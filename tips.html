@@ -495,7 +495,7 @@ tmpfs           <span class="hljs-number">1.6</span>G  <span class="hljs-number"
 tmpfs           <span class="hljs-number">7.8</span>G   <span class="hljs-number">67</span>M  <span class="hljs-number">7.8</span>G   <span class="hljs-number">1</span>% /dev/shm
 
 <span class="hljs-comment"># &quot;&#xC22B;&#xC790;%&quot; &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xCD9C;</span>
-$ df -h | sed -rn <span class="hljs-string">&apos;s/.* ([0-9]+%).*/\1/p&apos;</span>
+$ df -h | sed -En <span class="hljs-string">&apos;s/.* ([0-9]+%).*/\1/p&apos;</span>
 <span class="hljs-number">0</span>%
 <span class="hljs-number">1</span>%
 <span class="hljs-number">49</span>%
@@ -510,7 +510,7 @@ $ df -h | grep -o <span class="hljs-string">&apos;[0-9]\+%&apos;</span>
 --------------------------------------------
 
 <span class="hljs-comment"># 4&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; &#xCD94;&#xCD9C;</span>
-$ df -h | sed -r <span class="hljs-string">&apos;s/(\S+\s+){3}(\S+).*/\2/&apos;</span>
+$ df -h | sed -E <span class="hljs-string">&apos;s/(\S+\s+){3}(\S+).*/\2/&apos;</span>
 Avail
 <span class="hljs-number">7.8</span>G
 <span class="hljs-number">1.6</span>G
@@ -530,7 +530,7 @@ Avail
 pattern space &#xC758; &#xD2B9;&#xC815; &#xC704;&#xCE58;&#xC5D0; &#xB77C;&#xC778;&#xC744; insert, append &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC744; &#xC774;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># 3 &#xBC88;&#xC9F8; &#xB77C;&#xC778; &#xC55E;&#xC5D0; &#xCD94;&#xAC00;</span>
 <span class="hljs-comment"># &quot;:X $!{N; bX};&quot; &#xB294; &#xC804;&#xCCB4; &#xB77C;&#xC778;&#xC744; pattern space &#xB85C; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -r <span class="hljs-string">&apos;:X $!{N; bX}; s/^/XXXXX\n/M3&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -E <span class="hljs-string">&apos;:X $!{N; bX}; s/^/XXXXX\n/M3&apos;</span>
 <span class="hljs-number">111</span>
 <span class="hljs-number">222</span>
 XXXXX
@@ -538,7 +538,7 @@ XXXXX
 <span class="hljs-number">444</span>
 
 <span class="hljs-comment"># 3 &#xBC88;&#xC9F8; &#xB77C;&#xC778; &#xB4A4;&#xC5D0; &#xCD94;&#xAC00;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -r <span class="hljs-string">&apos;:X $!{N; bX}; s/$/\nXXXXX/M3&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -E <span class="hljs-string">&apos;:X $!{N; bX}; s/$/\nXXXXX/M3&apos;</span>
 <span class="hljs-number">111</span>
 <span class="hljs-number">222</span>
 <span class="hljs-number">333</span>
@@ -546,14 +546,14 @@ XXXXX
 <span class="hljs-number">444</span>
 
 <span class="hljs-comment"># &#xCC98;&#xC74C; &#xB77C;&#xC778; &#xC55E;&#xC5D0; &#xCD94;&#xAC00;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333&quot;</span> | sed -r <span class="hljs-string">&apos;:X $!{N; bX}; s/^/XXXXX\n/&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333&quot;</span> | sed -E <span class="hljs-string">&apos;:X $!{N; bX}; s/^/XXXXX\n/&apos;</span>
 XXXXX
 <span class="hljs-number">111</span>
 <span class="hljs-number">222</span>
 <span class="hljs-number">333</span>
 
 <span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778; &#xB4A4;&#xC5D0; &#xCD94;&#xAC00;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333&quot;</span> | sed -r <span class="hljs-string">&apos;:X $!{N; bX}; s/$/\nXXXXX/&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333&quot;</span> | sed -E <span class="hljs-string">&apos;:X $!{N; bX}; s/$/\nXXXXX/&apos;</span>
 <span class="hljs-number">111</span>
 <span class="hljs-number">222</span>
 <span class="hljs-number">333</span>
@@ -571,10 +571,10 @@ $ sed -i <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC138; &#xBC88;&#xC9F8; &#xC22B;&#xC790;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; 13963  &#xCD94;&#xCD9C;&#xD558;&#xAE30;</span>
 [ <span class="hljs-number">2014</span>/<span class="hljs-number">05</span>/<span class="hljs-number">01</span> <span class="hljs-number">10</span>:<span class="hljs-number">48</span>:<span class="hljs-number">26</span> | <span class="hljs-number">13963</span> | DEBUG ] It took <span class="hljs-number">11.16837501525879</span> seconds to complete
 
-$ sed -r <span class="hljs-string">&apos;s#[^0-9./:]# #g&apos;</span> file
+$ sed -E <span class="hljs-string">&apos;s#[^0-9./:]# #g&apos;</span> file
   <span class="hljs-number">2014</span>/<span class="hljs-number">05</span>/<span class="hljs-number">01</span> <span class="hljs-number">10</span>:<span class="hljs-number">48</span>:<span class="hljs-number">26</span>   <span class="hljs-number">13963</span>                   <span class="hljs-number">11.16837501525879</span>  
 
-$ sed -r <span class="hljs-string">&apos;s#[^0-9./:]# #g; s/\s*(\S+\s+){2}(\S+).*/\2/&apos;</span> file
+$ sed -E <span class="hljs-string">&apos;s#[^0-9./:]# #g; s/\s*(\S+\s+){2}(\S+).*/\2/&apos;</span> file
 <span class="hljs-number">13963</span>
 </code></pre>
 <p>&#xB2E4;&#xC74C; &#xC608;&#xB294; 0 &#xBCF4;&#xB2E4; &#xD070; &#xC22B;&#xC790;&#xB4E4;&#xC744; &#xC804;&#xBD80; 1 &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB824;&#xACE0; &#xD558;&#xB294;&#xB370;&#xC694;.<br>&#xC774;&#xB54C;&#xB294; &#xAC01; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; 0 &#xBCF4;&#xB2E4; &#xD070;&#xC9C0; &#xC77C;&#xC77C;&#xC774; &#xBE44;&#xAD50;&#xD560; &#xD544;&#xC694; &#xC5C6;&#xC774; regexp &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -602,7 +602,7 @@ D       <span class="hljs-number">1</span>       <span class="hljs-number">0</sp
 <p><code>-e</code> &#xC635;&#xC158;&#xC740; &#xBA85;&#xB839; &#xB2E8;&#xC704;&#xB85C; &#xBD84;&#xB9AC;&#xD574; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD558;&#xBBC0;&#xB85C; 
 &#xB9CC;&#xC57D;&#xC5D0; <code>s</code> &#xD558;&#xB098;&#xC758; &#xBA85;&#xB839;&#xC774; &#xAE38;&#xC5B4;&#xC9C8; &#xACBD;&#xC6B0;&#xB294; &#xC704; &#xBC29;&#xBC95;&#xC73C;&#xB85C;&#xB294; &#xC548;&#xB418;&#xACE0;
 &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ sed -zr <span class="hljs-string">&apos;s#(\s*)&lt;servlet-name&gt;(\s+)cofaxTools(\s+)&lt;/servlet-name&gt;#&apos;</span>\
+<pre><code class="lang-bash">$ sed -Ez <span class="hljs-string">&apos;s#(\s*)&lt;servlet-name&gt;(\s+)cofaxTools(\s+)&lt;/servlet-name&gt;#&apos;</span>\
 <span class="hljs-string">&apos;\1&lt;servlet-class&gt;\2org.cofax.cms.CofaxToolsServlet\3&lt;/servlet-class&gt;#&apos;</span> file
 </code></pre>
 

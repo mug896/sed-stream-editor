@@ -512,11 +512,11 @@ T YY1; t YY2
 </code></pre>
 <h4 id="substitute-&#xBA85;&#xB839;&#xC744;-&#xC0AC;&#xC6A9;&#xD560;-&#xB54C;-g-&#xD50C;&#xB798;&#xADF8;-&#xC640;-branch-&#xC758;-&#xCC28;&#xC774;">substitute &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; g &#xD50C;&#xB798;&#xADF8; &#xC640; branch &#xC758; &#xCC28;&#xC774;</h4>
 <pre><code class="lang-bash"><span class="hljs-comment"># g &#xD50C;&#xB798;&#xADF8;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890123456&quot;</span> | sed -r <span class="hljs-string">&apos;s#([0-9]{2})([0-9]{2})#\1\\x\2#g&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890123456&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]{2})([0-9]{2})#\1\\x\2#g&apos;</span>
 <span class="hljs-number">12</span>\x3456\x7890\x1234\x56
 
 <span class="hljs-comment"># branch &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;1234567890123456&apos;</span> | sed -r <span class="hljs-string">&apos;:X s/^([0-9]*)([0-9]{2})/\1\\x\2/; tX&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;1234567890123456&apos;</span> | sed -E <span class="hljs-string">&apos;:X s/^([0-9]*)([0-9]{2})/\1\\x\2/; tX&apos;</span>
 \x12\x34\x56\x78\x90\x12\x34\x56
 </code></pre>
 <h3 id="&#xC608;&#xC81C;-1">&#xC608;&#xC81C; 1</h3>
@@ -529,12 +529,12 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;123456
 [--natpf&lt;<span class="hljs-number">1</span>-N&gt; [&lt;rulename&gt;],tcp|udp,[&lt;hostip&gt;], &lt;hostport&gt;,[&lt;guestip&gt;],&lt;guestport&gt;] 
 [--natpf&lt;<span class="hljs-number">1</span>-N&gt; delete &lt;rulename&gt;] world [--nataliasmode default|proxyonly, [sameports]]
 
-$ sed -r <span class="hljs-string">&apos;s/\[[^][]*\]//g&apos;</span> file1          <span class="hljs-comment"># &#xAD04;&#xD638;&#xAC00; &#xC911;&#xCCA9;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC11C; &#xC62C;&#xBC14;&#xB85C; &#xC0AD;&#xC81C;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ sed -E <span class="hljs-string">&apos;s/\[[^][]*\]//g&apos;</span> file1          <span class="hljs-comment"># &#xAD04;&#xD638;&#xAC00; &#xC911;&#xCCA9;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC11C; &#xC62C;&#xBC14;&#xB85C; &#xC0AD;&#xC81C;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
 [--natsettings&lt;<span class="hljs-number">1</span>-N&gt; ,, ,, ] hello 
 [--natpf&lt;<span class="hljs-number">1</span>-N&gt; ,tcp|udp,, &lt;hostport&gt;,,&lt;guestport&gt;] 
  world [--nataliasmode default|proxyonly, ]
 
-$ sed -r <span class="hljs-string">&apos;:X s/\[[^][]*\]//g; tX&apos;</span> file1   <span class="hljs-comment"># branch loop &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</span>
+$ sed -E <span class="hljs-string">&apos;:X s/\[[^][]*\]//g; tX&apos;</span> file1   <span class="hljs-comment"># branch loop &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</span>
  hello   
 
  world
@@ -552,7 +552,7 @@ sharedfolder remove &lt;uuid|vmname&gt; --name &lt;name&gt; [--transient]
 
 <span class="hljs-comment"># &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xB294; \2 &#xB294; &#xACC4;&#xC18D; &#xC55E;&#xCABD;&#xC73C;&#xB85C; &#xBD99;&#xC5EC;&#xB123;&#xAE30;&#xAC00; &#xB418;&#xACE0; \3 &#xC740; &#xC0AD;&#xC81C;&#xAC00; &#xB41C;&#xB2E4;. \1 &#xC758; (.*) &#xB294; greedy &#xB9E4;&#xCE6D;</span>
 $ { <span class="hljs-built_in">set</span> <span class="hljs-operator">-f</span>; <span class="hljs-built_in">echo</span> $(&lt; file2) ;} | 
-    sed -rn <span class="hljs-string">&apos;:X s/(.*)(--[a-z-]+)(.*)/\2\n\1/; /--[a-z-]+\n$/{p;q}; tX&apos;</span>
+    sed -En <span class="hljs-string">&apos;:X s/(.*)(--[a-z-]+)(.*)/\2\n\1/; /--[a-z-]+\n$/{p;q}; tX&apos;</span>
 --transient
 --name
 --hostpath
@@ -562,7 +562,7 @@ $ { <span class="hljs-built_in">set</span> <span class="hljs-operator">-f</span>
 
 <span class="hljs-comment"># `l` &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xB514;&#xBC84;&#xAE45;&#xC744; &#xD574;&#xBCF4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ { <span class="hljs-built_in">set</span> <span class="hljs-operator">-f</span>; <span class="hljs-built_in">echo</span> `&lt; file2` ;} |
-    sed -rn <span class="hljs-string">&apos;:X s/(.*)(--[a-z-]+)(.*)/\2\n\1/; l; /--[a-z-]+\n$/{p;q}; tX&apos;</span>
+    sed -En <span class="hljs-string">&apos;:X s/(.*)(--[a-z-]+)(.*)/\2\n\1/; l; /--[a-z-]+\n$/{p;q}; tX&apos;</span>
 --transient\nUsage: VBoxManage sharedfolder add &lt;uuid|vmname&gt; --name \
 &lt;name&gt; --hostpath &lt;hostpath&gt; [--readonly] [--automount] VBoxManage sh\
 aredfolder remove &lt;uuid|vmname&gt; --name &lt;name&gt; [$
@@ -592,7 +592,7 @@ Usage: VBoxManage sharedfolder add &lt;uuid|vmname&gt; {{name}}
 VBoxManage sharedfolder remove &lt;uuid|vmname&gt; {{name}} &lt;name&gt; {{transient}}
 
 $ { <span class="hljs-built_in">set</span> <span class="hljs-operator">-f</span>; <span class="hljs-built_in">echo</span> `&lt; file3` ;} |
-    sed -rn <span class="hljs-string">&apos;:X s/(.*)(\{\{[a-z]+}})(.*)/\2\n\1/; /\{\{[a-z]+}}\n$/{p;q}; tX&apos;</span>
+    sed -En <span class="hljs-string">&apos;:X s/(.*)(\{\{[a-z]+}})(.*)/\2\n\1/; /\{\{[a-z]+}}\n$/{p;q}; tX&apos;</span>
 {{transient}}
 {{name}}
 {{hostpath}}
@@ -617,7 +617,7 @@ $ { <span class="hljs-built_in">set</span> <span class="hljs-operator">-f</span>
 &lt;/ns1:queryDeviceInfoBtRequest&gt;
 ---------------------------------------------------------
 
-$ sed -rn <span class="hljs-string">&apos;
+$ sed -En <span class="hljs-string">&apos;
 /&lt;ns1:queryDeviceInfoBtRequest/!b         # &#xCCAB;&#xB77C;&#xC778;&#xACFC; &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB418;&#xB294; &#xB77C;&#xC778;&#xC774;&#xBA74; &#xB05D;&#xC73C;&#xB85C; &#xBD84;&#xAE30;&#xD558;&#xACE0;
 h                                         # &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xBA74; hold &#xD569;&#xB2C8;&#xB2E4;.
 :X
@@ -691,11 +691,11 @@ EOF
 <h3 id="&#xC608;&#xC81C;-5">&#xC608;&#xC81C; 5</h3>
 <p>&#xC911;&#xBCF5;&#xB418;&#xB294; &#xB2E8;&#xC5B4; &#xC0AD;&#xC81C; &#xD558;&#xAE30;</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I am am a a boy am am a am boy am&quot;</span> |
-  sed -r <span class="hljs-string">&apos;:X s#(\b\w+\b)(.*) \1#\1\2#g; tX&apos;</span>
+  sed -E <span class="hljs-string">&apos;:X s#(\b\w+\b)(.*) \1#\1\2#g; tX&apos;</span>
 I am a boy
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I am am a a boy am am a am boy am&quot;</span> |
-  sed -r <span class="hljs-string">&apos;:X s#(\b\w+\b)(.*) \1#\1\2#g; l; tX&apos;</span>     <span class="hljs-comment"># &apos;l&apos; &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;</span>
+  sed -E <span class="hljs-string">&apos;:X s#(\b\w+\b)(.*) \1#\1\2#g; l; tX&apos;</span>     <span class="hljs-comment"># &apos;l&apos; &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;</span>
 I am am a a boy am am a am boy$
 I am am a a boy am am a boy$
 I am am a a boy am a boy$
@@ -707,10 +707,10 @@ I am a boy
 </code></pre>
 <h3 id="&#xC608;&#xC81C;-6">&#xC608;&#xC81C; 6</h3>
 <p>&#xCC9C; &#xB2E8;&#xC704; &#xCF64;&#xB9C8; &#xB123;&#xAE30;</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -r <span class="hljs-string">&apos;:X s#\B[0-9]{3}\b#,&amp;#; tX&apos;</span>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -E <span class="hljs-string">&apos;:X s#\B[0-9]{3}\b#,&amp;#; tX&apos;</span>
 <span class="hljs-number">1</span>,<span class="hljs-number">234</span>,<span class="hljs-number">567</span>,<span class="hljs-number">890</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -r <span class="hljs-string">&apos;:X s#\B[0-9]{3}\b#,&amp;#; l; tX&apos;</span>    <span class="hljs-comment"># &apos;l&apos; &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -E <span class="hljs-string">&apos;:X s#\B[0-9]{3}\b#,&amp;#; l; tX&apos;</span>    <span class="hljs-comment"># &apos;l&apos; &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;</span>
 <span class="hljs-number">1234567</span>,<span class="hljs-number">890</span>$
 <span class="hljs-number">1234</span>,<span class="hljs-number">567</span>,<span class="hljs-number">890</span>$
 <span class="hljs-number">1</span>,<span class="hljs-number">234</span>,<span class="hljs-number">567</span>,<span class="hljs-number">890</span>$

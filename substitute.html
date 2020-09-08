@@ -517,19 +517,19 @@ $ sed -n <span class="hljs-string">&apos;s/^[A-Z]/@@/p&apos;</span> file
 </code></pre>
 <h4 id="&#xB9E4;&#xCE6D;-&#xBC88;&#xD638;&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xC9C0;-&#xC54A;&#xC73C;&#xBA74;-default-&#xB294;-1-&#xC774;&#xB2E4;">&#xB9E4;&#xCE6D; &#xBC88;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default &#xB294; 1 &#xC774;&#xB2E4;.</h4>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xB9E4;&#xCE6D; &#xBC88;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C; s/../../1 &#xACFC; &#xAC19;&#xB2E4;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/&apos;</span>
 <span class="hljs-number">11</span> XaaX <span class="hljs-number">22</span> bb <span class="hljs-number">33</span> cc
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/2&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/2&apos;</span>
 <span class="hljs-number">11</span> aa <span class="hljs-number">22</span> XbbX <span class="hljs-number">33</span> cc
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/3&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/3&apos;</span>
 <span class="hljs-number">11</span> aa <span class="hljs-number">22</span> bb <span class="hljs-number">33</span> XccX
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/g&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/g&apos;</span>
 <span class="hljs-number">11</span> XaaX <span class="hljs-number">22</span> XbbX <span class="hljs-number">33</span> XccX
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/2g&apos;</span>  <span class="hljs-comment"># &#xB450;&#xBC88;&#xC9F8; &#xC774;&#xD6C4;&#xB85C; &#xC804;&#xBD80;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/[a-z]+/X&amp;X/2g&apos;</span>  <span class="hljs-comment"># &#xB450;&#xBC88;&#xC9F8; &#xC774;&#xD6C4;&#xB85C; &#xC804;&#xBD80;</span>
 <span class="hljs-number">11</span> aa <span class="hljs-number">22</span> XbbX <span class="hljs-number">33</span> XccX
 -----------------------------------------------------
 
@@ -550,10 +550,10 @@ PHP is a server-side scripting language.
 PHP is platform-independent.
 </code></pre>
 <p>regexp <code>|</code> (or) &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; <code>g</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/aa|bb/X&amp;X/&apos;</span>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/aa|bb/X&amp;X/&apos;</span>
 <span class="hljs-number">11</span> XaaX <span class="hljs-number">22</span> bb <span class="hljs-number">33</span> cc
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -r <span class="hljs-string">&apos;s/aa|bb/X&amp;X/g&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/aa|bb/X&amp;X/g&apos;</span>
 <span class="hljs-number">11</span> XaaX <span class="hljs-number">22</span> XbbX <span class="hljs-number">33</span> cc
 </code></pre>
 <h4 id="capturing-groups-and-backreferences">Capturing Groups and Backreferences</h4>
@@ -563,7 +563,7 @@ Learn SED programming language
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Learn SED language programming&quot;</span> | sed <span class="hljs-string">&apos;s/\(language\) \(programming\)/\2 \1/&apos;</span>
 Learn SED programming language
 
-$ sed -rn <span class="hljs-string">&apos;/^(.)(.)(.)\3\2\1$/p&apos;</span> /usr/share/dict/words
+$ sed -En <span class="hljs-string">&apos;/^(.)(.)(.)\3\2\1$/p&apos;</span> /usr/share/dict/words
 redder
 </code></pre>
 <p><code>&amp;</code> &#xBB38;&#xC790;&#xB294; &#xB9E4;&#xCE6D;&#xB41C; &#xC601;&#xC5ED;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
@@ -600,7 +600,7 @@ LEARN sED PROGRAMMING LANGUAGE
 ..............................................................
 
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC740; &#xBAA8;&#xB4E0; &#xB2E8;&#xC5B4;&#xC758; &#xCCAB;&#xBB38;&#xC790;&#xB97C; &#xB300;&#xBB38;&#xC790;&#xB85C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;learn sed programming language&quot;</span> | sed -r <span class="hljs-string">&apos;s/\b[a-z]+\b/\u&amp;/g&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;learn sed programming language&quot;</span> | sed -E <span class="hljs-string">&apos;s/\b[a-z]+\b/\u&amp;/g&apos;</span>
 Learn Sed Programming Language
 </code></pre>
 <h4 id="&#xC774;&#xC804;&#xC5D0;-&#xC0AC;&#xC6A9;&#xB41C;-regexp-&#xC911;&#xBCF5;-&#xC791;&#xC131;-&#xBC29;&#xC9C0;&#xD558;&#xAE30;">&#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; regexp &#xC911;&#xBCF5; &#xC791;&#xC131; &#xBC29;&#xC9C0;&#xD558;&#xAE30;</h4>
@@ -610,7 +610,7 @@ Learn Sed Programming Language
 &#xC5EC;&#xAE30;&#xC11C; <code>//</code> &#xBD80;&#xBD84;&#xC774; &#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; regexp &#xC73C;&#xB85C; &#xB300;&#xCCB4;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xAC12; 123 &#xC744; id &#xAC12;&#xC5D0; &#xBD99;&#xC774;&#xAE30; </span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&lt;pagenum page=&quot;normal&quot; id=&quot;page&quot;&gt;123&lt;/pagenum&gt;&apos;</span> |
-sed -r <span class="hljs-string">&apos;
+sed -E <span class="hljs-string">&apos;
     /(&lt;pagenum page=&quot;normal&quot; id=&quot;)(\w+)(&quot;&gt;)([0-9]*)(&lt;\/pagenum&gt;)/ {
 
         # &#xCCAB; &#xBC88;&#xC9F8; &#xBC29;&#xBC95;
@@ -659,14 +659,14 @@ $ readelf -Wa /bin/date | sed -n <span class="hljs-string">&apos;/Section Header
 <h4 id="&#xAD6C;&#xBD84;&#xC790;&#xB97C;-&#xB2E4;&#xB978;-&#xBB38;&#xC790;&#xB85C;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;"><code>/../../</code> &#xAD6C;&#xBD84;&#xC790;&#xB97C; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h4>
 <p>&#xC774; &#xAE30;&#xB2A5;&#xC740; addresses &#xBA54;&#xB274;&#xC5D0;&#xC11C;&#xB3C4; &#xB098;&#xC654;&#xB294;&#xB370;&#xC694;. <code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB3C4; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xCC28;&#xC774;&#xC810;&#xC740; <code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB294; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xBB38;&#xC790;&#xB97C; escape &#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &#xBAA8;&#xB450; escape &#xD574;&#xC57C; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC00;&#xB3C5;&#xC131;&#xC774; &#xB5A8;&#xC5B4;&#xC9C4;&#xB2E4;.</span>
-$ sed -r <span class="hljs-string">&apos;s/\/usr\/local\/bin\/(\w+)/\1/&apos;</span>
+$ sed -E <span class="hljs-string">&apos;s/\/usr\/local\/bin\/(\w+)/\1/&apos;</span>
 
 <span class="hljs-comment"># &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC784;&#xC758;&#xC758; &#xBB38;&#xC790;&#xB97C; &#xC120;&#xC815;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
-$ sed -r <span class="hljs-string">&apos;s@/usr/local/bin/(\w+)@\1@&apos;</span>
+$ sed -E <span class="hljs-string">&apos;s@/usr/local/bin/(\w+)@\1@&apos;</span>
 
-$ sed -r <span class="hljs-string">&apos;s#/usr/local/bin/(\w+)#\1#&apos;</span>
+$ sed -E <span class="hljs-string">&apos;s#/usr/local/bin/(\w+)#\1#&apos;</span>
 
-$ sed -r <span class="hljs-string">&apos;s,/usr/local/bin/(\w+),\1,&apos;</span>
+$ sed -E <span class="hljs-string">&apos;s,/usr/local/bin/(\w+),\1,&apos;</span>
 </code></pre>
 <h3 id="a-nonprintable-&#xBB38;&#xC790;&#xC758;-&#xD65C;&#xC6A9;"><code>\a</code> non-printable &#xBB38;&#xC790;&#xC758; &#xD65C;&#xC6A9;</h3>
 <p><code>s</code> &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB2E4; &#xBCF4;&#xBA74; &#xC774;&#xB7F0; &#xBB38;&#xC81C;&#xAC00; &#xC0DD;&#xAE30;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
@@ -747,7 +747,7 @@ sh$
 <p>&#xC774;&#xB54C;&#xB294; sed &#xC758; <code>-z</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 sed &#xC758; <code>-z</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC744; &#xD55C; &#xBC88;&#xC5D0; &#xC804;&#xBD80; &#xC77D;&#xC5B4; &#xB4E4;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB2E4;&#xC74C; &#xC2DC;&#xC791; &#xBD80;&#xBD84; (<code>^</code>) &#xACFC; &#xB9C8;&#xC9C0;&#xB9C9; &#xBD80;&#xBD84; (<code>$</code>) &#xC758; newline &#xB4E4;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ sed -rz <span class="hljs-string">&apos;s/^\n+//; s/\n+$/\n/g&apos;</span> file
+<pre><code class="lang-bash">$ sed -Ez <span class="hljs-string">&apos;s/^\n+//; s/\n+$/\n/g&apos;</span> file
 Hello
 
 Welcome to

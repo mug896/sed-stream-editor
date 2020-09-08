@@ -491,7 +491,7 @@ pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xBA85;&#xB839
 &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xB610; &#xACB0;&#xACFC;&#xB97C; &#xC218;&#xC815;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACA0;&#xC8E0;?</p>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD588;&#xC744; &#xB54C; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><img src="images/execute_1.png" alt=""></p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2:3&quot;</span> | sed -r <span class="hljs-string">&apos;s#([0-9]+):([0-9]+)#AA=$((\1+\2)); sleep $AA; echo $AA#e&apos;</span> 
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2:3&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]+):([0-9]+)#AA=$((\1+\2)); sleep $AA; echo $AA#e&apos;</span> 
 <span class="hljs-number">5</span>
 </code></pre>
 <p><code>e</code> &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xD615;&#xD0DC;&#xB97C; 2&#xAC00;&#xC9C0;&#xB85C; &#xBD84;&#xB958;&#xD574; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -535,7 +535,7 @@ $ cat data
 
 ------------------------
 
-$ sed -rn <span class="hljs-string">&apos;
+$ sed -En <span class="hljs-string">&apos;
     1{h;b}      # &#xCC98;&#xC74C; &#xC22B;&#xC790;&#xC77C; &#xACBD;&#xC6B0; hold &#xD558;&#xACE0; END &#xB85C; &#xBD84;&#xAE30;&#xD569;&#xB2C8;&#xB2E4;.
     G           # &#xD604;&#xC7AC; pattern space &#xC5D0; &#xC788;&#xB294; &#xC22B;&#xC790;&#xC5D0; hold space &#xC5D0; &#xC788;&#xB294; &#xC22B;&#xC790;&#xB97C; append &#xD569;&#xB2C8;&#xB2E4;.
     s/\n/ /     # newline &#xC744; space &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; shell &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.
@@ -549,7 +549,7 @@ $ sed -rn <span class="hljs-string">&apos;
 <span class="hljs-number">999</span>
 ------------------------
 
-$ sed -rn <span class="hljs-string">&apos;
+$ sed -En <span class="hljs-string">&apos;
     1{h;b}
     G
     s/\n/ /                 # f() &#xC258; &#xD568;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC2E4;&#xD589;
@@ -572,7 +572,7 @@ $ cat comp.sh
 <span class="hljs-keyword">fi</span>
 ..........................
 
-$ sed -rn <span class="hljs-string">&apos;
+$ sed -En <span class="hljs-string">&apos;
     1{h;b}
     G
     s/\n/ /
@@ -592,7 +592,7 @@ $ sed -rn <span class="hljs-string">&apos;
 <span class="hljs-number">15</span>      <span class="hljs-number">14</span>      <span class="hljs-number">10</span>      <span class="hljs-number">18</span>      <span class="hljs-number">5</span>
 
 $ shuf -i <span class="hljs-number">1</span>-<span class="hljs-number">20</span> | paste - - - - - |
-sed -r <span class="hljs-string">&apos;
+sed -E <span class="hljs-string">&apos;
     p
 # `s` &#xBA85;&#xB839;&#xC5D0; &#xC758;&#xD574; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; `sh -c` &#xC5D0; &#xC758;&#xD574; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.
 # f() { for n; do  r=$((r+n)); done; echo &quot;sum : $r&quot; ;}; f 7   12   1   10   16
@@ -615,7 +615,7 @@ sum : <span class="hljs-number">68</span>
 <span class="hljs-number">002</span> daum.net KR
 <span class="hljs-number">003</span> google.com US
 
-$ sed -rn <span class="hljs-string">&apos;
+$ sed -En <span class="hljs-string">&apos;
     h
     s#.* (.*) .*#dig +short \1 | head -n1#e
     G

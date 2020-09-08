@@ -514,7 +514,7 @@ DEF
 <span class="hljs-number">555</span>
 
 <span class="hljs-comment"># &apos;N&apos; &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0;</span>
-$ sed -rn <span class="hljs-string">&apos;N; s/[0-9]+\n[A-Z]+/XXX/; P;D&apos;</span> file
+$ sed -En <span class="hljs-string">&apos;N; s/[0-9]+\n[A-Z]+/XXX/; P;D&apos;</span> file
 <span class="hljs-number">111</span>
 XXX
 <span class="hljs-number">333</span>
@@ -522,7 +522,7 @@ XXX
     &lt;---- &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778; <span class="hljs-number">555</span> &#xAC00; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
 
 <span class="hljs-comment"># &apos;$!N&apos; &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0;</span>
-$ sed -rn <span class="hljs-string">&apos;$!N; s/[0-9]+\n[A-Z]+/XXX/; P;D&apos;</span> file
+$ sed -En <span class="hljs-string">&apos;$!N; s/[0-9]+\n[A-Z]+/XXX/; P;D&apos;</span> file
 <span class="hljs-number">111</span>
 XXX
 <span class="hljs-number">333</span>

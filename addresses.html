@@ -536,7 +536,7 @@ $ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&ap
 $ sed -n <span class="hljs-string">&apos;/apple/p&apos;</span> 
 
 <span class="hljs-comment"># &#xB77C;&#xC778;&#xC774; file[0-9]+ &#xACFC; &#xB9E4;&#xCE6D;&#xB420; &#xACBD;&#xC6B0;&#xB9CC; &#xD504;&#xB9B0;&#xD2B8;</span>
-$ sed -rn <span class="hljs-string">&apos;/file[0-9]+/p&apos;</span> 
+$ sed -En <span class="hljs-string">&apos;/file[0-9]+/p&apos;</span> 
 
 <span class="hljs-comment"># &#xB77C;&#xC778;&#xC5D0; apple &#xC774; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0;&#xB9CC; foo &#xB97C; bar &#xB85C; &#xC218;&#xC815;</span>
 $ sed <span class="hljs-string">&apos;/apple/ s/foo/bar/&apos;</span>
