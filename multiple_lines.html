@@ -1074,7 +1074,7 @@ AA=$( <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<s
 BB=$( <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$BB</span>&quot;</span> | sed -z <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s#\([&amp;\#]\)#\\\1#g&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s#\n#\\n#g&apos;</span>  )
 
 <span class="hljs-comment"># sed &#xBA85;&#xB839;&#xC740; &#xB514;&#xD3F4;&#xD2B8;&#xC778; basic regular expression &#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</span>
-sed -z -i <span class="hljs-string">&apos;s#&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&quot;</span><span class="hljs-string">&apos;#&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$BB</span>&quot;</span><span class="hljs-string">&apos;#g&apos;</span> *.html
+sed -z -i <span class="hljs-string">&quot;s#<span class="hljs-variable">${AA}</span>#<span class="hljs-variable">${BB}</span>#g&quot;</span> *.html
 </code></pre>
 
                     
