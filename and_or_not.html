@@ -541,6 +541,11 @@ Xgoobar aaa <span class="hljs-number">222</span>X
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;foobar 111 222&quot;</span> | sed -E <span class="hljs-string">&apos;/^foo/! s/^|$/X/g&apos;</span>
 foobar <span class="hljs-number">111</span> <span class="hljs-number">222</span>
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C; &#xB450; &#xC2DD;&#xC740; &#xB3D9;&#xC77C;&#xD55C; &#xAC83;&#xC73C;&#xB85C; &#xACF5;&#xBC31; &#xB77C;&#xC778; &#xB610;&#xB294; &apos;#&apos; &#xBB38;&#xC790;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</span>
+sed -En <span class="hljs-string">&apos;/^\s*$|^#/!p&apos;</span>
+
+sed -En <span class="hljs-string">&apos;/^\s*$/!{ /^#/!p }&apos;</span>
 </code></pre>
 <h3 id="&#xC608;&#xC81C;-1">&#xC608;&#xC81C; 1</h3>
 <p>&#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9; &#xC911;&#xC5D0;&#xC11C; <code>rocommunity</code> &#xAC00; &#xC788;&#xB294; &#xB77C;&#xC778;&#xC744; &#xC0AD;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0;&#xB370; &#xB77C;&#xC778;&#xC774; <code>127.0.0.1</code> &#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC73C;&#xBA74; &#xC0AD;&#xC81C;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xD504;&#xB9B0;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
