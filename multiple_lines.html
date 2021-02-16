@@ -125,16 +125,16 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1" data-path="regexp.html">
+        <li class="chapter " data-level="2.1" data-path="regex.html">
             
                 
-                    <a href="./regexp.html">
+                    <a href="./regex.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.</b>
                         
-                        Regexp
+                        Regex
                     </a>
             
             
@@ -592,7 +592,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> 
 </code></pre>
 <p><img src="images/ml_44.png" alt=""></p>
 <hr>
-<p>&#xC704;&#xC758; &#xACBD;&#xC6B0;&#xB294; regexp &#xC5D0;&#xC11C; &#xB2E8;&#xC21C;&#xD788; <code>^</code>, <code>$</code> &#xBB38;&#xC790;&#xB9CC; &#xC0AC;&#xC6A9;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xCCB4; &#xB77C;&#xC778;&#xC774; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0;&#xB9CC;
+<p>&#xC704;&#xC758; &#xACBD;&#xC6B0;&#xB294; regex &#xC5D0;&#xC11C; &#xB2E8;&#xC21C;&#xD788; <code>^</code>, <code>$</code> &#xBB38;&#xC790;&#xB9CC; &#xC0AC;&#xC6A9;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xCCB4; &#xB77C;&#xC778;&#xC774; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0;&#xB9CC;
 &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB77C;&#xC778; &#xC911;&#xC5D0; &#xC77C;&#xBD80;&#xBD84;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC804;&#xCCB4; &#xB77C;&#xC778; &#xC911;&#xC5D0;&#xC11C; 2&#xAC1C;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xB294; &#xACBD;&#xC6B0;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;A11\n2B2\nC33\n4D4&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^[A-Z]/XXX/Mg; p&apos;</span>
@@ -1013,7 +1013,7 @@ EEE
 </code></pre>
 <h3 id="&#xC608;&#xC81C;-4">&#xC608;&#xC81C; 4</h3>
 <p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; <code>forall</code> &#xB77C;&#xC778;&#xC744; <code>goal</code> &#xB77C;&#xC778; &#xC544;&#xB798;&#xB85C; &#xC704;&#xCE58; &#xC2DC;&#xD0A4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
-<code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; regexp &#xC5D0;&#xC11C; &#xCCAB; &#xB77C;&#xC778;, &#xC911;&#xAC04; &#xB77C;&#xC778;&#xB4E4;, &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &#xBD84;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744;
+<code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; regex &#xC5D0;&#xC11C; &#xCCAB; &#xB77C;&#xC778;, &#xC911;&#xAC04; &#xB77C;&#xC778;&#xB4E4;, &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &#xBD84;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744;
 &#xC8FC;&#xC758;&#xAE4A;&#xAC8C; &#xBCF4;&#xC138;&#xC694;</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xB370;&#xC774;&#xD130; &#xB0B4;&#xC6A9;</span>
 goal identifier statement  
@@ -1066,8 +1066,8 @@ BB=$( cat &lt;&lt;\EOF
 EOF
 )
 
-<span class="hljs-comment"># &#xBCC0;&#xACBD;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xBCC0;&#xC218; AA &#xC758; &#xB0B4;&#xC6A9;&#xC740; &apos;s&apos; &#xBA85;&#xB839;&#xC758; &#xC67C;&#xCABD;( regexp &#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xACF3; ) &#xC5D0;</span>
-<span class="hljs-comment"># &#xC704;&#xCE58;&#xD558;&#xAC8C; &#xB418;&#xBBC0;&#xB85C; &#xB0B4;&#xC6A9;&#xC911;&#xC5D0; regexp &#xBB38;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0; escape &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xBCC0;&#xACBD;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xBCC0;&#xC218; AA &#xC758; &#xB0B4;&#xC6A9;&#xC740; &apos;s&apos; &#xBA85;&#xB839;&#xC758; &#xC67C;&#xCABD;( regex &#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xACF3; ) &#xC5D0;</span>
+<span class="hljs-comment"># &#xC704;&#xCE58;&#xD558;&#xAC8C; &#xB418;&#xBBC0;&#xB85C; &#xB0B4;&#xC6A9;&#xC911;&#xC5D0; regex &#xBB38;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0; escape &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
 AA=$( <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>&quot;</span> | sed -z <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s#\([][^$*\.#]\)#\\\1#g&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s#\n#\\n#g&apos;</span> )
 
 <span class="hljs-comment"># BB &#xBCC0;&#xC218;&#xC758; &#xB0B4;&#xC6A9;&#xB3C4; sed &#xBA85;&#xB839;&#xBB38;&#xC5D0;&#xC11C; &#xBB38;&#xC81C;&#xAC00; &#xC0DD;&#xAE30;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; escape &#xCC98;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.</span>

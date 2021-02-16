@@ -125,16 +125,16 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1" data-path="regexp.html">
+        <li class="chapter " data-level="2.1" data-path="regex.html">
             
                 
-                    <a href="./regexp.html">
+                    <a href="./regex.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.</b>
                         
-                        Regexp
+                        Regex
                     </a>
             
             
@@ -485,7 +485,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="substitute"><img src="images/buttons/s.png" \=""> Substitute</h1>
-<h4 id="s--regexp--replacement--flags">s <em>/ regexp / replacement / [flags]</em></h4>
+<h4 id="s--regex--replacement--flags">s <em>/ regex / replacement / [flags]</em></h4>
 <p>sed &#xC5D0;&#xC11C; pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xC218;&#xC815;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBA54;&#xC778; &#xBA85;&#xB839;&#xC73C;&#xB85C;
 &#xC5EC;&#xB7EC; flags &#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xB2E4;&#xC591;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><img src="images/subs_1.png" alt=""></p>
@@ -552,7 +552,7 @@ $ sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/PH
 PHP is a server-side scripting language.
 PHP is platform-independent.
 </code></pre>
-<p>regexp <code>|</code> (or) &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; <code>g</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>regex <code>|</code> (or) &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; <code>g</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;11 aa 22 bb 33 cc&quot;</span> | sed -E <span class="hljs-string">&apos;s/aa|bb/X&amp;X/&apos;</span>
 <span class="hljs-number">11</span> XaaX <span class="hljs-number">22</span> bb <span class="hljs-number">33</span> cc
 
@@ -606,11 +606,11 @@ LEARN sED PROGRAMMING LANGUAGE
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;learn sed programming language&quot;</span> | sed -E <span class="hljs-string">&apos;s/\b[a-z]+\b/\u&amp;/g&apos;</span>
 Learn Sed Programming Language
 </code></pre>
-<h4 id="&#xC774;&#xC804;&#xC5D0;-&#xC0AC;&#xC6A9;&#xB41C;-regexp-&#xC911;&#xBCF5;-&#xC791;&#xC131;-&#xBC29;&#xC9C0;&#xD558;&#xAE30;">&#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; regexp &#xC911;&#xBCF5; &#xC791;&#xC131; &#xBC29;&#xC9C0;&#xD558;&#xAE30;</h4>
-<p>&#xBA85;&#xB839;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD558;&#xB2E4; &#xBCF4;&#xBA74; &#xC885;&#xC885; address &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; regexp &#xC774;&#xB098; &#xC774;&#xC804; <code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C;
-&#xC0AC;&#xC6A9;&#xB41C; regexp &#xC774; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB2E4;&#xC2DC; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
+<h4 id="&#xC774;&#xC804;&#xC5D0;-&#xC0AC;&#xC6A9;&#xB41C;-regex-&#xC911;&#xBCF5;-&#xC791;&#xC131;-&#xBC29;&#xC9C0;&#xD558;&#xAE30;">&#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; regex &#xC911;&#xBCF5; &#xC791;&#xC131; &#xBC29;&#xC9C0;&#xD558;&#xAE30;</h4>
+<p>&#xBA85;&#xB839;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD558;&#xB2E4; &#xBCF4;&#xBA74; &#xC885;&#xC885; address &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; regex &#xC774;&#xB098; &#xC774;&#xC804; <code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C;
+&#xC0AC;&#xC6A9;&#xB41C; regex &#xC774; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB2E4;&#xC2DC; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
 &#xC774;&#xB7F4; &#xACBD;&#xC6B0; sed &#xB294; &#xC911;&#xBCF5; &#xC791;&#xC131;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; <code>s//.../</code> &#xD615;&#xC2DD;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.
-&#xC5EC;&#xAE30;&#xC11C; <code>//</code> &#xBD80;&#xBD84;&#xC774; &#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; regexp &#xC73C;&#xB85C; &#xB300;&#xCCB4;&#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xC5EC;&#xAE30;&#xC11C; <code>//</code> &#xBD80;&#xBD84;&#xC774; &#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; regex &#xC73C;&#xB85C; &#xB300;&#xCCB4;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xAC12; 123 &#xC744; id &#xAC12;&#xC5D0; &#xBD99;&#xC774;&#xAE30; </span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&lt;pagenum page=&quot;normal&quot; id=&quot;page&quot;&gt;123&lt;/pagenum&gt;&apos;</span> |
 sed -E <span class="hljs-string">&apos;
@@ -726,7 +726,7 @@ Unix                                Hello
                                      and Linux
 </code></pre>
 <p>&#xC544;&#xB798; &#xCCAB; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xACE0;
-&#xB450; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; regexp &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;&#xB85C; &#xB77C;&#xC778;&#xC758; &#xB05D;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
+&#xB450; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; regex &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;&#xB85C; &#xB77C;&#xC778;&#xC758; &#xB05D;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
 &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC758; &#xB05D;&#xC5D0; &quot; and Linux&quot; &#xAC00; &#xCD94;&#xAC00;&#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ sed <span class="hljs-string">&apos;$ s/$/ and Linux/&apos;</span> file
 Hello
