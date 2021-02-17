@@ -702,7 +702,7 @@ bcab
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc
 <span class="hljs-number">111010101011000010000000</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc | sed <span class="hljs-string">&apos;s/.\{8\}/&amp; /g&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc | sed -E <span class="hljs-string">&apos;s/.{8}/&amp; /g&apos;</span>
 <span class="hljs-number">11101010</span> <span class="hljs-number">10110000</span> <span class="hljs-number">10000000</span> 
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc | fold -b8
@@ -725,8 +725,8 @@ Unix                                Hello
                                     Unix
                                      and Linux
 </code></pre>
-<p>&#xC544;&#xB798; &#xCCAB; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xACE0;
-&#xB450; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; regex &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;&#xB85C; &#xB77C;&#xC778;&#xC758; &#xB05D;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
+<p>&#xC544;&#xB798; &#xCCAB; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xACE0;
+&#xB450; &#xBC88;&#xC9F8; <code>$</code> &#xBB38;&#xC790;&#xB294; regex &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB85C; &#xB77C;&#xC778;&#xC758; &#xB05D;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
 &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC758; &#xB05D;&#xC5D0; &quot; and Linux&quot; &#xAC00; &#xCD94;&#xAC00;&#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ sed <span class="hljs-string">&apos;$ s/$/ and Linux/&apos;</span> file
 Hello
@@ -750,7 +750,7 @@ sh$
 <p>&#xC774;&#xB54C;&#xB294; sed &#xC758; <code>-z</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 sed &#xC758; <code>-z</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC744; &#xD55C; &#xBC88;&#xC5D0; &#xC804;&#xBD80; &#xC77D;&#xC5B4; &#xB4E4;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB2E4;&#xC74C; &#xC2DC;&#xC791; &#xBD80;&#xBD84; (<code>^</code>) &#xACFC; &#xB9C8;&#xC9C0;&#xB9C9; &#xBD80;&#xBD84; (<code>$</code>) &#xC758; newline &#xB4E4;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ sed -Ez <span class="hljs-string">&apos;s/^\n+//; s/\n+$/\n/g&apos;</span> file
+<pre><code class="lang-bash">$ sed -Ez <span class="hljs-string">&apos;s/^\n+//; s/\n+$/\n/&apos;</span> file
 Hello
 
 Welcome to
