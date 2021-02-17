@@ -493,7 +493,7 @@ BRE( Basic Regular Expressions ), ERE( Extended Regular Expressions ), PRE( Perl
 &#xD558;&#xC9C0;&#xB9CC; &#xBCF4;&#xD1B5; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC740; BRE, ERE &#xC785;&#xB2C8;&#xB2E4;.
 &#xBB50; &#xAD73;&#xC774; PRE &#xAE4C;&#xC9C0; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB300;&#xBD80;&#xBD84; &#xBB38;&#xC81C; &#xD574;&#xACB0;&#xC774; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xAE30;&#xB3C4; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p>Regular Expressions &#xAC15;&#xC88C; : <a href="https://exynoa.tistory.com/197" target="_blank">https://exynoa.tistory.com/197</a></p>
+<p>Regular Expressions &#xAC15;&#xC88C; : <a href="https://exynoa.tistory.com/197" target="_blank">https://exynoa.tistory.com/197</a><br>Regex &#xB97C; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xB294; &#xC0AC;&#xC774;&#xD2B8; : <a href="http://regexr.com" target="_blank">http://regexr.com</a></p>
 </blockquote>
 <h3 id="bre-ere">BRE, ERE</h3>
 <p>&#xC608;&#xC804;&#xC5D0;&#xB294; ERE &#xAC00; BRE &#xC5D0; &#xBE44;&#xD574; &#xC880;&#xB354; &#xD655;&#xC7A5;&#xB41C; &#xAE30;&#xB2A5;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5C8;&#xB2E4;&#xACE0; &#xD558;&#xB294;&#xB370; &#xC9C0;&#xAE08;&#xC740;
@@ -946,6 +946,20 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111,22
 <span class="hljs-number">444</span>,<span class="hljs-number">222</span>,<span class="hljs-number">333</span>,<span class="hljs-number">111</span>
 </code></pre>
 <h3 id="&#xC608;&#xC81C;-2">&#xC608;&#xC81C; 2</h3>
+<p>IP &#xC8FC;&#xC18C;&#xB294; 4 &#xAC1C;&#xC758; &#xC22B;&#xC790;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C0;&#xB294;&#xB370; &#xAC01;&#xAC01; &#xBC94;&#xC704;&#xAC00; 0 ~ 255 &#xAE4C;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.
+regex &#xC744; &#xC774;&#xC6A9;&#xD574; IP &#xC8FC;&#xC18C;&#xAC00; &#xB9DE;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sed -En <span class="hljs-string">&apos;/(([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])/p&apos;</span> &lt;&lt;\@
+<span class="hljs-number">192.168</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">123.456</span>.<span class="hljs-number">789.101</span>      <span class="hljs-comment"># 456 789 &#xB294; IP &#xC8FC;&#xC18C;&#xAC00; &#xC544;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-number">10.1</span>.<span class="hljs-number">2.4</span>
+@
+
+<span class="hljs-number">192.168</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">10.1</span>.<span class="hljs-number">2.4</span>
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-3">&#xC608;&#xC81C; 3</h3>
 <p>&#xB2E4;&#xC74C;&#xC740; <code>&quot;[&#xC22B;&#xC790; - &#xC22B;&#xC790;]&quot;</code> &#xD615;&#xD0DC;&#xC758; &#xD544;&#xB4DC;&#xC5D0;&#xC11C; &#xCCAB; &#xBC88;&#xC9F8; &#xC22B;&#xC790;&#xB9CC; &#xCD94;&#xCD9C;&#xD574;&#xC11C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC22B;&#xC790;&#xC5D0; &#xC18C;&#xC218;&#xC810;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xBBC0;&#xB85C; &apos;[0-9.]&apos; &#xC744; &#xC0AC;&#xC6A9;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;10368,&quot;Verizon DSL&quot;,DSL,NY,NORTHEAST,-5,-4,&quot;[1.1 - 3.0]&quot;,&quot;[0.384 - 0.768]&quot;&apos;</span> |
@@ -953,7 +967,7 @@ sed -E <span class="hljs-string">&apos;s#&quot;\[([0-9.]*)[^&quot;]*&quot;#&quot
 
 <span class="hljs-number">10368</span>,<span class="hljs-string">&quot;Verizon DSL&quot;</span>,DSL,NY,NORTHEAST,-<span class="hljs-number">5</span>,-<span class="hljs-number">4</span>,<span class="hljs-string">&quot;1.1&quot;</span>,<span class="hljs-string">&quot;0.384&quot;</span>
 </code></pre>
-<h3 id="&#xC608;&#xC81C;-3">&#xC608;&#xC81C; 3</h3>
+<h3 id="&#xC608;&#xC81C;-4">&#xC608;&#xC81C; 4</h3>
 <p>&#xB450; &#xBC88;&#xC9F8;  double quote &#xC73C;&#xB85C; &#xB458;&#xB7EC;&#xC2F8;&#xC778; &#xAC12;&#xC744; <code>[ ]</code> &#xC548;&#xC73C;&#xB85C;  &#xB123;&#xACE0; &#xAC01;&#xAC01;&#xC758; &#xAC12;&#xB4E4;&#xC744; comma &#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xC5EC; double quote &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># Before</span>
 {<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;john , jane, gordon ,matthew&quot;</span>} 
@@ -970,7 +984,7 @@ $ sed -E <span class="hljs-string">&apos;
 
 {<span class="hljs-string">&quot;name&quot;</span>: [<span class="hljs-string">&quot;john&quot;</span>,<span class="hljs-string">&quot;jane&quot;</span>,<span class="hljs-string">&quot;gordon&quot;</span>,<span class="hljs-string">&quot;matthew&quot;</span>]}
 </code></pre>
-<h3 id="&#xC608;&#xC81C;-4">&#xC608;&#xC81C; 4</h3>
+<h3 id="&#xC608;&#xC81C;-5">&#xC608;&#xC81C; 5</h3>
 <p>&#xC774;&#xBC88; &#xC608;&#xC81C;&#xB294; <code>( )</code> &#xC758; nesting &#xAE30;&#xB2A5;&#xACFC; <code>.*</code> &#xC758; greedy &#xD55C; &#xC18D;&#xC131;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># Before</span>
      //svn.server.address/repos/module1/branches/issue-<span class="hljs-number">001</span>-name1
@@ -984,9 +998,6 @@ svn co //svn.server.address/repos/module1/branches/issue-<span class="hljs-numbe
 svn co //svn.server.address/repos/module2/branches/issue-<span class="hljs-number">002</span>-name2 issue-<span class="hljs-number">002</span>-name2
 svn co //svn.server.address/repos/module3/branches/issue-<span class="hljs-number">003</span>-name3 issue-<span class="hljs-number">003</span>-name3
 </code></pre>
-<blockquote>
-<p>regex &#xB97C; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xB294; &#xC0AC;&#xC774;&#xD2B8; <a href="http://regexr.com/" target="_blank">http://regexr.com/</a> &#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
-</blockquote>
 
                     
                     </section>
