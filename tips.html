@@ -495,7 +495,7 @@ tmpfs           <span class="hljs-number">1.6</span>G  <span class="hljs-number"
 tmpfs           <span class="hljs-number">7.8</span>G   <span class="hljs-number">67</span>M  <span class="hljs-number">7.8</span>G   <span class="hljs-number">1</span>% /dev/shm
 
 <span class="hljs-comment"># &quot;&#xC22B;&#xC790;%&quot; &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xCD9C;</span>
-$ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%).*|./\1/g&apos;</span>
+$ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%)|./\1/g&apos;</span>
 <span class="hljs-number">0</span>%
 <span class="hljs-number">1</span>%
 <span class="hljs-number">49</span>%
