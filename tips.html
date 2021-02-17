@@ -502,7 +502,7 @@ $ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%)|./\1/g&apos;</span>
 <span class="hljs-number">1</span>%
 
 <span class="hljs-comment"># grep &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</span>
-$ df -h | grep -o <span class="hljs-string">&apos;[0-9]\+%&apos;</span>
+$ df -h | grep -Eo <span class="hljs-string">&apos;[0-9]+%&apos;</span>
 <span class="hljs-number">0</span>%
 <span class="hljs-number">1</span>%
 <span class="hljs-number">49</span>%
