@@ -543,11 +543,11 @@ $ sed -r <span class="hljs-string">&apos;...&apos;</span>      <span class="hljs
 <code>[ ]</code> &#xB97C; escape &#xD560; &#xB54C;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xBB38;&#xC790;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h3 id="----"><code>^</code>, <code>$</code>, <code>*</code>, <code>.</code>, <code>[</code> <code>\</code></h3>
 <pre><code class="lang-bash"><span class="hljs-comment"># BRE (escape &#xD574;&#xC11C; &#xC0AC;&#xC6A9;)</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;[^$*.\]&apos;</span> | sed <span class="hljs-string">&apos;s/\[\^\$\*\.\\]/xxx/&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;^*.\[]$&apos;</span> | sed <span class="hljs-string">&apos;s/\^\*\.\\\[]\$/xxx/&apos;</span>
 xxx
 
 <span class="hljs-comment"># ERE (escape &#xD574;&#xC11C; &#xC0AC;&#xC6A9;)</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;[^$*.\]&apos;</span> | sed -E <span class="hljs-string">&apos;s/\[\^\$\*\.\\]/xxx/&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;^*.\[]$&apos;</span> | sed -E <span class="hljs-string">&apos;s/\^\*\.\\\[]\$/xxx/&apos;</span>
 xxx
 </code></pre>
 <h3 id="character-classes-and-bracket-expressions">Character Classes and Bracket Expressions</h3>
