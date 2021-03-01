@@ -764,12 +764,40 @@ aaa@bbb
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(((\w+)@\w+)@\w+)/\3/&apos;</span>
 aaa
 </code></pre>
+<h4 id="regex-&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xCD94;&#xCD9C;">regex &#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xCD94;&#xCD9C;</h4>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0; &#xC22B;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xD2B9;&#xC815; &#xC704;&#xCE58;&#xC758; &#xC22B;&#xC790;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)).*/\2/&apos;</span>        <span class="hljs-comment"># &#xCCAB;&#xBC88;&#xC9F8; </span>
+<span class="hljs-number">12</span>
+$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([0-9]+).*|./\1/g&apos;</span>
+<span class="hljs-number">12</span>
+
+$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){2}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xB450;&#xBC88;&#xC9F8;</span>
+<span class="hljs-number">345</span>
+
+$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){3}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xC138;&#xBC88;&#xC9F8;</span>
+<span class="hljs-number">6789</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; OR &#xC5F0;&#xC0B0;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xB9CC; &#xCD94;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;[&#xC22B;&#xC790;]&apos; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;</span>
+$ <span class="hljs-built_in">echo</span> f[oo[<span class="hljs-number">12</span>]b]ar[<span class="hljs-number">345</span>]z123[o2]<span class="hljs-number">3</span>o[<span class="hljs-number">6789</span>]x[<span class="hljs-number">12</span>x3]x | sed -E <span class="hljs-string">&apos;s/(\[[0-9]+])|./\1/g&apos;</span>
+[<span class="hljs-number">12</span>][<span class="hljs-number">345</span>][<span class="hljs-number">6789</span>]
+
+<span class="hljs-comment"># &quot;&#xC22B;&#xC790;%&quot; &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD56D;&#xBAA9;&#xB9CC; &#xCD94;&#xCD9C;</span>
+$ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%)|./\1/g&apos;</span>
+<span class="hljs-number">0</span>%
+<span class="hljs-number">1</span>%
+<span class="hljs-number">49</span>%
+<span class="hljs-number">1</span>%
+</code></pre>
 <h4 id="regex-&#xB85C;-&#xB9E4;&#xCE6D;&#xB41C;-&#xC804;&#xBD80;&#xB97C;-&#xB098;&#xD0C0;&#xB0B4;&#xB294;--&#xBB38;&#xC790;">regex &#xB85C; &#xB9E4;&#xCE6D;&#xB41C; &#xC804;&#xBD80;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <code>&amp;</code> &#xBB38;&#xC790;</h4>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/.*/X&amp;X/&apos;</span>
 X111 AB <span class="hljs-number">222</span> CD <span class="hljs-number">333</span>X
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/[A-Z]+/X&amp;X/&apos;</span>
 <span class="hljs-number">111</span> XABX <span class="hljs-number">222</span> CD <span class="hljs-number">333</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/[A-Z]+/X&amp;X/g&apos;</span>
+<span class="hljs-number">111</span> XABX <span class="hljs-number">222</span> XCDX <span class="hljs-number">333</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/[A-Z]+.*/X&amp;X/&apos;</span>
 <span class="hljs-number">111</span> XAB <span class="hljs-number">222</span> CD <span class="hljs-number">333</span>X
@@ -992,23 +1020,6 @@ $ sed -E <span class="hljs-string">&apos;s#\s+(.*/(.*))#svn co \1 \2#&apos;</spa
 svn co //svn.server.address/repos/module1/branches/issue-<span class="hljs-number">001</span>-name1 issue-<span class="hljs-number">001</span>-name1
 svn co //svn.server.address/repos/module2/branches/issue-<span class="hljs-number">002</span>-name2 issue-<span class="hljs-number">002</span>-name2
 svn co //svn.server.address/repos/module3/branches/issue-<span class="hljs-number">003</span>-name3 issue-<span class="hljs-number">003</span>-name3
-</code></pre>
-<h3 id="&#xC608;&#xC81C;-6">&#xC608;&#xC81C; 6</h3>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0; &#xC22B;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xD2B9;&#xC815; &#xC704;&#xCE58;&#xC758; &#xC22B;&#xC790;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)).*/\2/&apos;</span>        <span class="hljs-comment"># &#xCCAB;&#xBC88;&#xC9F8; </span>
-<span class="hljs-number">12</span>
-$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([0-9]+).*|./\1/g&apos;</span>
-<span class="hljs-number">12</span>
-
-$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){2}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xB450;&#xBC88;&#xC9F8;</span>
-<span class="hljs-number">345</span>
-
-$ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){3}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xC138;&#xBC88;&#xC9F8;</span>
-<span class="hljs-number">6789</span>
-
-<span class="hljs-comment"># &apos;[&#xC22B;&#xC790;]&apos; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;</span>
-$ <span class="hljs-built_in">echo</span> f[oo[<span class="hljs-number">12</span>]b]ar[<span class="hljs-number">345</span>]z123[o2]<span class="hljs-number">3</span>o[<span class="hljs-number">6789</span>]x[<span class="hljs-number">12</span>x3]x | sed -E <span class="hljs-string">&apos;s/(\[[0-9]+])|./\1/g&apos;</span>
-[<span class="hljs-number">12</span>][<span class="hljs-number">345</span>][<span class="hljs-number">6789</span>]
 </code></pre>
 
                     
