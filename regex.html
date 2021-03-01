@@ -777,7 +777,7 @@ $ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span c
 $ <span class="hljs-built_in">echo</span> foo12bar345zoo6789xxx | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){3}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xC138;&#xBC88;&#xC9F8;</span>
 <span class="hljs-number">6789</span>
 </code></pre>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; OR &#xC5F0;&#xC0B0;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xB9CC; &#xCD94;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>OR</code> &#xC5F0;&#xC0B0;&#xACFC; <code>g</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xB9CC; &#xCD94;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &quot;[&#xC22B;&#xC790;]&quot; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;</span>
 $ <span class="hljs-built_in">echo</span> f[oo[<span class="hljs-number">12</span>]b]ar[<span class="hljs-number">345</span>]z123[o2]<span class="hljs-number">3</span>o[<span class="hljs-number">6789</span>]x[<span class="hljs-number">12</span>x3]x | sed -E <span class="hljs-string">&apos;s/(\[[0-9]+])|./\1/g&apos;</span>
 [<span class="hljs-number">12</span>][<span class="hljs-number">345</span>][<span class="hljs-number">6789</span>]
