@@ -1,0 +1,1090 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-2');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Regex | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./escape_sequences.html" />
+    
+    
+    <link rel="prev" href="./basics.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1"
+        data-chapter-title="Regex"
+        data-filepath="regex.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="regex.html">
+            
+                
+                    <a href="./regex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Regex
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="addresses.html">
+            
+                
+                    <a href="./addresses.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Addresses
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="and_or_not.html">
+            
+                
+                    <a href="./and_or_not.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        AND, OR, NOT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="commands.html">
+            
+                
+                    <a href="./commands.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Commands
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="print.html">
+            
+                
+                    <a href="./print.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        print
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="delete.html">
+            
+                
+                    <a href="./delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        delete
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="quit.html">
+            
+                
+                    <a href="./quit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        quit
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="substitute.html">
+            
+                
+                    <a href="./substitute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        substitute
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="next.html">
+            
+                
+                    <a href="./next.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        next
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="move.html">
+            
+                
+                    <a href="./move.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        move between spaces
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="insert_append_change.html">
+            
+                
+                    <a href="./insert_append_change.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        insert, append, change
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="read_write.html">
+            
+                
+                    <a href="./read_write.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        read, write
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="etc.html">
+            
+                
+                    <a href="./etc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        etc
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="branch.html">
+            
+                
+                    <a href="./branch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Branch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="multiple_lines.html">
+            
+                
+                    <a href="./multiple_lines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Multiple lines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="execute.html">
+            
+                
+                    <a href="./execute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Execute
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="regex">Regex</h1>
+<p>&#xBB38;&#xC790;&#xB97C; &#xB2E4;&#xB8E8;&#xB294; Regular Expressions &#xC740; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4; &#xACF5;&#xD559;&#xC5D0;&#xC11C; &#xC81C;&#xC77C; &#xC911;&#xC694;&#xD558;&#xACE0; &#xAE30;&#xCD08;&#xAC00; &#xB418;&#xB294; &#xBD80;&#xBD84;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC258;&#xC5D0;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD588;&#xC744;&#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xCD9C;&#xB825;&#xB3C4; &#xBB38;&#xC790;&#xACE0;, &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xD30C;&#xC2F1;&#xC744; &#xC704;&#xD574; &#xC77D;&#xC5B4;&#xB4E4;&#xC774;&#xB294;
+&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB3C4; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xAC00; &#xC791;&#xC131;&#xD55C; &#xBB38;&#xC790;&#xB4E4;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+regex &#xB294; &#xBCF4;&#xD1B5; 3&#xAC00;&#xC9C0;&#xB85C; &#xBD84;&#xB958;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+BRE( Basic Regular Expressions ), ERE( Extended Regular Expressions ), PRE( Perl Regular Expressions ) &#xC778;&#xB370;&#xC694;.
+&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xBC95;&#xC740; &#xAC19;&#xC740;&#xB370; &#xAE30;&#xB2A5;&#xC740; PRE &#xAC00; &#xC81C;&#xC77C; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2F9;&#xC5F0;&#xD788; perl &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xB370; grep &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB3C4; &#xD234; &#xD2B9;&#xC131;&#xC0C1; &#xBD80;&#xBD84;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xBCF4;&#xD1B5; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC740; BRE, ERE &#xC785;&#xB2C8;&#xB2E4;.
+&#xAD73;&#xC774; PRE &#xAE4C;&#xC9C0; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB300;&#xBD80;&#xBD84; &#xBB38;&#xC81C; &#xD574;&#xACB0;&#xC774; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xAE30;&#xB3C4; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>Regular Expressions &#xC744; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xB294; &#xC0AC;&#xC774;&#xD2B8; : <a href="https://regex101.com/" target="_blank">https://regex101.com/</a></p>
+</blockquote>
+<h3 id="bre-ere">BRE, ERE</h3>
+<p>&#xC608;&#xC804;&#xC5D0;&#xB294; ERE &#xAC00; BRE &#xC5D0; &#xBE44;&#xD574; &#xC880;&#xB354; &#xD655;&#xC7A5;&#xB41C; &#xAE30;&#xB2A5;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5C8;&#xB2E4;&#xACE0; &#xD558;&#xB294;&#xB370; &#xC9C0;&#xAE08;&#xC740;
+&#xAE30;&#xB2A5;&#xC0C1;&#xC758; &#xCC28;&#xC774;&#xB294; &#xC5C6;&#xACE0; &#xB2E8;&#xC9C0; syntax &#xB9CC; &#xB2E4;&#xB974;&#xB2E4;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="-----"><code>?</code>, <code>+</code>, <code>|</code>, <code>( )</code>, <code>{ }</code></h3>
+<p>&#xC774; &#xBB38;&#xC790;&#xB4E4;&#xC740; regex &#xC5D0;&#xC11C; &#xD2B9;&#xC218;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB294; &#xBA54;&#xD0C0;&#xBB38;&#xC790; &#xB4E4;&#xC778;&#xB370;&#xC694;.
+&#xC774; &#xBB38;&#xC790;&#xB4E4;&#xC744; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; escape &#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; BRE &#xC774;&#xACE0; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; ERE &#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># BRE</span>
+$ <span class="hljs-built_in">echo</span> AA22-CC1234 | sed -n <span class="hljs-string">&apos;s/[A-Z]\{2\}[0-9]\+-\([A-Z]\{2\}[0-9]*\)/\1/p&apos;</span>
+CC1234
+
+<span class="hljs-comment"># ERE</span>
+$ <span class="hljs-built_in">echo</span> AA22-CC1234 | sed -En <span class="hljs-string">&apos;s/[A-Z]{2}[0-9]+-([A-Z]{2}[0-9]*)/\1/p&apos;</span>
+CC1234
+------------------------------------
+
+<span class="hljs-comment"># BRE</span>
+$ <span class="hljs-built_in">echo</span> ABCD | sed -n <span class="hljs-string">&apos;/CC\?\|EE\?/p&apos;</span>
+ABCD
+
+<span class="hljs-comment"># ERE</span>
+$ <span class="hljs-built_in">echo</span> ABCD | sed -En <span class="hljs-string">&apos;/CC?|EE?/p&apos;</span>
+ABCD
+</code></pre>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; ERE &#xAC00; &#xAC04;&#xACB0;&#xD574; &#xBCF4;&#xC774;&#xC9C0;&#xB9CC; &#xB9CC;&#xC57D;&#xC5D0; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;
+&#xC704;&#xC758; regex &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xAC00; &#xB9CE;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xBA74; BRE &#xB85C; &#xC791;&#xC131;&#xD558;&#xB294;&#xAC8C; &#xB354; &#xC2DD;&#xC774; &#xAC04;&#xB2E8;&#xD574;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+ERE &#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB450; escape &#xD574;&#xC57C; &#xB418;&#xB2C8;&#xAE4C;&#xC694;.
+sed &#xB294; default &#xAC00; BRE &#xC785;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; ERE syntax &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC120; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>-E</code> &#xB610;&#xB294; <code>-r</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># BRE &#xAC00; &#xB354; &#xAC04;&#xB2E8;&#xD558;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;{AA22}+(CC1234)&apos;</span> | sed -n <span class="hljs-string">&apos;/{AA22}+(CC1234)/p&apos;</span>
+{AA22}+(CC1234)
+
+<span class="hljs-comment"># ERE &#xB294; &#xBAA8;&#xB450; escape &#xD574;&#xC57C; &#xD55C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;{AA22}+(CC1234)&apos;</span> | sed -En <span class="hljs-string">&apos;/\{AA22\}\+\(CC1234\)/p&apos;</span>
+{AA22}+(CC1234)
+
+$ sed <span class="hljs-string">&apos;...&apos;</span>         <span class="hljs-comment"># BRE (default)</span>
+
+$ sed -E <span class="hljs-string">&apos;...&apos;</span>      <span class="hljs-comment"># ERE</span>
+
+$ sed -r <span class="hljs-string">&apos;...&apos;</span>      <span class="hljs-comment"># ERE</span>
+</code></pre>
+<h4 id="bre-ere-&#xACF5;&#xD1B5;-&#xBB38;&#xC790;">BRE, ERE &#xACF5;&#xD1B5; &#xBB38;&#xC790;</h4>
+<p>&#xB2E4;&#xC74C; &#xBB38;&#xC790;&#xB4E4;&#xB294; &#xACF5;&#xD1B5;&#xC801;&#xC73C;&#xB85C; escape &#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; regex &#xBA54;&#xD0C0;&#xBB38;&#xC790; &#xC778;&#xB370;&#xC694;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xC77C;&#xBC18; &#xD14D;&#xC2A4;&#xD2B8; &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; BRE, ERE &#xBAA8;&#xB450;&#xC5D0;&#xC11C; <code>\</code> &#xB97C; &#xC774;&#xC6A9;&#xD574; escape &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p><code>[ ]</code> &#xC640; <code>{ }</code> &#xB97C; escape &#xD560; &#xB54C;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xBB38;&#xC790;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h3 id="----"><code>^</code>, <code>$</code>, <code>*</code>, <code>.</code>, <code>[</code> <code>\</code></h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># BRE (escape &#xD574;&#xC11C; &#xC0AC;&#xC6A9;)</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;^*.\[]$&apos;</span> | sed <span class="hljs-string">&apos;s/\^\*\.\\\[]\$/xxx/&apos;</span>
+xxx
+
+<span class="hljs-comment"># ERE (escape &#xD574;&#xC11C; &#xC0AC;&#xC6A9;)</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;^*.\[]$&apos;</span> | sed -E <span class="hljs-string">&apos;s/\^\*\.\\\[]\$/xxx/&apos;</span>
+xxx
+</code></pre>
+<h3 id="character-classes-and-bracket-expressions">Character Classes and Bracket Expressions</h3>
+<p><code>[ ]</code> &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xC548;&#xC5D0; &#xC788;&#xB294; &#xBB38;&#xC790;&#xB4E4; &#xC911;&#xC5D0; &#xD558;&#xB098;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; <code>gray</code> or <code>grey</code>  &#xB2E8;&#xC5B4;&#xAC00; <code>blue</code> &#xB85C; &#xCE58;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>sed  &apos;s/gr[ae]y/blue/&apos;</p>
+</blockquote>
+<p><code>-</code> &#xAE30;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xB450; &#xBB38;&#xC790;&#xB97C; &#xC5F0;&#xACB0;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370; &#xC774;&#xB54C;&#xB294; &#xC0AC;&#xC774;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xBB38;&#xC790;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>gr[a-d]y : gray grby grcy grdy</p>
+</blockquote>
+<p>&#xBB38;&#xC790;&#xB4E4;&#xC744; &#xBE44;&#xC2B7;&#xD55C; &#xC758;&#xBBF8;&#xB97C; &#xAC00;&#xC9C4; &#xADF8;&#xB8F9;&#xC73C;&#xB85C; &#xB098;&#xB204;&#xC5B4;&#xB193;&#xC740; &#xAC83;&#xC774; character classes &#xC785;&#xB2C8;&#xB2E4;.
+<code>[[:alnum:]]</code> &#xC758;&#xBBF8;&#xB294; <code>[ ]</code> &#xD45C;&#xD604;&#xC2DD; &#xB0B4;&#xC5D0;&#xC11C; <code>[:alnum:]</code> &#xC774;&#xB77C;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5B4;
+&#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; <code>[A-Za-z0-9]</code> &#xC758;&#xBBF8;&#xB97C; &#xAC00;&#xC9C0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; <code>[[:upper:][:digit:]]</code> &#xC758; &#xC758;&#xBBF8;&#xB294; <code>[A-Z0-9]</code> &#xC640; &#xAC19;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Represented</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[:alnum:]]</td>
+<td><code>[A-Za-z0-9]</code></td>
+<td>Alphanumeric characters</td>
+</tr>
+<tr>
+<td>[[:alpha:]]</td>
+<td><code>[A-Za-z]</code></td>
+<td>Alphabetic characters</td>
+</tr>
+<tr>
+<td>[[:lower:]]</td>
+<td><code>[a-z]</code></td>
+<td>Lower-case alphabetic characters</td>
+</tr>
+<tr>
+<td>[[:upper:]]</td>
+<td><code>[A-Z]</code></td>
+<td>Upper-case alphabetic characters</td>
+</tr>
+<tr>
+<td>[[:digit:]]</td>
+<td><code>[0-9]</code></td>
+<td>Numeric characters</td>
+</tr>
+<tr>
+<td>[[:xdigit:]]</td>
+<td><code>[0-9a-fA-F]</code></td>
+<td>Hexadecimal digit characters</td>
+</tr>
+<tr>
+<td>[[:space:]]</td>
+<td><code>[ \t\n\v\f\r]</code></td>
+<td>All whitespace chars (form feed \x0c)</td>
+</tr>
+<tr>
+<td>[[:blank:]]</td>
+<td><code>[ \t]</code></td>
+<td>Space, tab only</td>
+</tr>
+<tr>
+<td>[[:punct:]]</td>
+<td><code>[!@#$%^&amp;*(){}[]...]</code></td>
+<td>&#xD0A4;&#xBCF4;&#xB4DC;&#xC5D0; &#xC788;&#xB294; &#xC22B;&#xC790;, &#xB300;,&#xC18C;&#xBB38;&#xC790; &#xBE7C;&#xACE0; &#xBAA8;&#xB4E0; &#xBB38;&#xC790;</td>
+</tr>
+<tr>
+<td>[[:graph:]]</td>
+<td><code>[!-~]</code></td>
+<td>Printable and visible characters<br>(ASCII &#xD14C;&#xC774;&#xBE14;&#xC5D0;&#xC11C; <code>!</code> &#xBD80;&#xD130; <code>~</code> &#xAE4C;&#xC9C0;)</td>
+</tr>
+<tr>
+<td>[[:print:]]</td>
+<td><code>[ -~]</code></td>
+<td>Printable (non-Control) characters<br>(ASCII &#xD14C;&#xC774;&#xBE14;&#xC5D0;&#xC11C; <code>space</code> &#xBD80;&#xD130; <code>~</code> &#xAE4C;&#xC9C0;)</td>
+</tr>
+<tr>
+<td>[[:cntrl:]]</td>
+<td><code>[\x00-\x19\x7F]</code></td>
+<td>Control characters</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>[[:graph:]]</code> &#xC640; <code>[[:print:]]</code> &#xB294; space &#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC548; &#xD558;&#xACE0; &#xCC28;&#xC774;.  </p>
+</blockquote>
+<p><code>[ ]</code> &#xD45C;&#xD604;&#xC2DD; &#xC5D0;&#xC11C; <code>-</code> &#xB97C; &#xC77C;&#xBC18; &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xB450; &#xBB38;&#xC790; &#xC0AC;&#xC774;&#xC5D0; &#xC704;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; 
+&#xCC98;&#xC74C;&#xC774;&#xB098; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; &#xB418;&#xACE0; <code>]</code>, <code>[</code> &#xBB38;&#xC790;&#xB294; &#xCC98;&#xC74C;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;allow-all&apos; &apos;vm-process-priority&apos; &#xC640; &#xAC19;&#xC740; &#xC18C;&#xBB38;&#xC790;&#xC640; &apos;-&apos; &#xBB38;&#xC790;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB2E8;&#xC5B4; &#xB9E4;&#xCE6D;</span>
+[[:lower:]-]+ or [a-z-]+
+
+<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &apos;[&apos;, &apos;]&apos;, &apos;@&apos; &#xBB38;&#xC790;&#xB97C; &#xC0AD;&#xC81C; </span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;[@foo]&apos;</span> | sed <span class="hljs-string">&apos;s/[][@]//g&apos;</span>
+foo
+</code></pre>
+<h5 id="logical-not-&#xC744;-&#xB098;&#xD0C0;&#xB0B4;&#xB294;-">logical NOT &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <code>^</code></h5>
+<p><code>[ ]</code> &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xB9E8;&#xC55E;&#xC5D0; <code>^</code> &#xB97C; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; logical NOT &#xC758; &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;\n&apos; &#xC744; &#xC81C;&#xC678;&#xD55C; &#xBAA8;&#xB4E0; &#xBB38;&#xC790; (newline &#xB9CC; &#xC544;&#xB2C8;&#xBA74; &#xB9E4;&#xCE6D; &#xC131;&#xACF5;)</span>
+[^\n]
+
+<span class="hljs-comment"># &#xC22B;&#xC790;&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBAA8;&#xB4E0; &#xBB38;&#xC790; (&#xC22B;&#xC790;&#xB9CC; &#xC544;&#xB2C8;&#xBA74; &#xB9E4;&#xCE6D; &#xC131;&#xACF5;)</span>
+[^[:digit:]] or [^<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]
+
+<span class="hljs-comment"># &apos;]&apos;, &apos;[&apos;, &apos;-&apos; &#xBB38;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xBA74; &#xB9E4;&#xCE6D; &#xC131;&#xACF5;</span>
+[^][-]
+</code></pre>
+<p><a name="extensions"></a></p>
+<h3 id="regular-expression-extensions">Regular expression Extensions</h3>
+<p>&#xC774; &#xAE30;&#xB2A5;&#xC740; BRE, ERE &#xBAA8;&#xB450;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC18C;&#xBB38;&#xC790;&#xC640; &#xB300;&#xBB38;&#xC790;&#xAC00; &#xAC19;&#xC774; &#xC788;&#xB294;&#xB370; &#xB300;&#xBB38;&#xC790;&#xB294; &#xC18C;&#xBB38;&#xC790;&#xC758; logical NOT &#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;&#xC740; <code>[ ]</code>  &#xC5D0;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC2DC; &#xB9D0;&#xD574;&#xC11C; <code>[\w]</code> &#xB294; <code>\</code>, <code>w</code> &#xB450; &#xBB38;&#xC790;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="s-s"><code>\s</code>, <code>\S</code></h3>
+<p><code>\s</code> &#xB294; <code>[[:space:]]</code> &#xB97C; <code>\S</code> &#xB294; <code>[^[:space::]]</code> &#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="w-w"><code>\w</code>, <code>\W</code></h3>
+<p><code>\w</code> &#xB294; <code>[[:alnum:]_]</code>  &#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;. &#xC989; <code>[:alnum:]</code> &#xD074;&#xB798;&#xC2A4;&#xC5D0; <code>_</code> &#xAC00; &#xCD94;&#xAC00;&#xB41C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>(<code>-</code> &#xB294; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.)</p>
+<p><code>\W</code> &#xB294; <code>[^[:alnum:]_]</code> &#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="b-b"><code>\b</code>, <code>\B</code></h3>
+<p>word boundary &#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># \b &#xC758; &#xACBD;&#xC6B0;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= def.&apos;</span> | sed <span class="hljs-string">&apos;s/\b/X/g&apos;</span>
+XabcX %-= XdefX.
+
+<span class="hljs-comment"># \B &#xC758; &#xACBD;&#xC6B0;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= def.&apos;</span> | sed <span class="hljs-string">&apos;s/\B/X/g&apos;</span>
+aXbXc X%X-X=X dXeXf.X
+</code></pre>
+<h3 id=""><code>\&lt;</code>, <code>\&gt;</code></h3>
+<p><code>\&lt;</code> &#xB294; word boundary &#xC778;&#xB370; word &#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC744;, <code>\&gt;</code> &#xB294; word &#xC758; &#xB05D;&#xBD80;&#xBD84;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;\&lt;&apos; &#xC758; &#xACBD;&#xC6B0;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc %-= def.&quot;</span> | sed <span class="hljs-string">&apos;s/\&lt;/X/g&apos;</span>
+Xabc %-= Xdef.
+
+<span class="hljs-comment"># &apos;\&gt;&apos; &#xC758; &#xACBD;&#xC6B0;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc %-= def.&quot;</span> | sed <span class="hljs-string">&apos;s/\&gt;/X/g&apos;</span>
+abcX %-= defX.
+</code></pre>
+<h3 id="subexpressions-and-backreferences">Subexpressions and Back-references</h3>
+<p>regex &#xC5D0;&#xC11C; <code>( )</code> &#xB97C; &#xD558;&#xBA74; subexpression &#xC774; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC774; subexpression &#xC740; <code>{ }</code>, <code>+</code>, <code>*</code> &#xC640; &#xAC19;&#xC740;  &#xC218;&#xB7C9; &#xD55C;&#xC815;&#xC790;&#xC640; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@&quot;</span> | sed -En <span class="hljs-string">&apos;/^\w+@$/p&apos;</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@&quot;</span> | sed -En <span class="hljs-string">&apos;/^(\w+@){2}$/p&apos;</span>
+aaa@bbb@
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@&quot;</span> | sed -En <span class="hljs-string">&apos;/^(\w+@)+$/p&apos;</span>
+aaa@bbb@
+
+<span class="hljs-comment"># &#xC911;&#xBCF5; &#xB9E4;&#xCE6D; &#xAD6C;&#xD558;&#xAE30;, &apos;sed&apos; &#xB2E8;&#xC5B4;&#xAC00; 2&#xBC88; &#xC774;&#xC0C1; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0;&#xB9CC; &#xD504;&#xB9B0;&#xD2B8;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111sed22sss333&quot;</span> | sed -En <span class="hljs-string">&apos;/(sed.*){2,}/p&apos;</span> 
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111sed22sed333&quot;</span> | sed -En <span class="hljs-string">&apos;/(sed.*){2,}/p&apos;</span> 
+<span class="hljs-number">111</span>sed22sed333
+
+<span class="hljs-comment"># sed &#xB450; &#xB2E8;&#xC5B4;&#xAC00; &#xBD99;&#xC5B4; &#xC788;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &apos;.*&apos; &#xB97C; &#xC0AC;&#xC6A9;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111sedsed333&quot;</span> | sed -En <span class="hljs-string">&apos;/(sed.*){2,}/p&apos;</span> 
+<span class="hljs-number">111</span>sedsed333
+</code></pre>
+<p>&#xB610;&#xD55C; <code>( )</code> &#xC5D0;&#xC11C; OR &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;AA11 AA22 AA33 AA44 AAAA&apos;</span> | sed -E <span class="hljs-string">&apos;s/AA(11|22|[^0-9]{2})/XX/g&apos;</span>
+XX XX AA33 AA44 XX
+
+<span class="hljs-comment"># %pK &#xB294; &#xB194;&#xB450;&#xACE0; %p &#xB9CC; %pK &#xB85C; &#xBCC0;&#xACBD;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;%pK %p-%p&apos;</span> | sed -E <span class="hljs-string">&apos;s/%p([^K])/%pK\1/g&apos;</span>
+%pK %pK-%p
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;%pK %p-%p&apos;</span> | sed -E <span class="hljs-string">&apos;s/%p([^K]|$)/%pK\1/g&apos;</span>
+%pK %pK-%pK
+---------------------------------------------------------------------
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C; &#xB450; &#xC2DD;&#xC740; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xB97C; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. </span>
+<span class="hljs-comment"># &#xCC38;&#xACE0;&#xB85C; [ ] &#xC548;&#xC5D0;&#xC11C; &apos;.&apos; &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB550; escape &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB418;&#xB294;&#xAC78; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;__123-45.67__&apos;</span> | sed -En <span class="hljs-string">&apos;/^(0|1|2|3|4|5|6|7|8|9|\.|_|-)+$/p&apos;</span>
+__123-<span class="hljs-number">45.67</span>__
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;__123-45.67__&apos;</span> | sed -En <span class="hljs-string">&apos;/^[0-9._-]+$/p&apos;</span>
+__123-<span class="hljs-number">45.67</span>__
+</code></pre>
+<p><code>( )</code> &#xB97C; &#xD558;&#xBA74; back-reference &#xB97C; &#xC704;&#xD55C; &#xBC88;&#xD638;&#xAC00; &#xB9E4;&#xACA8;&#xC9C0;&#xACE0; <code>\1</code> <code>\2</code> <code>\3</code> &#xC640; &#xAC19;&#xC740; &#xD615;&#xD0DC;&#xB85C; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(\w+)@(\w+)@(\w+)/\1/&apos;</span>
+aaa
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(\w+)@(\w+)@(\w+)/\2/&apos;</span>
+bbb
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(\w+)@(\w+)@(\w+)/\3/&apos;</span>
+ccc
+</code></pre>
+<p>&#xC774; back-reference &#xBC88;&#xD638;&#xB294; regex &#xC5D0;&#xC11C;&#xB3C4; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C; &apos;\1&apos; &#xC740; (\w+) &#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xB9E4;&#xCE6D; &#xB41C; &#xACB0;&#xACFC; &#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; aaa &#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># aaa &#xC640; ccc &#xB294; &#xD2C0;&#xB9AC;&#xBBC0;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB428;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -En <span class="hljs-string">&apos;/(\w+)@\w+@\1/p&apos;</span>
+
+<span class="hljs-comment"># aaa &#xC640; aaa &#xB294; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xBBC0;&#xB85C; &#xB0B4;&#xC6A9;&#xC774; &#xD504;&#xB9B0;&#xD2B8;&#xAC00; &#xB41C;&#xB2E4;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@aaa&quot;</span> | sed -En <span class="hljs-string">&apos;/(\w+)@\w+@\1/p&apos;</span>
+aaa@bbb@aaa
+
+<span class="hljs-comment"># &#xC774;&#xBC88;&#xC5D0;&#xB294; word boundary &#xB85C; &apos;sed&apos; &#xB2E8;&#xC5B4;&#xAC00; 2&#xBC88; &#xC774;&#xC0C1; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0;&#xB9CC; &#xD504;&#xB9B0;&#xD2B8;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 sedsed 33&quot;</span> | sed -En <span class="hljs-string">&apos;/(\bsed\b).*\1/p&apos;</span> 
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 sed sed 33&quot;</span> | sed -En <span class="hljs-string">&apos;/(\bsed\b).*\1/p&apos;</span> 
+<span class="hljs-number">111</span> sed sed <span class="hljs-number">33</span>
+</code></pre>
+<p><code>( )</code> &#xB294; nesting &#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC14;&#xAE65;&#xCABD; &#xAD04;&#xD638;&#xAC00; &#xC791;&#xC740; &#xBC88;&#xD638;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(((\w+)@\w+)@\w+)/\1/&apos;</span>
+aaa@bbb@ccc
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(((\w+)@\w+)@\w+)/\2/&apos;</span>
+aaa@bbb
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@ccc&quot;</span> | sed -E <span class="hljs-string">&apos;s/(((\w+)@\w+)@\w+)/\3/&apos;</span>
+aaa
+</code></pre>
+<h4 id="regex-&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xCD94;&#xCD9C;">regex &#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xCD94;&#xCD9C;</h4>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0; &#xC22B;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xD2B9;&#xC815; &#xC704;&#xCE58;&#xC758; &#xC22B;&#xC790;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;foo12bar345zoo6789xxx&quot;</span> | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)).*/\2/&apos;</span>        <span class="hljs-comment"># &#xCCAB;&#xBC88;&#xC9F8; &#xC22B;&#xC790;</span>
+<span class="hljs-number">12</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;foo12bar345zoo6789xxx&quot;</span> | sed -E <span class="hljs-string">&apos;s/([0-9]+).*|./\1/g&apos;</span>
+<span class="hljs-number">12</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;foo12bar345zoo6789xxx&quot;</span> | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){2}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xB450;&#xBC88;&#xC9F8; &#xC22B;&#xC790;</span>
+<span class="hljs-number">345</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;foo12bar345zoo6789xxx&quot;</span> | sed -E <span class="hljs-string">&apos;s/([^0-9]*([0-9]+)){3}.*/\2/&apos;</span>     <span class="hljs-comment"># &#xC138;&#xBC88;&#xC9F8; &#xC22B;&#xC790;</span>
+<span class="hljs-number">6789</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>OR</code> &#xC5F0;&#xC0B0;&#xACFC; <code>g</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xB9CC; &#xCD94;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &quot;[&#xC22B;&#xC790;]&quot; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;f[oo[12]b]ar[345]z123[o2]3o[6789]x[12x3]x&quot;</span> | sed -E <span class="hljs-string">&apos;s/(\[[0-9]+])|./\1/g&apos;</span>
+[<span class="hljs-number">12</span>][<span class="hljs-number">345</span>][<span class="hljs-number">6789</span>]
+
+<span class="hljs-comment"># &quot;&#xC22B;&#xC790;%&quot; &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD56D;&#xBAA9;&#xB9CC; &#xCD94;&#xCD9C;</span>
+$ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%)|./\1/g&apos;</span>
+<span class="hljs-number">0</span>%
+<span class="hljs-number">1</span>%
+<span class="hljs-number">49</span>%
+<span class="hljs-number">1</span>%
+</code></pre>
+<h4 id="regex-&#xB85C;-&#xB9E4;&#xCE6D;&#xB41C;-&#xC804;&#xBD80;&#xB97C;-&#xB098;&#xD0C0;&#xB0B4;&#xB294;--&#xBB38;&#xC790;">regex &#xB85C; &#xB9E4;&#xCE6D;&#xB41C; &#xC804;&#xBD80;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <code>&amp;</code> &#xBB38;&#xC790;</h4>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/.*/X&amp;X/&apos;</span>
+X111 AB <span class="hljs-number">222</span> CD <span class="hljs-number">333</span>X
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/[A-Z]+/X&amp;X/&apos;</span>
+<span class="hljs-number">111</span> XABX <span class="hljs-number">222</span> CD <span class="hljs-number">333</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/[A-Z]+/X&amp;X/g&apos;</span>
+<span class="hljs-number">111</span> XABX <span class="hljs-number">222</span> XCDX <span class="hljs-number">333</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB 222 CD 333&apos;</span> | sed -E <span class="hljs-string">&apos;s/[A-Z]+.*/X&amp;X/&apos;</span>
+<span class="hljs-number">111</span> XAB <span class="hljs-number">222</span> CD <span class="hljs-number">333</span>X
+</code></pre>
+<h3 id="&#xC640;--&#xB294;-greedy-&#xD558;&#xBBC0;&#xB85C;-&#xC8FC;&#xC758;&#xAC00;-&#xD544;&#xC694;&#xD558;&#xB2E4;"><code>*</code> &#xC640; <code>+</code> &#xB294; greedy &#xD558;&#xBBC0;&#xB85C; &#xC8FC;&#xC758;&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;.</h3>
+<p>regex &#xC5D0;&#xC11C; <code>*</code>, <code>+</code> &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xB9E4;&#xCE6D;&#xC744; &#xC2DC;&#xB3C4;&#xD560; &#xB54C; &#xD55C;&#xAC00;&#xC9C0; &#xBB38;&#xC81C;&#xC810;&#xC774; &#xC788;&#xB294;&#xB370;&#xC694;.
+&#xAC00;&#xB839; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xB77C;&#xC778;&#xC774; &#xC788;&#xC744; &#xB54C; <code>/AA.*AA/</code> or <code>/AA.+AA/</code> &#xB85C; &#xB9E4;&#xCE6D;&#xC744; &#xC2DC;&#xB3C4;&#xD558;&#xBA74;
+&#xC5B4;&#xB514;&#xAE4C;&#xC9C0; &#xB9E4;&#xCE6D;&#xC744; &#xD574;&#xC57C; &#xB418;&#xB294;&#xAC00; &#xD558;&#xB294; &#xBB38;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">AA <span class="hljs-number">111</span> AA <span class="hljs-number">222</span> AA <span class="hljs-number">333</span> AA              <span class="hljs-comment"># lazy matching</span>
+^^^^^^^^^
+
+AA <span class="hljs-number">111</span> AA <span class="hljs-number">222</span> AA <span class="hljs-number">333</span> AA              <span class="hljs-comment"># greedy matching</span>
+^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre>
+<p>sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; BRE, ERE &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; 3&#xBC88; greedy (longest) matching &#xC744; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; regex &#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xC8FC;&#xC758;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC22B;&#xC790; &#xBD80;&#xBD84;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xB824;&#xACE0; &#xD558;&#xB294;&#xB370; &#xB9C8;&#xC9C0;&#xB9C9; &#xBB38;&#xC790;&#xB9CC; &#xD45C;&#xC2DC;&#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc123&quot;</span> | sed -En <span class="hljs-string">&apos;s/.*([0-9]+)/\1/p&apos;</span>
+<span class="hljs-number">3</span>
+
+<span class="hljs-comment"># &#xCCAB; &#xBC88;&#xC9F8; &apos;img&apos; &#xD0DC;&#xADF8;&#xB97C; &#xC0AD;&#xC81C;&#xD558;&#xB824;&#xACE0; &#xD558;&#xB294;&#xB370; &apos;&lt;html&gt;&apos; &#xB9CC; &#xB0A8;&#xACE0; &#xBAA8;&#xB450; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4;. </span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&lt;html&gt;&lt;img src=&quot;file1.png&quot;&gt;abc&lt;img src=&quot;file2.png&quot;&gt;&lt;/html&gt;&apos;</span> |
+  sed -En <span class="hljs-string">&apos;s/&lt;img.*&gt;//p&apos;</span>
+&lt;html&gt;
+
+<span class="hljs-comment"># &#xC55E;&#xCABD;&#xC758; &apos;aa=11,xx=00,bb&apos; &#xB97C; &apos;ZZZ&apos; &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB824;&#xACE0; &#xD558;&#xB294;&#xB370; &#xB9C8;&#xC9C0;&#xB9C9; &apos;bb&apos; &#xAE4C;&#xC9C0; &#xB9E4;&#xCE6D;&#xC774; &#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aa=11,xx=00,bb=22,aa=33,yy=00,bb=44&apos;</span> | sed -E <span class="hljs-string">&apos;s/aa.*bb/ZZZ/&apos;</span>
+ZZZ=<span class="hljs-number">44</span>
+</code></pre>
+<p>BRE, ERE &#xC5D0;&#xC11C; lazy matching &#xC744; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xBA74;&#xB429;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc123&quot;</span> | sed -En <span class="hljs-string">&apos;s/[^0-9]*([0-9]+)/\1/p&apos;</span>
+<span class="hljs-number">123</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&lt;html&gt;&lt;img src=&quot;file1.png&quot;&gt;abc&lt;img src=&quot;file2.png&quot;&gt;&lt;/html&gt;&apos;</span> |
+  sed -En <span class="hljs-string">&apos;s/&lt;img[^&gt;]*&gt;//p&apos;</span>
+&lt;html&gt;abc&lt;img src=<span class="hljs-string">&quot;file2.png&quot;</span>&gt;&lt;/html&gt;
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aa=11,xx=00,bb=22,aa=33,yy=00,bb=44&apos;</span> | sed -E <span class="hljs-string">&apos;s/aa[^b]*bb/ZZZ/&apos;</span>
+ZZZ=<span class="hljs-number">22</span>,aa=<span class="hljs-number">33</span>,yy=<span class="hljs-number">00</span>,bb=<span class="hljs-number">44</span>
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC740; &#xC55E;&#xCABD;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xB4A4;&#xCABD;&#xC744; ZZZ &#xB85C; &#xBC14;&#xAFC0;&#xACBD;&#xC6B0;</span>
+<span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9; &apos;=44&apos; &#xB294; regex &#xB9E4;&#xCE6D;&#xC5D0;&#xB294; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC740; hidden &#xC774;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aa=11,xx=00,bb=22,aa=33,yy=00,bb=44&apos;</span> | sed -E <span class="hljs-string">&apos;s/(.*)aa.*bb/\1ZZZ/&apos;</span>
+aa=<span class="hljs-number">11</span>,xx=<span class="hljs-number">00</span>,bb=<span class="hljs-number">22</span>,ZZZ=<span class="hljs-number">44</span>
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xB450; &#xAC1C;&#xC758; greedy (.*) &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB294;&#xB370;&#xC694;.</span>
+<span class="hljs-comment"># &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xC55E;&#xCABD;&#xC774; &#xBA3C;&#xC800; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aa=11,xx=00,bb=22,aa=33,yy=00,bb=44&apos;</span> | sed -E <span class="hljs-string">&apos;s/aa.*bb(.*)/ZZZ\1/&apos;</span>
+ZZZ=<span class="hljs-number">44</span>
+</code></pre>
+<h4 id="&#xC640;--&#xC5D0;-&#xB300;&#xD574;&#xC11C;"><code>.*</code> &#xC640; <code>.+</code> &#xC5D0; &#xB300;&#xD574;&#xC11C;</h4>
+<p><code>.*</code> &#xC640; <code>.+</code> &#xB294; greedy &#xD558;&#xC9C0;&#xB9CC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>,</code> &#xAC00; &#xC0AC;&#xC774;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA74;
+&#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; &#xD544;&#xB4DC; &#xAC12;&#xC744; &#xCD94;&#xCD9C;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; <code>,</code> 3 &#xAC1C;&#xB3C4; &#xB9E4;&#xCE6D;&#xC774; &#xB3FC;&#xC57C; &#xD558;&#xB2C8;&#xAE4C;&#xC694;</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111,222,333,444&quot;</span> | sed -En <span class="hljs-string">&apos;s/(.*),(.*),(.*),(.*)/\1:\2:\3:\4/p&apos;</span>
+<span class="hljs-number">111</span>:<span class="hljs-number">222</span>:<span class="hljs-number">333</span>:<span class="hljs-number">444</span>
+</code></pre>
+<p><code>.*</code> &#xC640; <code>.+</code> &#xC758; &#xCC28;&#xC774;&#xC810;&#xC740; <code>(.*)</code> &#xB294; &#xD544;&#xB4DC; &#xAC12;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0;&#xB9CC;
+<code>(.+)</code> &#xB294; &#xD544;&#xB4DC; &#xAC12;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9E4;&#xCE6D; &#xC790;&#xCCB4;&#xAC00; &#xC548;&#xB418;&#xC5B4; &#xAC12;&#xC774; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat file
+<span class="hljs-number">1.839</span>,<span class="hljs-number">1.672</span>,<span class="hljs-number">22.372</span>,<span class="hljs-number">1.00</span>
+<span class="hljs-number">30.750</span>,,<span class="hljs-number">0.998</span>,<span class="hljs-number">1.00</span>             <span class="hljs-comment"># 2&#xBC88;&#xC9F8; &#xD544;&#xB4DC; &#xAC12;&#xC774; &#xC5C6;&#xB2E4;.</span>
+
+<span class="hljs-comment"># &apos;(.*)&apos; &#xB294; &#xD544;&#xB4DC; &#xAC12;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; 2&#xBC88;&#xC9F8; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xD45C;&#xC2DC;&#xB41C;&#xB2E4;.</span>
+$ sed -En <span class="hljs-string">&apos;s/(.*),(.*),(.*),(.*)/\1:\2:\3:\4/p&apos;</span> file
+<span class="hljs-number">1.839</span>:<span class="hljs-number">1.672</span>:<span class="hljs-number">22.372</span>:<span class="hljs-number">1.00</span>
+<span class="hljs-number">30.750</span>::<span class="hljs-number">0.998</span>:<span class="hljs-number">1.00</span>
+
+<span class="hljs-comment"># &apos;(.+)&apos; &#xB294; &#xD544;&#xB4DC; &#xAC12;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xB9E4;&#xCE6D; &#xC790;&#xCCB4;&#xAC00; &#xC548;&#xB418;&#xC5B4; 2&#xBC88;&#xC9F8; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ sed -En <span class="hljs-string">&apos;s/(.+),(.+),(.+),(.+)/\1:\2:\3:\4/p&apos;</span> file
+<span class="hljs-number">1.839</span>:<span class="hljs-number">1.672</span>:<span class="hljs-number">22.372</span>:<span class="hljs-number">1.00</span>
+</code></pre>
+<h4 id="-&#xC218;&#xB7C9;-&#xD55C;&#xC815;&#xC790;"><code>{ }</code> &#xC218;&#xB7C9; &#xD55C;&#xC815;&#xC790;</h4>
+<p><code>*</code> &#xB294; <code>{,}</code> &#xACFC; &#xAC19;&#xACE0; <code>+</code> &#xB294; <code>{1,}</code> &#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;XYXYXY12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY)*/ZZZ/&apos;</span> 
+ZZZ12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;XYXYXY12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY){,}/ZZZ/&apos;</span>
+ZZZ12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;XYXYXY12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY)+/ZZZ/&apos;</span>
+ZZZ12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;XYXYXY12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY){1,}/ZZZ/&apos;</span>
+ZZZ12345
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY)*/ZZZ/&apos;</span>
+ZZZ12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY){,}/ZZZ/&apos;</span>
+ZZZ12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY)+/ZZZ/&apos;</span>
+<span class="hljs-number">12345</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY){1,}/ZZZ/&apos;</span>
+<span class="hljs-number">12345</span>
+</code></pre>
+<p><code>?</code> &#xB294; <code>{,1}</code> &#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;XYXYXY12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY)?/ZZZ/&apos;</span> 
+ZZZXYXY12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;XYXYXY12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY){,1}/ZZZ/&apos;</span> 
+ZZZXYXY12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY)?/ZZZ/&apos;</span> 
+ZZZ12345
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;12345&quot;</span> | sed -E <span class="hljs-string">&apos;s/^(XY){,1}/ZZZ/&apos;</span> 
+ZZZ12345
+</code></pre>
+<h3 id="hidden-&#xC5D0;-&#xC8FC;&#xC758;">hidden &#xC5D0; &#xC8FC;&#xC758;</h3>
+<p>regex &#xB9E4;&#xCE6D;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xBD80;&#xBD84;&#xC740; hidden &#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xBBC0;&#xB85C; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C; &apos;AAA&apos; &#xB294; &#xB9E4;&#xCE6D;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC740; hidden &#xC774;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;AAA CONFIG_FOO BBB&apos;</span> | sed -E <span class="hljs-string">&apos;s/(CONFIG_\w+).*/\1/&apos;</span>
+AAA CONFIG_FOO
+
+<span class="hljs-comment"># hidden &#xC774; &#xC0DD;&#xAE30;&#xC9C0; &#xC54A;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC804;&#xCCB4; &#xB77C;&#xC778;&#xC744; &#xB9E4;&#xCE6D;&#xC744; &#xD574;&#xC57C; &#xD55C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> AAA CONFIG_FOO BBB | sed -E <span class="hljs-string">&apos;s/.*(CONFIG_\w+).*/\1/&apos;</span>
+CONFIG_FOO
+
+<span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C;&#xB294; 2017 &#xC774; hidden &#xC774;&#xACE0; greedy &apos;.*&apos; &#xC5D0; &#xC758;&#xD574; 1000 &#xAE4C;&#xC9C0; &#xB9E4;&#xCE6D;&#xC774; &#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;2017-01-19:31:51 15333 37723 - MATCH: 1000 [text]&apos;</span> |
+  sed -E <span class="hljs-string">&apos;s/-.* ([0-9]+) .*/-\1/&apos;</span>
+<span class="hljs-number">2017</span>-<span class="hljs-number">1000</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; strace &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xD568;&#xC218; &#xC774;&#xB984;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xB824;&#xACE0; &#xD55C;&#xAC83;&#xC778;&#xB370;&#xC694;.
+&#xCD9C;&#xB825; &#xACB0;&#xACFC;&#xB97C; &#xBCF4;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC740; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xB9D0;&#xC544;&#xC57C; &#xD558;&#xB294;&#xB370; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat some.strace
+<span class="hljs-number">26074</span> <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>)                           = ?
+<span class="hljs-number">26074</span> +++ exited with <span class="hljs-number">0</span> +++
+<span class="hljs-number">26073</span> close(<span class="hljs-number">65</span>)                         = <span class="hljs-number">0</span>
+<span class="hljs-number">26073</span> gettid()                          = <span class="hljs-number">26073</span>
+<span class="hljs-number">26074</span> &lt;... madvise resumed&gt; )           = <span class="hljs-number">0</span>
+<span class="hljs-number">26073</span> gettid()                          = <span class="hljs-number">26073</span>
+<span class="hljs-number">26073</span> &lt;... futex resumed&gt; )             = -<span class="hljs-number">1</span> EAGAIN (Resource temporarily unavailabl
+
+$ sed -En <span class="hljs-string">&apos;s/[0-9]+ (\w+).*/\1/p&apos;</span> some.strace
+<span class="hljs-built_in">exit</span>
+close
+gettid
+gettid
+<span class="hljs-number">26073</span> &lt;... futex resumed&gt; )             = -EAGAIN
+</code></pre>
+<p><code>26073 &lt;... futex resumed&gt; )             = -</code> &#xBD80;&#xBD84;&#xC774; hidden &#xC774; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sed -En <span class="hljs-string">&apos;s/[0-9]+ (\w+).*/XXX\1YYY/p&apos;</span> some.strace
+XXX<span class="hljs-built_in">exit</span>YYY
+XXXcloseYYY
+XXXgettidYYY
+XXXgettidYYY
+<span class="hljs-number">26073</span> &lt;... futex resumed&gt; )             = -XXXEAGAINYYY
+</code></pre>
+<p>&#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC55E;&#xC5D0; <code>^</code> anchor &#xB97C; &#xBD99;&#xC5EC;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sed -En <span class="hljs-string">&apos;s/^[0-9]+ (\w+).*/\1/p&apos;</span> some.strace
+<span class="hljs-built_in">exit</span>
+close
+gettid
+gettid
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-1">&#xC608;&#xC81C; 1</h3>
+<p>&#xB2E4;&#xC74C; &#xB370;&#xC774;&#xD130;&#xB294; CSV( comma-separated values ) &#xC778;&#xB370;&#xC694;. &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xD544;&#xB4DC;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># 2&#xBC88;&#xC9F8; &#xD544;&#xB4DC;&#xC640; 3&#xBC88;&#xC9F8; &#xD544;&#xB4DC; &#xBC14;&#xAFB8;&#xAE30;</span>
+<span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C; &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB418;&#xB294; 111, 444 &#xB294; hidden &#xC774;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111,222,333,444&apos;</span> | sed -E <span class="hljs-string">&apos;s/,(.*),(.*),/,\2,\1,/&apos;</span>
+<span class="hljs-number">111</span>,<span class="hljs-number">333</span>,<span class="hljs-number">222</span>,<span class="hljs-number">444</span>
+
+<span class="hljs-comment"># 4&#xBC88;&#xC9F8; &#xD544;&#xB4DC;&#xB97C; 1&#xBC88;&#xC9F8;&#xB85C;, 1,2&#xBC88;&#xC9F8; &#xD544;&#xB4DC;&#xB97C; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;</span>
+<span class="hljs-comment"># &apos;.*&apos; &#xAC00; &#xBCF5;&#xC218;&#xAC1C; &#xC774;&#xC0C1; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; &#xCCAB; &#xBC88;&#xC9F8; &#xAC83;&#xC774; greedy &#xAC00; &#xB41C;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xCE6D;&#xC740; (111,222),(333),(444)</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111,222,333,444&apos;</span> | sed -E <span class="hljs-string">&apos;s/(.*),(.*),(.*)/\3,\2,\1/&apos;</span>
+<span class="hljs-number">444</span>,<span class="hljs-number">333</span>,<span class="hljs-number">111</span>,<span class="hljs-number">222</span>
+
+<span class="hljs-comment"># 4&#xBC88;&#xC9F8; &#xD544;&#xB4DC;&#xC640; 1&#xBC88;&#xC9F8; &#xD544;&#xB4DC; &#xBC14;&#xAFB8;&#xAE30;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111,222,333,444&apos;</span> | sed -E <span class="hljs-string">&apos;s/(.*),(.*),(.*),(.*)/\4,\2,\3,\1/&apos;</span>
+<span class="hljs-number">444</span>,<span class="hljs-number">222</span>,<span class="hljs-number">333</span>,<span class="hljs-number">111</span>
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-2">&#xC608;&#xC81C; 2</h3>
+<p>IP &#xC8FC;&#xC18C;&#xB294; 4 &#xAC1C;&#xC758; &#xC22B;&#xC790;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C0;&#xB294;&#xB370; &#xAC01;&#xAC01; &#xBC94;&#xC704;&#xAC00; 0 ~ 255 &#xAE4C;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.<br>regex &#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; IP &#xC8FC;&#xC18C;&#xAC00; &#xB9DE;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sed -En <span class="hljs-string">&apos;/(([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])/p&apos;</span> &lt;&lt;\@
+<span class="hljs-number">192.168</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">123.456</span>.<span class="hljs-number">789.101</span>      <span class="hljs-comment"># 456 789 &#xB294; IP &#xC8FC;&#xC18C;&#xAC00; &#xC544;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-number">10.1</span>.<span class="hljs-number">2.4</span>
+@
+
+<span class="hljs-number">192.168</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-number">10.1</span>.<span class="hljs-number">2.4</span>
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-3">&#xC608;&#xC81C; 3</h3>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>&quot;[&#xC22B;&#xC790; - &#xC22B;&#xC790;]&quot;</code> &#xD615;&#xD0DC;&#xC758; &#xD544;&#xB4DC;&#xC5D0;&#xC11C; &#xCCAB; &#xBC88;&#xC9F8; &#xC22B;&#xC790;&#xB9CC; &#xCD94;&#xCD9C;&#xD574;&#xC11C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC22B;&#xC790;&#xC5D0; &#xC18C;&#xC218;&#xC810;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xBBC0;&#xB85C; &apos;[0-9.]&apos; &#xC744; &#xC0AC;&#xC6A9;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;10368,&quot;Verizon DSL&quot;,DSL,NY,NORTHEAST,-5,-4,&quot;[1.1 - 3.0]&quot;,&quot;[0.384 - 0.768]&quot;&apos;</span> |
+sed -E <span class="hljs-string">&apos;s#&quot;\[([0-9.]*)[^&quot;]*&quot;#&quot;\1&quot;#g&apos;</span>
+
+<span class="hljs-number">10368</span>,<span class="hljs-string">&quot;Verizon DSL&quot;</span>,DSL,NY,NORTHEAST,-<span class="hljs-number">5</span>,-<span class="hljs-number">4</span>,<span class="hljs-string">&quot;1.1&quot;</span>,<span class="hljs-string">&quot;0.384&quot;</span>
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-4">&#xC608;&#xC81C; 4</h3>
+<p>&#xB450; &#xBC88;&#xC9F8;  double quote &#xC73C;&#xB85C; &#xB458;&#xB7EC;&#xC2F8;&#xC778; &#xAC12;&#xC744; <code>[ ]</code> &#xC548;&#xC73C;&#xB85C;  &#xB123;&#xACE0; &#xAC01;&#xAC01;&#xC758; &#xAC12;&#xB4E4;&#xC744; comma &#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xC5EC; double quote &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Before</span>
+{<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;john , jane, gordon ,matthew&quot;</span>} 
+
+<span class="hljs-comment"># After    </span>
+{<span class="hljs-string">&quot;name&quot;</span>: [<span class="hljs-string">&quot;john&quot;</span>,<span class="hljs-string">&quot;jane&quot;</span>,<span class="hljs-string">&quot;gordon&quot;</span>,<span class="hljs-string">&quot;matthew&quot;</span>]}
+
+-------------------------------------------
+
+$ sed -E <span class="hljs-string">&apos;
+    s/&quot;([^&quot;]+)&quot;.*&quot;([^&quot;]+)&quot;/&quot;\1&quot;: [&quot;\2&quot;]/    # quotes &#xC73C;&#xB85C; &#xB458;&#xB7EC;&#xC2F8;&#xC778; &#xCCAB;&#xBC88;&#xC9F8;, &#xB450;&#xBC88;&#xC9F8;&#xAC12; &#xBD84;&#xB9AC;
+    s/ ?, ?/&quot;,&quot;/g                           # comma &#xB85C; &#xBD84;&#xB9AC;&#xB41C; &#xAC01;&#xAC01;&#xC758; &#xAC12;&#xB4E4;&#xC744; quote &#xCC98;&#xB9AC;
+&apos;</span> file
+
+{<span class="hljs-string">&quot;name&quot;</span>: [<span class="hljs-string">&quot;john&quot;</span>,<span class="hljs-string">&quot;jane&quot;</span>,<span class="hljs-string">&quot;gordon&quot;</span>,<span class="hljs-string">&quot;matthew&quot;</span>]}
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-5">&#xC608;&#xC81C; 5</h3>
+<p>&#xC774;&#xBC88; &#xC608;&#xC81C;&#xB294; <code>( )</code> &#xC758; nesting &#xAE30;&#xB2A5;&#xACFC; <code>.*</code> &#xC758; greedy &#xD55C; &#xC18D;&#xC131;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Before</span>
+     //svn.server.address/repos/module1/branches/issue-<span class="hljs-number">001</span>-name1
+     //svn.server.address/repos/module2/branches/issue-<span class="hljs-number">002</span>-name2
+     //svn.server.address/repos/module3/branches/issue-<span class="hljs-number">003</span>-name3
+
+$ sed -E <span class="hljs-string">&apos;s#\s+(.*/(.*))#svn co \1 \2#&apos;</span> file
+
+<span class="hljs-comment"># After</span>
+svn co //svn.server.address/repos/module1/branches/issue-<span class="hljs-number">001</span>-name1 issue-<span class="hljs-number">001</span>-name1
+svn co //svn.server.address/repos/module2/branches/issue-<span class="hljs-number">002</span>-name2 issue-<span class="hljs-number">002</span>-name2
+svn co //svn.server.address/repos/module3/branches/issue-<span class="hljs-number">003</span>-name3 issue-<span class="hljs-number">003</span>-name3
+</code></pre>
+<h1 id="quiz">Quiz</h1>
+<p>&#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; C/C++ &#xD568;&#xC218;&#xC758; &#xC6D0;&#xD615;&#xC744; &#xC785;&#xB825;&#xBC1B;&#xC544;&#xC11C; &#xB9E4;&#xCE6D;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xB9CC;&#xB4E4;&#xB824;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
+sed &#xBA85;&#xB839;&#xBB38;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xC131;&#xD558;&#xBA74; &#xC88B;&#xC744;&#xAE4C;&#xC694;?</p>
+<ol>
+<li><p>C/C++ &#xD568;&#xC218;&#xC758; &#xC6D0;&#xD615;&#xC5D0;&#xB294; regex &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>(</code>, <code>)</code> &#xBB38;&#xC790;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C;
+ ERE &#xBCF4;&#xB2E4;&#xB294; BRE &#xB85C; &#xC791;&#xC131;&#xD558;&#xB294;&#xAC83;&#xC774; &#xC88B;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xADF8;&#xB9AC;&#xACE0; <code>*</code> , <code>.</code> , <code>[</code> &#xBB38;&#xC790;&#xB294; BRE, ERE &#xBAA8;&#xB450;&#xC5D0;&#xC11C; regex &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xBBC0;&#xB85C; escape &#xD574;&#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ol>
+<pre><code class="lang-bash"><span class="hljs-comment"># C/C++ &#xD568;&#xC218;&#xC758; &#xC6D0;&#xD615;&#xC5D0;&#xB294; regex &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; ( , ) , [ , * &#xBB38;&#xC790;&#xAC00; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</span>
+
+int foobar(const char*, int (*) [<span class="hljs-number">3</span>])
+
+----------------------------------------------------------
+
+<span class="hljs-comment"># &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC704;&#xC758; &#xD568;&#xC218; &#xC6D0;&#xD615;&#xC744; &#xC785;&#xB825;&#xD588;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xACE0; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD574;&#xC11C; &#xB9E4;&#xCE6D;&#xC744; &#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ input=<span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span>
+
+<span class="hljs-comment"># sed &#xBA85;&#xB839;&#xBB38;&#xC744; BRE &#xB85C; &#xC791;&#xC131;&#xD558;&#xC600;&#xC9C0;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span> |
+  sed -n <span class="hljs-string">&apos;/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span><span class="hljs-string">&apos;/p&apos;</span>
+$
+
+<span class="hljs-comment"># shell &#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD574; * &#xBB38;&#xC790;&#xB97C; \* &#xB85C; [ &#xBB38;&#xC790;&#xB97C; \[ &#xB85C; escape &#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</span>
+$ input=<span class="hljs-variable">${input//\*/\\*}</span>
+$ input=<span class="hljs-variable">${input//[/\\[}</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span>
+int foobar(const char\*, int (\*) \[<span class="hljs-number">3</span>])
+
+<span class="hljs-comment"># &#xC774;&#xC81C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xB294;&#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span> |
+  sed -n <span class="hljs-string">&apos;/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span><span class="hljs-string">&apos;/p&apos;</span>
+int foobar(const char*, int (*) [<span class="hljs-number">3</span>])
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./basics.html" class="navigation navigation-prev " aria-label="Previous page: Basics"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./escape_sequences.html" class="navigation navigation-next " aria-label="Next page: Escape sequences"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

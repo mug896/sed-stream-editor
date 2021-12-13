@@ -1,0 +1,687 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-2');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>move between spaces | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./insert_append_change.html" />
+    
+    
+    <link rel="prev" href="./next.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.6"
+        data-chapter-title="move between spaces"
+        data-filepath="move.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="regex.html">
+            
+                
+                    <a href="./regex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Regex
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="addresses.html">
+            
+                
+                    <a href="./addresses.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Addresses
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="and_or_not.html">
+            
+                
+                    <a href="./and_or_not.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        AND, OR, NOT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="commands.html">
+            
+                
+                    <a href="./commands.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Commands
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="print.html">
+            
+                
+                    <a href="./print.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        print
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="delete.html">
+            
+                
+                    <a href="./delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        delete
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="quit.html">
+            
+                
+                    <a href="./quit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        quit
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="substitute.html">
+            
+                
+                    <a href="./substitute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        substitute
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="next.html">
+            
+                
+                    <a href="./next.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        next
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.6" data-path="move.html">
+            
+                
+                    <a href="./move.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        move between spaces
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="insert_append_change.html">
+            
+                
+                    <a href="./insert_append_change.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        insert, append, change
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="read_write.html">
+            
+                
+                    <a href="./read_write.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        read, write
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="etc.html">
+            
+                
+                    <a href="./etc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        etc
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="branch.html">
+            
+                
+                    <a href="./branch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Branch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="multiple_lines.html">
+            
+                
+                    <a href="./multiple_lines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Multiple lines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="execute.html">
+            
+                
+                    <a href="./execute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Execute
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="----move-between-spaces"><img src="images/buttons/h.png" \=""> <img src="images/buttons/H.png" \=""> <img src="images/buttons/x.png" \=""> <img src="images/buttons/g.png" \=""> <img src="images/buttons/G.png" \=""> Move between spaces</h1>
+<p>&#xC18C;&#xBB38;&#xC790;&#xB85C; &#xB41C; &#xBA85;&#xB839;&#xC740; <code>copy</code> &#xC785;&#xB2C8;&#xB2E4;.<br>&#xBAA9;&#xC801;&#xC9C0; &#xAE30;&#xC874; &#xB370;&#xC774;&#xD130;&#xB294; &#xC0AD;&#xC81C;&#xB418;&#xACE0; source &#xB0B4;&#xC6A9;&#xC774; dest &#xB85C; copy &#xB429;&#xB2C8;&#xB2E4;.<br>&#xB300;&#xBB38;&#xC790;&#xB85C; &#xB41C; &#xBA85;&#xB839;&#xC740; <code>append</code> &#xC785;&#xB2C8;&#xB2E4;.<br>&#xBA3C;&#xC800; newline &#xC774; dest &#xC5D0; append &#xB418;&#xACE0; &#xC774;&#xC5B4; source &#xB0B4;&#xC6A9;&#xC774; dest &#xC5D0; append &#xB429;&#xB2C8;&#xB2E4;.  </p>
+<blockquote>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &apos;<code>x</code>&apos; &#xBA85;&#xB839;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0; source &#xB0B4;&#xC6A9;&#xC740; &#xBCC0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h3 id="hold-copy"><img src="images/buttons/h.png" \=""> hold (copy)</h3>
+<h5 id="1-&#xD604;&#xC7AC;-hold-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC740;-&#xC804;&#xBD80;-&#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;">1. &#xD604;&#xC7AC; hold space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC740; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="2-pattern-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC774;-hold-space-&#xB85C;-copy-&#xB429;&#xB2C8;&#xB2E4;">2. pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; hold space &#xB85C; copy &#xB429;&#xB2C8;&#xB2E4;.</h5>
+<p><img src="images/hold_1_1.png" alt=""></p>
+<p><img src="images/hold_1_2.png" alt=""></p>
+<h3 id="hold-append"><img src="images/buttons/H.png" \=""> Hold (append)</h3>
+<h5 id="1-&#xBA3C;&#xC800;-hold-space-&#xC5D0;-newline-&#xC744;-append-&#xD569;&#xB2C8;&#xB2E4;">1. &#xBA3C;&#xC800; hold space &#xC5D0; newline &#xC744; append &#xD569;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="2-pattern-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC774;-copy-&#xB418;&#xC5B4;-hold-space-&#xB85C;-append-&#xB429;&#xB2C8;&#xB2E4;">2. pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; copy &#xB418;&#xC5B4; hold space &#xB85C; append &#xB429;&#xB2C8;&#xB2E4;.</h5>
+<p><img src="images/hold_2_1.png" alt=""></p>
+<p><img src="images/hold_2_2.png" alt=""></p>
+<h3 id="go-to-pattern-space-copy"><img src="images/buttons/g.png" \=""> go to pattern space (copy)</h3>
+<h5 id="1-&#xD604;&#xC7AC;-pattern-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC740;-&#xC804;&#xBD80;-&#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;">1. &#xD604;&#xC7AC; pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC740; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="2-hold-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC774;-pattern-space-&#xB85C;-copy-&#xB429;&#xB2C8;&#xB2E4;">2. hold space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; pattern space &#xB85C; copy &#xB429;&#xB2C8;&#xB2E4;.</h5>
+<p><img src="images/pattern_1.png" alt=""></p>
+<h3 id="go-to-pattern-space-append"><img src="images/buttons/G.png" \=""> Go to pattern space (append)</h3>
+<h5 id="1-&#xBA3C;&#xC800;-pattern-space-&#xC5D0;-newline-&#xC744;-append-&#xD569;&#xB2C8;&#xB2E4;">1. &#xBA3C;&#xC800; pattern space &#xC5D0; newline &#xC744; append &#xD569;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="2-hold-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC774;-copy-&#xB418;&#xC5B4;-pattern-space-&#xB85C;-append-&#xB429;&#xB2C8;&#xB2E4;">2. hold space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; copy &#xB418;&#xC5B4; pattern space &#xB85C; append &#xB429;&#xB2C8;&#xB2E4;.</h5>
+<p><img src="images/pattern_2.png" alt=""></p>
+<h3 id="exchange"><img src="images/buttons/x.png" \=""> eXchange</h3>
+<h5 id="1-pattern-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xACFC;-hold-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC744;-&#xC11C;&#xB85C;-&#xB9DE;&#xBC14;&#xAFC9;&#xB2C8;&#xB2E4;">1. pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xACFC; hold space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xC11C;&#xB85C; &#xB9DE;&#xBC14;&#xAFC9;&#xB2C8;&#xB2E4;.</h5>
+<p><img src="images/exchange.png" alt=""></p>
+<hr>
+<h3 id="&#xADF8;&#xB9BC;&#xC73C;&#xB85C;-&#xBCF4;&#xB294;-&#xC608;&#xC81C;">&#xADF8;&#xB9BC;&#xC73C;&#xB85C; &#xBCF4;&#xB294; &#xC608;&#xC81C;</h3>
+<p><img src="images/move_example.png" alt=""></p>
+<h3 id="&#xC608;&#xC81C;-1">&#xC608;&#xC81C; 1</h3>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xC5B4;&#xB5A4; &#xBA85;&#xB839;&#xC758; &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xC778;&#xB370;&#xC694;.
+md5sum &#xC744; &#xAD6C;&#xD574;&#xC11C; &#xD30C;&#xC77C; &#xC0AC;&#xC774;&#xC988;&#xC640; &#xD568;&#xAED8; &#xD45C;&#xC2DC;&#xD558;&#xB294;&#xB370; &#xD56D;&#xC0C1; &#xCD9C;&#xB825;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; &#xD45C;&#xC2DC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC744; sed &#xB97C; &#xC774;&#xC6A9;&#xD574; <code>&#xD30C;&#xC77C;&#xBA85; -&gt; gz -&gt; bz2</code> &#xC21C;&#xC11C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">command</span> ...
+e805c26ff46c6e138e3<span class="hljs-built_in">cd</span>198cff281ea <span class="hljs-number">301</span> Packages.bz2
+<span class="hljs-number">15</span>bfecb2b041d5387aacdd32879e4e56 <span class="hljs-number">324</span> Packages
+b97a7252f202566a1e5fdc5b50c2ffdf <span class="hljs-number">283</span> Packages.gz
+---------------------------------------------------
+
+<span class="hljs-comment"># &apos;n&apos; &#xBA85;&#xB839;&#xC740; &#xC790;&#xB3D9; &#xCD9C;&#xB825; &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C; pattern space &#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xBBC0;&#xB85C; &apos;-n&apos; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;</span>
+$ <span class="hljs-built_in">command</span> ... | sed -n <span class="hljs-string">&apos;h; n; N; G; p&apos;</span>
+<span class="hljs-number">15</span>bfecb2b041d5387aacdd32879e4e56 <span class="hljs-number">324</span> Packages
+b97a7252f202566a1e5fdc5b50c2ffdf <span class="hljs-number">283</span> Packages.gz
+e805c26ff46c6e138e3<span class="hljs-built_in">cd</span>198cff281ea <span class="hljs-number">301</span> Packages.bz2
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-2">&#xC608;&#xC81C; 2</h3>
+<p>&#xB2E4;&#xC74C;&#xC740; docker hub &#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xC774;&#xBBF8;&#xC9C0;&#xC758; tag list &#xB97C; &#xC870;&#xD68C;&#xD574; sort &#xD55C; &#xACB0;&#xACFC;&#xC778;&#xB370; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xB530;&#xB77C;&#xC11C; 
+<code>latest</code> &#xAC00; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC784;&#xC758;&#xC758; &#xC704;&#xCE58;&#xC5D0; &#xB098;&#xD0C0;&#xB0A0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC5B4;&#xB5A4; &#xACBD;&#xC6B0;&#xC5D0;&#xC11C;&#xB4E0; <code>latest</code> &#xB97C; &#xD56D;&#xC0C1; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xD45C;&#xC2DC;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ docker-taglist alpine                         <span class="hljs-comment"># latest &#xAC00; &#xC5C6;&#xB294;&#xACBD;&#xC6B0;</span>
+latest             <span class="hljs-number">2.6</span>                <span class="hljs-number">2.6</span>               <span class="hljs-number">2.6</span>
+<span class="hljs-number">2.6</span>                <span class="hljs-number">2.7</span>                <span class="hljs-number">2.7</span>               <span class="hljs-number">2.7</span>
+<span class="hljs-number">2.7</span>                <span class="hljs-number">3</span>                  <span class="hljs-number">3</span>                 <span class="hljs-number">3</span>
+<span class="hljs-number">3</span>                  <span class="hljs-number">3.1</span>                <span class="hljs-number">3.1</span>               <span class="hljs-number">3.1</span>
+<span class="hljs-number">3.1</span>                <span class="hljs-number">3.2</span>                <span class="hljs-number">3.2</span>               <span class="hljs-number">3.2</span>
+<span class="hljs-number">3.2</span>                <span class="hljs-number">3.3</span>                <span class="hljs-number">3.3</span>               <span class="hljs-number">3.3</span>
+<span class="hljs-number">3.3</span>                latest             <span class="hljs-number">3.4</span>               <span class="hljs-number">3.4</span>
+<span class="hljs-number">3.4</span>                <span class="hljs-number">3.4</span>                <span class="hljs-number">3.5</span>               <span class="hljs-number">3.5</span>
+<span class="hljs-number">3.5</span>                <span class="hljs-number">3.5</span>                <span class="hljs-number">3.6</span>               <span class="hljs-number">3.6</span>
+<span class="hljs-number">3.6</span>                <span class="hljs-number">3.6</span>                latest
+--------------------------------------------------------------
+
+<span class="hljs-comment"># &#xC785;&#xB825; &#xB77C;&#xC778;&#xC774; &apos;latest&apos; &#xAC00; &#xC544;&#xB2D0; &#xACBD;&#xC6B0; &#xCD9C;&#xB825;&#xD55C; &#xD6C4; :X &#xB808;&#xC774;&#xBE14;&#xB85C; branch &#xD569;&#xB2C8;&#xB2E4;.</span>
+/^latest$/!{p; bX};
+
+<span class="hljs-comment"># &#xC785;&#xB825; &#xB77C;&#xC778;&#xC774; &apos;latest&apos; &#xC77C; &#xACBD;&#xC6B0;&#xB294; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</span>
+h;
+
+<span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC77C; &#xACBD;&#xC6B0; hold space &#xC758; &#xB0B4;&#xC6A9;&#xC744; pattern space &#xB85C; &#xAC00;&#xC838;&#xC624;&#xB294;&#xB370;</span>
+<span class="hljs-comment"># &#xC774;&#xB54C; &#xAC12;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC744; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; /^$/! &#xB85C; &#xCCB4;&#xD06C;&#xD558;&#xC5EC; &#xD504;&#xB9B0;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-variable">${g; /^$/!p}</span><span class="hljs-string">&apos; 
+
+$ cat taglist | sed -n &apos;</span>/^latest$/!{p; bX}; h; :X <span class="hljs-variable">${g; /^$/!p}</span><span class="hljs-string">&apos;
+</span></code></pre>
+<h3 id="&#xC608;&#xC81C;-3">&#xC608;&#xC81C; 3</h3>
+<p><code>/usr/include/elf.h</code> &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xBA74; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; typedef struct &#xC774; &#xC788;&#xB294;&#xB370;&#xC694;.
+&#xADF8;&#xC911;&#xC5D0;&#xC11C; <code>Elf64_Ehdr</code> &#xBD80;&#xBD84;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &quot;typedef struct&quot; &#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB098;&#xBA74; hold space &#xB85C; &#xC774;&#xB3D9;&#xD558;&#xACE0; &#xC2DD;&#xC758; &#xB05D;&#xC73C;&#xB85C; branch &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xC774;&#xB54C; &#xAE30;&#xC874;&#xC5D0; hold space &#xC5D0; &#xB0B4;&#xC6A9;&#xC774; &#xC788;&#xC5C8;&#xB2E4;&#xBA74; &#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;.</span>
+/typedef struct/{h;b}
+<span class="hljs-comment"># &#xC774;&#xD6C4;&#xBD80;&#xD130;&#xB294; &#xB77C;&#xC778;&#xC744; hold space &#xC5D0; &#xACC4;&#xC18D; append &#xD569;&#xB2C8;&#xB2E4;. </span>
+H
+<span class="hljs-comment"># &quot;Elf64_Ehdr;&quot; &#xAC00; &#xD3EC;&#xD568;&#xB41C; &#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB098;&#xBA74; hold space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; pattern space &#xB85C; &#xC62E;&#xAE34; &#xD6C4;</span>
+<span class="hljs-comment"># &#xD504;&#xB9B0;&#xD2B8;&#xD558;&#xACE0; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;. </span>
+/Elf64_Ehdr;/{g;p;Q}/ 
+
+$ sed -n <span class="hljs-string">&apos;/typedef struct/{h;b}; H; /Elf64_Ehdr;/{g;p;Q}&apos;</span> /usr/include/elf.h      
+typedef struct
+{
+  unsigned char e_ident[EI_NIDENT];     /* Magic number and other info */
+  Elf64_Half    e_<span class="hljs-built_in">type</span>;                 /* Object file <span class="hljs-built_in">type</span> */
+  Elf64_Half    e_machine;              /* Architecture */
+  Elf64_Word    e_version;              /* Object file version */
+  Elf64_Addr    e_entry;                /* Entry point virtual address */
+  Elf64_Off     e_phoff;                /* Program header table file offset */
+  Elf64_Off     e_shoff;                /* Section header table file offset */
+  Elf64_Word    e_flags;                /* Processor-specific flags */
+  Elf64_Half    e_ehsize;               /* ELF header size <span class="hljs-keyword">in</span> bytes */
+  Elf64_Half    e_phentsize;            /* Program header table entry size */
+  Elf64_Half    e_phnum;                /* Program header table entry count */
+  Elf64_Half    e_shentsize;            /* Section header table entry size */
+  Elf64_Half    e_shnum;                /* Section header table entry count */
+  Elf64_Half    e_shstrndx;             /* Section header string table index */
+} Elf64_Ehdr;
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>-z</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC804;&#xCCB4; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC778; &#xD6C4; <code>regex</code> &#xC744; &#xD65C;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sed -z -rn <span class="hljs-string">&apos;s/.*(typedef struct\n.+} Elf64_Ehdr;\n).*/\1/p&apos;</span> /usr/include/elf.h
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-4">&#xC608;&#xC81C; 4</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>AAA</code> &#xB4A4;&#xC5D0; &#xC22B;&#xC790; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC774;&#xC5B4;&#xC9C0;&#xB294;&#xB370;&#xC694;.
+&#xC774;&#xAC83;&#xC744; &#xD55C;&#xAC1C;&#xC758; &#xB77C;&#xC778;&#xC73C;&#xB85C; &#xB9CC;&#xB4DC;&#xB294;&#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xB370;&#xC774;&#xD130; &#xB0B4;&#xC6A9;</span>
+AAA
+<span class="hljs-number">1</span>
+<span class="hljs-number">34</span>
+AAA
+<span class="hljs-number">5</span>
+<span class="hljs-number">32</span>
+<span class="hljs-number">61</span>
+<span class="hljs-number">17</span>
+AAA
+<span class="hljs-number">71</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">15</span>
+...................
+
+$ sed -En <span class="hljs-string">&apos;
+    /AAA/{
+        :X 
+        x          # `x` &#xBA85;&#xB839;&#xC73C;&#xB85C; hold space &#xB0B4;&#xC6A9;&#xACFC; pattern space &#xB0B4;&#xC6A9;&#xC744; &#xAD50;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
+        s/\n/ /g   # newline &#xC744; space &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; &#xD55C; &#xC904;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.
+        p          # &#xB0B4;&#xC6A9;&#xC744; &#xD504;&#xB9B0;&#xD2B8;&#xD558;&#xACE0;
+        b          # &#xBA85;&#xB839; &#xC0AC;&#xC774;&#xD074;&#xC758; END &#xB85C; &#xBD84;&#xAE30;&#xD569;&#xB2C8;&#xB2E4;.
+    } 
+    H              # AAA &#xC640; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xB294; `H` &#xBA85;&#xB839;&#xC73C;&#xB85C; hold space &#xC5D0; append &#xD569;&#xB2C8;&#xB2E4;.
+    $bX            # &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC77C; &#xACBD;&#xC6B0; :X &#xB85C; &#xBD84;&#xAE30;&#xD558;&#xC5EC; hold space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xD504;&#xB9B0;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;.
+&apos;</span> file
+
+AAA <span class="hljs-number">1</span> <span class="hljs-number">34</span>
+AAA <span class="hljs-number">5</span> <span class="hljs-number">32</span> <span class="hljs-number">61</span> <span class="hljs-number">17</span>
+AAA <span class="hljs-number">71</span> <span class="hljs-number">4</span> <span class="hljs-number">15</span>
+</code></pre>
+<h3 id="&#xC608;&#xC81C;-5">&#xC608;&#xC81C; 5</h3>
+<p>&#xD544;&#xB4DC;&#xAC00; space &#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xB808;&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>/config</code> &#xACFC; <code>/service</code> &#xD544;&#xB4DC;&#xB97C; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0;&#xB370; &#xC5EC;&#xAE30;&#xC11C; &#xBB38;&#xC81C;&#xB294; &#xD544;&#xB4DC;&#xC758; &#xC704;&#xCE58;&#xB098; &#xC21C;&#xC11C;&#xAC00; &#xC815;&#xD574;&#xC838; &#xC788;&#xC9C0;&#xAC00; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xB370;&#xC774;&#xD130; &#xB0B4;&#xC6A9;</span>
+build <span class="hljs-number">345</span> /config:launcher.mxres /nickname:prod /service:session
+auto <span class="hljs-number">4986</span> /nickname:deal /service:engine /config:launcher5.mxres
+build <span class="hljs-number">912</span> /config:launcher_binary.mxres /service:scanner /nickname:input 
+.........................................................................
+
+$ sed -E <span class="hljs-string">&apos;
+    h                            # &#xBA3C;&#xC800; &#xC6D0;&#xBCF8; &#xB77C;&#xC778;&#xC744; hold &#xD558;&#xC5EC; &#xBCF5;&#xC0AC;
+
+    s#.*(/config:[^ ]+).*#\1#    # /config &#xAC12;&#xC744; &#xCD94;&#xCD9C;&#xD55C; &#xD6C4; `H` &#xBA85;&#xB839;&#xC73C;&#xB85C; hold space &#xC5D0; append.
+    H;g                          # &#xD604;&#xC7AC; pattern space &#xB294; /config &#xAC12;&#xB9CC; &#xB0A8;&#xACE0; &#xC0AD;&#xC81C;&#xB41C; &#xC0C1;&#xD0DC;&#xC774;&#xBBC0;&#xB85C;
+                                 # `g` &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; hold space &#xAC12;&#xC744; pattern space &#xB85C; &#xBCF5;&#xC0AC;
+
+    s#.*(/service:[^ ]+).*#\1#   # &#xC704;&#xC640; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC73C;&#xB85C; /service &#xAC12; &#xCD94;&#xCD9C;
+    H;g                          # `g` &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; hold space &#xAC12;&#xC744; pattern space &#xB85C; &#xBCF5;&#xC0AC;
+
+    s#.*\n(.*)\n(.*)#\1 \2#      # &#xD604;&#xC7AC; pattern space &#xC5D0;&#xB294; &#xC6D0;&#xBCF8; &#xB77C;&#xC778;&#xACFC; /config, /service
+                                 # 3&#xAC1C;&#xC758; &#xB77C;&#xC778;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C; /config, /service &#xAC12;&#xB9CC; &#xCD94;&#xCD9C;
+&apos;</span> file
+
+/config:launcher.mxres /service:session
+/config:launcher5.mxres /service:engine
+/config:launcher_binary.mxres /service:scanner
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./next.html" class="navigation navigation-prev " aria-label="Previous page: next"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./insert_append_change.html" class="navigation navigation-next " aria-label="Next page: insert, append, change"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

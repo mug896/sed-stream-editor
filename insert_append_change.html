@@ -1,0 +1,692 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-2');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>insert, append, change | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./read_write.html" />
+    
+    
+    <link rel="prev" href="./move.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.7"
+        data-chapter-title="insert, append, change"
+        data-filepath="insert_append_change.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="regex.html">
+            
+                
+                    <a href="./regex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Regex
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="addresses.html">
+            
+                
+                    <a href="./addresses.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Addresses
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="and_or_not.html">
+            
+                
+                    <a href="./and_or_not.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        AND, OR, NOT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="commands.html">
+            
+                
+                    <a href="./commands.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Commands
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="print.html">
+            
+                
+                    <a href="./print.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        print
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="delete.html">
+            
+                
+                    <a href="./delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        delete
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="quit.html">
+            
+                
+                    <a href="./quit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        quit
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="substitute.html">
+            
+                
+                    <a href="./substitute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        substitute
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="next.html">
+            
+                
+                    <a href="./next.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        next
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="move.html">
+            
+                
+                    <a href="./move.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        move between spaces
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.7" data-path="insert_append_change.html">
+            
+                
+                    <a href="./insert_append_change.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        insert, append, change
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="read_write.html">
+            
+                
+                    <a href="./read_write.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        read, write
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="etc.html">
+            
+                
+                    <a href="./etc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        etc
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="branch.html">
+            
+                
+                    <a href="./branch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Branch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="multiple_lines.html">
+            
+                
+                    <a href="./multiple_lines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Multiple lines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="execute.html">
+            
+                
+                    <a href="./execute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Execute
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="--insert-append-change"><img src="images/buttons/i.png" \=""> <img src="images/buttons/a.png" \=""> <img src="images/buttons/c.png" \=""> insert, append, change</h1>
+<p>&#xB77C;&#xC778; &#xC5D0;&#xB514;&#xD130;&#xC778; <a href="https://youtu.be/2XLZ4Z8LpEE?t=810" target="_blank">ed</a> &#xB97C; stream &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xB9CC;&#xB4E0; &#xAC83;&#xC774;
+sed &#xC774;&#xBBC0;&#xB85C; sed &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xD30C;&#xC77C;&#xC744; &#xC27D;&#xAC8C; &#xC218;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<video width="806" height="466" controls preload="auto">
+  <source src="images/file_editing.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<pre><code class="lang-bash"><span class="hljs-comment"># multiple lines &#xC744; &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95; ( &#xB77C;&#xC778; &#xB05D;&#xC5D0; &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC778;&#xB2E4; )</span>
+sed -i <span class="hljs-string">&apos;2a \
+192.168.100.1     gateway\
+192.168.100.2     webserver\
+192.168.100.3     dbserver
+&apos;</span> hosts
+
+<span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4;&#xB824;&#xBA74;</span>
+$ sed -i <span class="hljs-string">&apos;4a\\&apos;</span> hosts       <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 1 &#xAC1C;</span>
+$ sed -i <span class="hljs-string">&apos;4a\\n&apos;</span> hosts      <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 2 &#xAC1C;</span>
+$ sed -i <span class="hljs-string">&apos;4a\\n\n&apos;</span> hosts    <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 3 &#xAC1C;</span>
+</code></pre>
+<hr>
+<p>&#xC774; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; pattern space &#xC640;&#xB294; &#xAD00;&#xACC4;&#xAC00; &#xC5C6;&#xB294; &#xBA85;&#xB839;&#xB4E4;&#xB85C; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; 
+sed &#xC5D0;&#xC758;&#xD574; queue &#xB418;&#xC5C8;&#xB2E4;&#xAC00; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; <code>-n</code> &#xC635;&#xC158;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xC744; &#xAE08;&#xC9C0;&#xD560; &#xC218;&#xB3C4; &#xC5C6;&#xACE0; <code>s</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC218;&#xC815;&#xC744; &#xD560; &#xC218;&#xB3C4; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>pattern space &#xC5D0; &#xC9C1;&#xC811; insert, append &#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; <a href="tips.html">Tips</a> &#xBA54;&#xB274;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
+</blockquote>
+<h3 id=""><img src="images/buttons/i.png" \=""> <img src="images/buttons/a.png" \=""></h3>
+<h5 id="1-&#xD604;&#xC7AC;-pattern-space-&#xB0B4;&#xC6A9;&#xC5D0;&#xB294;-&#xC601;&#xD5A5;&#xC744;-&#xC8FC;&#xC9C0;-&#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;">1. &#xD604;&#xC7AC; pattern space &#xB0B4;&#xC6A9;&#xC5D0;&#xB294; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="2-n-&#xC635;&#xC158;-&#xC124;&#xC815;&#xC5D0;-&#xAD00;&#xACC4;&#xC5C6;&#xC774;-&#xC785;&#xB825;&#xD55C;-&#xAC12;&#xC774;-&#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;">2. <code>-n</code> &#xC635;&#xC158; &#xC124;&#xC815;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="3-&#xB4A4;&#xC774;&#xC5B4;-&#xACC4;&#xC18D;&#xD574;&#xC11C;-&#xBA85;&#xB839;&#xC744;-&#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74;-e-&#xC635;&#xC158;&#xC744;-&#xC774;&#xC6A9;&#xD574;&#xC11C;-&#xBD84;&#xB9AC;&#xD574;&#xC57C;-&#xD569;&#xB2C8;&#xB2E4;">3. &#xB4A4;&#xC774;&#xC5B4; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>-e</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</h5>
+<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2i -----&apos;</span>
+<span class="hljs-number">1</span>
+-----
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2a =====&apos;</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+=====
+<span class="hljs-number">3</span>
+
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span>
+<span class="hljs-number">1</span>
+-----
+<span class="hljs-number">2</span>
+=====
+<span class="hljs-number">3</span>
+
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2{i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span> 
+<span class="hljs-number">1</span>
+-----
+<span class="hljs-number">2</span>
+=====
+<span class="hljs-number">3</span>
+
+$ <span class="hljs-built_in">echo</span> abc | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/a/{i ----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/b/{i ====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span>
+----
+====
+abc
+</code></pre>
+<p><code>-n</code> &#xC635;&#xC158; &#xC124;&#xC815;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; &#xD504;&#xB9B0;&#xD2B8;&#xB418;&#xBA70; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xCC28;&#xC774;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;i&apos; &#xB294; &#xD574;&#xB2F9; &#xBA85;&#xB839;&#xC774; &#xC704;&#xCE58;&#xD55C; &#xACF3;&#xC5D0;&#xC11C; &#xD504;&#xB9B0;&#xD2B8;&#xB418;&#xC9C0;&#xB9CC;</span>
+<span class="hljs-comment"># &apos;a&apos; &#xB294; &#xBA85;&#xB839; &#xC704;&#xCE58;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xD56D;&#xC0C1; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; append &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ seq <span class="hljs-number">3</span> | sed -n <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span>  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/2/XXXXX/p&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span>
+XXXXX
+-----
+=====
+
+$ seq <span class="hljs-number">3</span> | sed -n <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/2/XXXXX/p&apos;</span>
+-----
+XXXXX
+=====
+
+<span class="hljs-comment"># &apos;-n&apos; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xB294; &#xCC28;&#xC774;&#xAC00; &#xC5C6;&#xB2E4;.</span>
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/2/XXXXX/&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span>
+<span class="hljs-number">1</span>
+-----
+XXXXX
+=====
+<span class="hljs-number">3</span>
+
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/2/XXXXX/&apos;</span>
+<span class="hljs-number">1</span>
+-----
+XXXXX
+=====
+<span class="hljs-number">3</span>
+</code></pre>
+<p><code>i</code>, <code>a</code> &#xBA85;&#xB839;&#xC758; &#xC785;&#xB825;&#xAC12;&#xC740; &#xC77C;&#xBC18; &#xD14D;&#xC2A4;&#xD2B8; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xBBC0;&#xB85C; &#xACF5;&#xBC31;&#xC744; &#xD3EC;&#xD568;&#xD574;&#xC11C; <code>;</code> &#xBB38;&#xC790;&#xB3C4; &#xC62C; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+&#xB4A4;&#xC774;&#xC5B4; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>-e</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;-e&apos; &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xBD84;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; </span>
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----; 2a =====&apos;</span>
+<span class="hljs-number">1</span>
+-----; <span class="hljs-number">2</span>a =====
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; multiple lines &#xC744; &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;. <code>a</code> &#xBA85;&#xB839;&#xB3C4; &#xBC29;&#xBC95;&#xC740; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2i -----\               $ seq 3 | sed &apos;</span><span class="hljs-number">2</span>i \
+-----\                                 -----\
+-----<span class="hljs-string">&apos;                                 -----\
+                                       -----&apos;</span>
+<span class="hljs-number">1</span>                                      
+-----                                  <span class="hljs-number">1</span>
+-----                                  -----
+-----                                  -----
+<span class="hljs-number">2</span>                                      -----
+<span class="hljs-number">3</span>                                      <span class="hljs-number">2</span>
+                                       <span class="hljs-number">3</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; shell &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ AA=<span class="hljs-number">100</span>
+
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;2a --<span class="hljs-variable">${AA}</span>--&quot;</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+--<span class="hljs-number">100</span>--
+<span class="hljs-number">3</span>
+
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a\&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;--<span class="hljs-variable">${AA}</span>--&quot;</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+--<span class="hljs-number">100</span>--
+<span class="hljs-number">3</span>
+</code></pre>
+<h3 id=""><img src="images/buttons/c.png" \=""></h3>
+<h5 id="1-&#xD604;&#xC7AC;-pattern-space-&#xC5D0;-&#xC788;&#xB294;-&#xB0B4;&#xC6A9;&#xC744;-&#xC804;&#xBD80;-&#xC0AD;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;">1. &#xD604;&#xC7AC; pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="2-n-&#xC635;&#xC158;-&#xC124;&#xC815;&#xC5D0;-&#xAD00;&#xACC4;&#xC5C6;&#xC774;-&#xC785;&#xB825;&#xD55C;-&#xAC12;&#xC774;-&#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;">2. <code>-n</code> &#xC635;&#xC158; &#xC124;&#xC815;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</h5>
+<h5 id="3-pattern-space-&#xB0B4;&#xC6A9;&#xC774;-&#xC804;&#xBD80;-&#xC0AD;&#xC81C;&#xB41C;-&#xC0C1;&#xD0DC;&#xC774;&#xBBC0;&#xB85C;-&#xBA85;&#xB839;-&#xC0AC;&#xC774;&#xD074;&#xC744;-&#xC885;&#xB8CC;&#xD558;&#xACE0;-new-cycle-&#xC744;-&#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;">3. pattern space &#xB0B4;&#xC6A9;&#xC774; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xB41C; &#xC0C1;&#xD0DC;&#xC774;&#xBBC0;&#xB85C; &#xBA85;&#xB839; &#xC0AC;&#xC774;&#xD074;&#xC744; &#xC885;&#xB8CC;&#xD558;&#xACE0; new cycle &#xC744; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</h5>
+<p>&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; <code>i</code>, <code>a</code> &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>c</code> &#xBA85;&#xB839;&#xC774; &#xC81C;&#xC77C; &#xB4A4;&#xC5D0; &#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2c XXXXX&apos;</span>
+<span class="hljs-number">1</span>
+XXXXX
+<span class="hljs-number">3</span>
+
+<span class="hljs-comment"># &apos;c&apos; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xC0AC;&#xC774;&#xD074;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xBBC0;&#xB85C; &apos;i&apos;, &apos;a&apos; &#xAC12;&#xC740; &#xD45C;&#xC2DC;&#xAC00; &#xC548;&#xB41C;&#xB2E4;.</span>
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a -----&apos;</span> 
+<span class="hljs-number">1</span>
+XXXXX
+<span class="hljs-number">3</span>
+
+<span class="hljs-comment"># &apos;c&apos; &#xBA85;&#xB839;&#xC774; &#xC81C;&#xC77C; &#xB4A4;&#xC5D0; &#xC640;&#xC57C; &#xD55C;&#xB2E4;.</span>
+$ seq <span class="hljs-number">3</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span>
+<span class="hljs-number">1</span>
+.....
+XXXXX
+-----
+<span class="hljs-number">3</span>
+
+$ seq <span class="hljs-number">5</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a -----&apos;</span> 
+<span class="hljs-number">1</span>
+XXXXX
+<span class="hljs-number">5</span>
+
+$ seq <span class="hljs-number">5</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span>
+<span class="hljs-number">1</span>
+.....
+-----
+.....
+-----
+.....
+XXXXX
+-----
+<span class="hljs-number">5</span>
+
+<span class="hljs-comment"># &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4;.</span>
+$ seq <span class="hljs-number">5</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;N;N&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;3c -----&apos;</span>
+-----
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./move.html" class="navigation navigation-prev " aria-label="Previous page: move between spaces"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./read_write.html" class="navigation navigation-next " aria-label="Next page: read, write"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
