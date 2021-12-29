@@ -476,7 +476,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> 
 BBB                                         <span class="hljs-comment"># t &#xBA85;&#xB839;&#xACFC; X &#xB808;&#xC774;&#xBE14; &#xC0AC;&#xC6A9;</span>
 AAA
 BBB
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;111\n000\n222&apos;</span> | sed -n <span class="hljs-string">&apos;/^000$/{ s//AAA/; bX }; s/.*/BBB/; :X p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;111\n000\n222&apos;</span> | sed -n <span class="hljs-string">&apos;/000/{ s//AAA/; bX }; s/.*/BBB/; :X p&apos;</span>
 BBB                                         <span class="hljs-comment"># b &#xBA85;&#xB839;&#xACFC; X &#xB808;&#xC774;&#xBE14; &#xC0AC;&#xC6A9;</span>
 AAA
 BBB
