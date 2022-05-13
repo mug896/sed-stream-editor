@@ -1025,8 +1025,7 @@ int foobar(const char*, int (*) [<span class="hljs-number">3</span>])
 $ input=<span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span>
 
 <span class="hljs-comment"># sed &#xBA85;&#xB839;&#xBB38;&#xC744; BRE &#xB85C; &#xC791;&#xC131;&#xD558;&#xC600;&#xC9C0;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span> |
-  sed -n <span class="hljs-string">&apos;/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span><span class="hljs-string">&apos;/p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span> | sed -n <span class="hljs-string">&apos;/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span><span class="hljs-string">&apos;/p&apos;</span>
 $
 
 <span class="hljs-comment"># shell &#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD574; * &#xBB38;&#xC790;&#xB97C; \* &#xB85C; [ &#xBB38;&#xC790;&#xB97C; \[ &#xB85C; escape &#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</span>
@@ -1036,8 +1035,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span 
 int foobar(const char\*, int (\*) \[<span class="hljs-number">3</span>])
 
 <span class="hljs-comment"># &#xC774;&#xC81C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xB294;&#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span> |
-  sed -n <span class="hljs-string">&apos;/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span><span class="hljs-string">&apos;/p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;int foobar(const char*, int (*) [3])&apos;</span> | sed -n <span class="hljs-string">&apos;/&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$input</span>&quot;</span><span class="hljs-string">&apos;/p&apos;</span>
 int foobar(const char*, int (*) [<span class="hljs-number">3</span>])
 </code></pre>
 
