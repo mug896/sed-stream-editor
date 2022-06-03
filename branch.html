@@ -754,7 +754,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;123456
 <p>&#xC785;&#xB825;&#xAC12; &#xC911;&#xC5D0;&#xC11C; <code>foo</code> &#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBA74; <code>bar</code> &#xB97C; <code>xxx</code> &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xACE0;
 &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>bar</code> &#xB97C; <code>zzz</code> &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <blockquote>
-<p><code>s/foo/&amp;/</code> &#xD615;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC785;&#xB825;&#xAC12;&#xC740; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xC54A;&#xACE0; test flag &#xB9CC; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>s/foo/&amp;/</code> &#xD615;&#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC785;&#xB825;&#xAC12;&#xC740; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xACE0; test flag &#xB9CC; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb foo ccc bar ddd&quot;</span> | 
     sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/foo/&amp;/; tX; s/bar/zzz/; p; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/bar/xxx/; p&apos;</span>
