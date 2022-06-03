@@ -751,6 +751,20 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;123456
 . . .
 </code></pre>
 <h1 id="quiz">Quiz</h1>
+<p>&#xC785;&#xB825;&#xAC12; &#xC911;&#xC5D0;&#xC11C; <code>foo</code> &#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBA74; <code>bar</code> &#xB97C; <code>xxx</code> &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xACE0;
+&#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>bar</code> &#xB97C; <code>zzz</code> &#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<blockquote>
+<p><code>s/foo/&amp;/</code> &#xD615;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC785;&#xB825;&#xAC12;&#xC740; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xC54A;&#xACE0; test flag &#xB9CC; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb foo ccc bar ddd&quot;</span> | 
+    sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/foo/&amp;/; tX; s/bar/yyy/; p; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/bar/xxx/; p&apos;</span>
+aaa bbb foo ccc xxx ddd
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb zoo ccc bar ddd&quot;</span> |
+    sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/foo/&amp;/; tX; s/bar/zzz/; p; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/bar/xxx/; p&apos;</span>
+aaa bbb zoo ccc zzz ddd
+</code></pre>
+<h1 id="2">2.</h1>
 <p>&#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130; &#xC911;&#xC5D0;&#xB294; <code>( )</code>, <code>&lt; &gt;</code>, <code>{ }</code> &#xAC19;&#xC740; &#xAD04;&#xD638;&#xAC00; &#xC30D;&#xC73C;&#xB85C; nesting &#xB418;&#xC5B4; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; 
 &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xB2E4;&#xC74C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &#xAD04;&#xD638;&#xB9CC; &#xBAA8;&#xB450; &#xC81C;&#xAC70;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <p>&#xCCAB;&#xBC88;&#xC9F8; &#xBC29;&#xBC95;:</p>
@@ -806,7 +820,7 @@ sed -E <span class="hljs-string">&apos;:X s/__attr__\s*\([^()]*\)//g; s/(__attr_
 ((foo))  ((bar))  ((zoo))$
 ((foo))  ((bar))  ((zoo))
 </code></pre>
-<h1 id="2">2.</h1>
+<h1 id="3">3.</h1>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xC788;&#xB294; <code>,</code> &#xCF64;&#xB9C8;&#xB97C; &#xBAA8;&#xB450; &#xC81C;&#xAC70;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;John Doe, model (dell, 24, inch), 847483992, (100, foo, infinity) loop&quot;</span> |
 sed -E <span class="hljs-string">&apos;:X s/(\([^)]*),/\1/g; l; tX&apos;</span>
