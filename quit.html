@@ -473,7 +473,10 @@
 <h4 id="q-exitcode--q-exitcode">q <em>[exit-code]</em> , Q <em>[exit-code]</em></h4>
 <h5 id="1-&#xB354;-&#xC774;&#xC0C1;-&#xBA85;&#xB839;-&#xC0AC;&#xC774;&#xD074;&#xC744;-&#xC9C4;&#xD589;&#xD558;&#xC9C0;-&#xC54A;&#xACE0;-&#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;">1. &#xB354; &#xC774;&#xC0C1; &#xBA85;&#xB839; &#xC0AC;&#xC774;&#xD074;&#xC744; &#xC9C4;&#xD589;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;.</h5>
 <h5 id="2-&#xC885;&#xB8CC;-&#xC0C1;&#xD0DC;-&#xAC12;&#xC744;-&#xC9C0;&#xC815;&#xD560;-&#xC218;-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;">2. &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</h5>
-<p><code>q</code> &#xC640; <code>Q</code> &#xBA85;&#xB839;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC740; &#xC790;&#xB3D9; &#xCD9C;&#xB825; &#xBAA8;&#xB4DC;&#xC77C; &#xACBD;&#xC6B0; <code>q</code> &#xBA85;&#xB839;&#xC740; &#xC885;&#xB8CC;&#xC804;&#xC5D0; &#xD604;&#xC7AC; pattern space &#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xACE0;
+<p>sed &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD56D;&#xC0C1; &#xC2E4;&#xD589; &#xACB0;&#xACFC; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; <code>0</code> &#xC785;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; grep &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xC774; &#xD2B9;&#xC815; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xC624;&#xB958; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB824;&#xBA74; quit &#xBA85;&#xB839;&#xC744; 
+&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>q</code> &#xC640; <code>Q</code> &#xBA85;&#xB839;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC740; &#xC790;&#xB3D9; &#xCD9C;&#xB825; &#xBAA8;&#xB4DC;&#xC77C; &#xACBD;&#xC6B0; <code>q</code> &#xBA85;&#xB839;&#xC740; &#xC885;&#xB8CC;&#xC804;&#xC5D0; &#xD604;&#xC7AC; pattern space &#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xACE0;
 <code>Q</code> &#xBA85;&#xB839;&#xC740; &#xCD9C;&#xB825;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
 sed &#xC5D0;&#xC11C; <code>-n</code> &#xC635;&#xC158;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; &#xB450; &#xBA85;&#xB839;&#xC740; &#xCC28;&#xC774;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># q : &#xC885;&#xB8CC;&#xC2DC; patten space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
@@ -491,6 +494,27 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> 
 $
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">4</span>
+---------------------------------------------
+
+<span class="hljs-comment"># &#xC785;&#xB825;&#xB418;&#xB294; &#xAC12; &#xC911;&#xC5D0; &quot;226 Transfer complete&quot; &#xBB38;&#xC7A5;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12; 0 &#xC744; &#xBC18;&#xD658;&#xD558;&#xACE0; &#xC885;&#xB8CC;&#xD558;&#xACE0;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;
+230 Login successful.
+226 Transfer complete.
+250 Directory successfully changed.
+&quot;</span> | sed <span class="hljs-string">&apos;/226 Transfer complete/Q0; $!d; Q1&apos;</span>
+
+$ <span class="hljs-built_in">echo</span> $?
+<span class="hljs-number">0</span>
+
+<span class="hljs-comment"># &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0;&#xB294; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12; 1 &#xC744; &#xBC18;&#xD658;&#xD558;&#xACE0; &#xC885;&#xB8CC;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;
+230 Login successful.
+XXX Transfer complete.
+250 Directory successfully changed.
+&quot;</span> | sed <span class="hljs-string">&apos;/226 Transfer complete/Q0; $!d; Q1&apos;</span>
+
+$ <span class="hljs-built_in">echo</span> $?
+<span class="hljs-number">1</span>
 </code></pre>
 <p>sed &#xB294; stream editor &#xB85C;&#xC368; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC5B4;&#xB5A4; &#xCD9C;&#xB825; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB358; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xD30C;&#xC77C;&#xC758; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB05D;&#xAE4C;&#xC9C0;&#xB97C; &#xBAA8;&#xB450; &#xC2A4;&#xCE94;&#xD569;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC758; &#xC0AC;&#xC774;&#xC988;&#xAC00; &#xD074; &#xACBD;&#xC6B0; &#xD56D;&#xC0C1; &#xC5F0;&#xC0B0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xB294; &#xC2DC;&#xC810;&#xC5D0;&#xC11C; quit &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xC885;&#xB8CC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
