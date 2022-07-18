@@ -479,18 +479,16 @@
 <code>q</code> &#xC640; <code>Q</code> &#xBA85;&#xB839;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC740; &#xC790;&#xB3D9; &#xCD9C;&#xB825; &#xBAA8;&#xB4DC;&#xC77C; &#xACBD;&#xC6B0; <code>q</code> &#xBA85;&#xB839;&#xC740; &#xC885;&#xB8CC;&#xC804;&#xC5D0; &#xD604;&#xC7AC; pattern space &#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xACE0;
 <code>Q</code> &#xBA85;&#xB839;&#xC740; &#xCD9C;&#xB825;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
 sed &#xC5D0;&#xC11C; <code>-n</code> &#xC635;&#xC158;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; &#xB450; &#xBA85;&#xB839;&#xC740; &#xCC28;&#xC774;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># q : &#xC885;&#xB8CC;&#xC2DC; patten space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;AA\nBB\nCC\nDD\nEE&quot;</span> | sed <span class="hljs-string">&apos;N;N;q3&apos;</span>
-AA
-BB
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;AA\nBB\nCC\nDD\nEE&quot;</span> | sed <span class="hljs-string">&apos;N;N;q3&apos;</span>     <span class="hljs-comment"># q </span>
+AA                                                <span class="hljs-comment"># &#xC885;&#xB8CC;&#xC2DC; patten space &#xC5D0; &#xC788;&#xB294; </span>
+BB                                                <span class="hljs-comment"># &#xB0B4;&#xC6A9;&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
 CC
 
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">3</span>
 ---------------------------------------------
 
-<span class="hljs-comment"># Q</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;AA\nBB\nCC\nDD\nEE&quot;</span> | sed <span class="hljs-string">&apos;N;N;Q4&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;AA\nBB\nCC\nDD\nEE&quot;</span> | sed <span class="hljs-string">&apos;N;N;Q4&apos;</span>     <span class="hljs-comment"># Q</span>
 $
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">4</span>
