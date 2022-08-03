@@ -644,6 +644,15 @@ $ readelf -Wa /bin/date | sed -n <span class="hljs-string">&apos;/Section Header
   [<span class="hljs-number">26</span>] .gnu_debuglink  PROGBITS     <span class="hljs-number">0000000000000000</span> <span class="hljs-number">01</span>a0a0 <span class="hljs-number">000034</span> <span class="hljs-number">00</span>      <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">4</span>
   [<span class="hljs-number">27</span>] .shstrtab       STRTAB       <span class="hljs-number">0000000000000000</span> <span class="hljs-number">01</span>a0d4 <span class="hljs-number">00011</span>d <span class="hljs-number">00</span>      <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">1</span>
 </code></pre>
+<p><code>//d</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &#xD55C;&#xAC00;&#xC9C0; &#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; &#xD2B9;&#xC815; &#xB77C;&#xC778;&#xBD80;&#xD130; &#xB9C8;&#xC9C0;&#xB9C9;&#xAE4C;&#xC9C0; &#xCD9C;&#xB825;&#xD560; &#xB54C;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C;&#xB294; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <code>$</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC548;&#xB418;&#xACE0;  &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294; 
+&#xC784;&#xC758;&#xC758; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#xACB0;&#xACFC;&#xAC00; &#xC62C;&#xBC14;&#xB974;&#xC9C0; &#xC54A;&#xB2E4;. Displaying notes ... &#xB77C;&#xC778;&#xC774; &#xBAA8;&#xB450; &#xC0AD;&#xC81C;&#xAC00; &#xB41C;&#xB2E4;.</span>
+$ readelf -Wa /bin/date | sed -En <span class="hljs-string">&apos;/Displaying notes/,${ //d; p }&apos;</span>
+
+<span class="hljs-comment"># OK. &#xCCAB;&#xBC88;&#xC9F8; Displaying notes ... &#xB77C;&#xC778;&#xB9CC; &#xC0AD;&#xC81C;&#xAC00; &#xB41C;&#xB2E4;.</span>
+$ readelf -Wa /bin/date | sed -En <span class="hljs-string">&apos;/Displaying notes/,/\a/{ //d; p }&apos;</span>
+</code></pre>
 <h4 id="&#xAD6C;&#xBD84;&#xC790;&#xB97C;-&#xB2E4;&#xB978;-&#xBB38;&#xC790;&#xB85C;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;"><code>/../../</code> &#xAD6C;&#xBD84;&#xC790;&#xB97C; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h4>
 <p>&#xC774; &#xAE30;&#xB2A5;&#xC740; addresses &#xBA54;&#xB274;&#xC5D0;&#xC11C;&#xB3C4; &#xB098;&#xC654;&#xB294;&#xB370;&#xC694;. <code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB3C4; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xCC28;&#xC774;&#xC810;&#xC740; <code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C;&#xB294; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xBB38;&#xC790;&#xB97C; escape &#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &#xBAA8;&#xB450; escape &#xD574;&#xC57C; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC00;&#xB3C5;&#xC131;&#xC774; &#xB5A8;&#xC5B4;&#xC9C4;&#xB2E4;.</span>
