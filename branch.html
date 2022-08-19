@@ -863,6 +863,62 @@ $ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/
 
 ... sells sea ...... by the sea .....
 </code></pre>
+<h1 id="5-">5 .</h1>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC73C;&#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAC01; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; <code>---------------</code> &#xAD6C;&#xBD84;&#xC120;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACE0;
+&#xB370;&#xC774;&#xD130; &#xD56D;&#xBAA9;&#xC911;&#xC5D0; <code>Type:</code> &#xAC12;&#xC774; <code>normal (base)</code> &#xC77C; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xB808;&#xCF54;&#xB4DC;&#xB97C; &#xC0AD;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh">$ cat data
+UUID:           d7329035-<span class="hljs-number">18</span>f1-<span class="hljs-number">4981</span>-b281-ad73298<span class="hljs-built_in">cd</span>0de
+Type:           normal (differencing)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+
+UUID:           a3dea7af-<span class="hljs-number">4085</span>-<span class="hljs-number">4954</span>-aea3-<span class="hljs-number">4</span>bfd05fccca9
+Type:           normal (base)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+
+UUID:           dba798e4<span class="hljs-operator">-a</span>2bc-<span class="hljs-number">40</span>d7-<span class="hljs-number">8</span>f36-<span class="hljs-number">3</span>ba52adc24a4
+Type:           normal (differencing)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+
+UUID:           <span class="hljs-number">4</span>aa1b457<span class="hljs-operator">-f</span>5ca-<span class="hljs-number">4</span>bb4-<span class="hljs-number">913</span>f-<span class="hljs-number">9</span>b66ca1e7137
+Type:           normal (differencing)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+</code></pre>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#xC704;&#xC5D0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBCF4;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9; &#xB808;&#xCF54;&#xB4DC;&#xB294; &#xB05D;&#xC5D0; &#xACF5;&#xBC31;&#xB77C;&#xC778;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xAC8C;&#xB418;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xBE60;&#xC9C0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/^UUID/,/^$/{ /^$/{ g; p; z; x; i-----------------&apos;</span> \
+          <span class="hljs-operator">-e</span> <span class="hljs-string">&apos; b; }; H; }&apos;</span> data
+
+<span class="hljs-comment"># &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; $bX (&#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC77C; &#xACBD;&#xC6B0; :X &#xB808;&#xC774;&#xBE14;&#xB85C; &#xBD84;&#xAE30;) &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+$ sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/^UUID/,/^$/{ /^$/{ :X g; p; z; x;  i-----------------&apos;</span> \
+          <span class="hljs-operator">-e</span> <span class="hljs-string">&apos; b; }; H; $bX }&apos;</span> data
+
+$ sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/^UUID/,/^$/{ /^$/{ :X g; /\nType:\s+normal\s+\(base\)/!p; &apos;</span> \
+          <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;z; x;  i-----------------&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos; b; }; H; $bX }&apos;</span> data
+
+UUID:           d7329035-<span class="hljs-number">18</span>f1-<span class="hljs-number">4981</span>-b281-ad73298<span class="hljs-built_in">cd</span>0de
+Type:           normal (differencing)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+-----------------
+-----------------
+
+UUID:           dba798e4<span class="hljs-operator">-a</span>2bc-<span class="hljs-number">40</span>d7-<span class="hljs-number">8</span>f36-<span class="hljs-number">3</span>ba52adc24a4
+Type:           normal (differencing)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+-----------------
+
+UUID:           <span class="hljs-number">4</span>aa1b457<span class="hljs-operator">-f</span>5ca-<span class="hljs-number">4</span>bb4-<span class="hljs-number">913</span>f-<span class="hljs-number">9</span>b66ca1e7137
+Type:           normal (differencing)
+Capacity:       <span class="hljs-number">20480</span> MBytes
+Encryption:     disabled
+-----------------
+</code></pre>
 
                     
                     </section>
