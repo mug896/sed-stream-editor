@@ -468,45 +468,21 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="tips">Tips</h1>
-<p>&#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xAC70;&#xB098; N &#xBC88;&#xC9F8; &#xD544;&#xB4DC;&#xB97C; &#xCD94;&#xCD9C;&#xD560; &#xB54C;&#xB294;
-sed &#xBCF4;&#xB2E4;&#xB294; grep, awk &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ df -h
-Filesystem      Size  Used Avail Use% Mounted on
-udev            <span class="hljs-number">7.8</span>G     <span class="hljs-number">0</span>  <span class="hljs-number">7.8</span>G   <span class="hljs-number">0</span>% /dev
-tmpfs           <span class="hljs-number">1.6</span>G  <span class="hljs-number">1.7</span>M  <span class="hljs-number">1.6</span>G   <span class="hljs-number">1</span>% /run
-/dev/sda5        <span class="hljs-number">28</span>G   <span class="hljs-number">13</span>G   <span class="hljs-number">14</span>G  <span class="hljs-number">49</span>% /
-tmpfs           <span class="hljs-number">7.8</span>G   <span class="hljs-number">67</span>M  <span class="hljs-number">7.8</span>G   <span class="hljs-number">1</span>% /dev/shm
+<h4 id="sed-&#xBA85;&#xB839;&#xC744;-&#xBCC0;&#xC218;&#xC5D0;-&#xC800;&#xC7A5;&#xD574;-&#xC2E4;&#xD589;">sed &#xBA85;&#xB839;&#xC744; &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xC2E4;&#xD589;</h4>
+<pre><code class="lang-sh">$ AA=<span class="hljs-string">&quot;s/^/X/&quot;</span> BB=<span class="hljs-string">&apos;s/$/Y/&apos;</span>
 
-<span class="hljs-comment"># &quot;&#xC22B;&#xC790;%&quot; &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xCD9C;</span>
-$ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%)|./\1/g&apos;</span>
-<span class="hljs-number">0</span>%
-<span class="hljs-number">1</span>%
-<span class="hljs-number">49</span>%
-<span class="hljs-number">1</span>%
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">12345</span> | sed <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>; <span class="hljs-variable">$BB</span>&quot;</span>
+X12345Y
 
-<span class="hljs-comment"># grep &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</span>
-$ df -h | grep -Eo <span class="hljs-string">&apos;[0-9]+%&apos;</span>
-<span class="hljs-number">0</span>%
-<span class="hljs-number">1</span>%
-<span class="hljs-number">49</span>%
-<span class="hljs-number">1</span>%
---------------------------------------------
+$ CC=<span class="hljs-string">&quot;i-------&quot;</span>
 
-<span class="hljs-comment"># 4&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; &#xCD94;&#xCD9C;</span>
-$ df -h | sed -E <span class="hljs-string">&apos;s/(\S+\s+){3}(\S+).*/\2/&apos;</span>
-Avail
-<span class="hljs-number">7.8</span>G
-<span class="hljs-number">1.6</span>G
-<span class="hljs-number">14</span>G
-<span class="hljs-number">7.8</span>G
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">12345</span> | sed <span class="hljs-string">&quot;<span class="hljs-variable">$CC</span>; <span class="hljs-variable">$AA</span>; <span class="hljs-variable">$BB</span>&quot;</span>            <span class="hljs-comment"># i, a, c &#xBA85;&#xB839;&#xC740; </span>
+-------; s/^/X/; s/$/Y/
+<span class="hljs-number">12345</span>
 
-<span class="hljs-comment"># awk &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</span>
-$ df -h | awk <span class="hljs-string">&apos;{ print $4 }&apos;</span>
-Avail
-<span class="hljs-number">7.8</span>G
-<span class="hljs-number">1.6</span>G
-<span class="hljs-number">14</span>G
-<span class="hljs-number">7.8</span>G
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">12345</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;<span class="hljs-variable">$CC</span>&quot;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;<span class="hljs-variable">$AA</span>; <span class="hljs-variable">$BB</span>&quot;</span>     <span class="hljs-comment"># -e &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</span>
+-------
+X12345Y
 </code></pre>
 <h4 id="pattern-space-&#xC5D0;-&#xB77C;&#xC778;&#xC744;-insert-append-&#xD558;&#xAE30;">pattern space &#xC5D0; &#xB77C;&#xC778;&#xC744; insert, append &#xD558;&#xAE30;</h4>
 <p><code>i</code>, <code>a</code> &#xBA85;&#xB839;&#xC740; pattern space &#xC5D0;&#xB294; &#xB77C;&#xC778;&#xC774; &#xCD94;&#xAC00;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
@@ -603,6 +579,47 @@ $ sed -En <span class="hljs-string">&apos;/(([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25
 <span class="hljs-number">192.168</span>.<span class="hljs-number">0.1</span>
 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
 <span class="hljs-number">10.1</span>.<span class="hljs-number">2.4</span>
+</code></pre>
+<h4 id="sed-&#xBCF4;&#xB2E4;-&#xB2E4;&#xB978;-&#xBA85;&#xB839;&#xC744;-&#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC8C;-&#xD6A8;&#xC728;&#xC801;&#xC77C;-&#xACBD;&#xC6B0;">sed &#xBCF4;&#xB2E4; &#xB2E4;&#xB978; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC8C; &#xD6A8;&#xC728;&#xC801;&#xC77C; &#xACBD;&#xC6B0;</h4>
+<p>&#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xAC70;&#xB098; N &#xBC88;&#xC9F8; &#xD544;&#xB4DC;&#xB97C; &#xCD94;&#xCD9C;&#xD560; &#xB54C;&#xB294;
+sed &#xBCF4;&#xB2E4;&#xB294; grep, awk &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            <span class="hljs-number">7.8</span>G     <span class="hljs-number">0</span>  <span class="hljs-number">7.8</span>G   <span class="hljs-number">0</span>% /dev
+tmpfs           <span class="hljs-number">1.6</span>G  <span class="hljs-number">1.7</span>M  <span class="hljs-number">1.6</span>G   <span class="hljs-number">1</span>% /run
+/dev/sda5        <span class="hljs-number">28</span>G   <span class="hljs-number">13</span>G   <span class="hljs-number">14</span>G  <span class="hljs-number">49</span>% /
+tmpfs           <span class="hljs-number">7.8</span>G   <span class="hljs-number">67</span>M  <span class="hljs-number">7.8</span>G   <span class="hljs-number">1</span>% /dev/shm
+
+<span class="hljs-comment"># &quot;&#xC22B;&#xC790;%&quot; &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xCD9C;</span>
+$ df -h | sed -E <span class="hljs-string">&apos;s/([0-9]+%)|./\1/g&apos;</span>
+<span class="hljs-number">0</span>%
+<span class="hljs-number">1</span>%
+<span class="hljs-number">49</span>%
+<span class="hljs-number">1</span>%
+
+<span class="hljs-comment"># grep &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</span>
+$ df -h | grep -Eo <span class="hljs-string">&apos;[0-9]+%&apos;</span>
+<span class="hljs-number">0</span>%
+<span class="hljs-number">1</span>%
+<span class="hljs-number">49</span>%
+<span class="hljs-number">1</span>%
+--------------------------------------------
+
+<span class="hljs-comment"># 4&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; &#xCD94;&#xCD9C;</span>
+$ df -h | sed -E <span class="hljs-string">&apos;s/(\S+\s+){3}(\S+).*/\2/&apos;</span>
+Avail
+<span class="hljs-number">7.8</span>G
+<span class="hljs-number">1.6</span>G
+<span class="hljs-number">14</span>G
+<span class="hljs-number">7.8</span>G
+
+<span class="hljs-comment"># awk &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD6A8;&#xC728;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</span>
+$ df -h | awk <span class="hljs-string">&apos;{ print $4 }&apos;</span>
+Avail
+<span class="hljs-number">7.8</span>G
+<span class="hljs-number">1.6</span>G
+<span class="hljs-number">14</span>G
+<span class="hljs-number">7.8</span>G
 </code></pre>
 
                     
