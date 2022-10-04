@@ -679,6 +679,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc %-
 abcX %-= defX.
 </code></pre>
 <h3 id="subexpressions-and-backreferences">Subexpressions and Back-references</h3>
+<p><img src="images/group.png"></p>
 <p>regex &#xC5D0;&#xC11C; <code>( )</code> &#xB97C; &#xD558;&#xBA74; subexpression &#xC774; &#xB429;&#xB2C8;&#xB2E4;.
 &#xC774; subexpression &#xC740; <code>{ }</code>, <code>+</code>, <code>*</code> &#xC640; &#xAC19;&#xC740;  &#xC218;&#xB7C9; &#xD55C;&#xC815;&#xC790;&#xC640; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa@bbb@&quot;</span> | sed -En <span class="hljs-string">&apos;/^\w+@$/p&apos;</span>
