@@ -802,7 +802,7 @@ $ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-str
                             modify --netname &lt;name&gt;
 
 $ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/VBoxManage natnetwork/\a&amp;\a/;&apos;</span> \
-    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//; s/      /foobar/; p&apos;</span>
+    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//; s/[ ]{6}/foobar/; p&apos;</span>
 foobar                      add --netname &lt;name&gt;
 foobar                      remove --netname &lt;name&gt;
 foobar                      modify --netname &lt;name&gt;
