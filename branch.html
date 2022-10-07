@@ -809,6 +809,8 @@ foobar                      modify --netname &lt;name&gt;
 
 <span class="hljs-comment"># perl &#xC758;&#xACBD;&#xC6B0;&#xB294; e (execute) &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xCE58;&#xD658;&#xAC12;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/&quot; &quot; x length($1)/e&apos;</span>
+
+$ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/foobar . &quot; &quot; x (length($1) - 6)/e&apos;</span>
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; <code>[Ss]h</code> &#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xB2E8;&#xC5B4;&#xB97C; length &#xB97C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xBAA8;&#xB450; <code>.</code> &#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;She sells sea shells by the sea shore&quot;</span> | 
