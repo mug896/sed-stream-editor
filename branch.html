@@ -871,7 +871,7 @@ VBoxManage natnetwork       remove --netname &lt;name&gt;
 VBoxManage natnetwork       modify --netname &lt;name&gt;
 
 $ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/VBoxManage natnetwork/\a&amp;\a/;&apos;</span> \
-    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a([ ]*).(.*)\a/\a\1 \2\a/; /\a[ ]*\a/{s/\a//g; p;}; tX;&apos;</span>
+    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; s/\a\a//p; tX;&apos;</span>
                             add --netname &lt;name&gt;
                             remove --netname &lt;name&gt;
                             modify --netname &lt;name&gt;
