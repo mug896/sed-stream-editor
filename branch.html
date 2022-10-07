@@ -516,16 +516,16 @@ T YY1; t YY2
 
 <span class="hljs-comment"># s/@/:/g &#xAC00; &#xC131;&#xACF5;&#xD558;&#xBA74; tX &#xC5D0;&#xC758;&#xD574; :X &#xB808;&#xC774;&#xBE14;&#xB85C; &#xBD84;&#xAE30;&#xD574; p &#xCD9C;&#xB825;&#xC774; &#xB418;&#xAC8C;&#xD558;&#xACE0;</span>
 <span class="hljs-comment"># &#xC2E4;&#xD328;&#xD560; &#xACBD;&#xC6B0;&#xB294; b &#xBA85;&#xB839;&#xC5D0; &#xC758;&#xD574; END &#xB85C; &#xBD84;&#xAE30;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xAC8C;&#xD55C;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo@bar@zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; s/@/:/g; tX; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo@bar@zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; s/@/:/g; tX; b; :X p&apos;</span>
 foo:bar:zoo
 
 <span class="hljs-comment"># &#xD558;&#xC9C0;&#xB9CC; s/@/:/g &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD328;&#xD558;&#xC600;&#xB294;&#xB370;&#xB3C4; &#xC55E;&#xC120; s &#xBA85;&#xB839;&#xC774; &#xC131;&#xACF5;&#xD558;&#xC5EC; &#xAC12;&#xC774; &#xCD9C;&#xB825;&#xC774; &#xB41C;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo/bar/zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; s/@/:/g; tX; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo/bar/zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; s/@/:/g; tX; b; :X p&apos;</span>
 foo/bar/zoo
 
 <span class="hljs-comment"># s/@/:/g &#xBA85;&#xB839; &#xC0AC;&#xC6A9;&#xC804;&#xC5D0; tR :R &#xB97C; &#xC774;&#xC6A9;&#xD574; flag &#xAC12;&#xC744; 0 &#xC73C;&#xB85C; &#xB9AC;&#xC14B;&#xD55C;&#xB2E4;.</span>
 <span class="hljs-comment"># s/@/:/g &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD328;&#xD558;&#xC5EC; &#xAE30;&#xB300;&#xD558;&#xC600;&#xB358; &#xAC83;&#xACFC; &#xAC19;&#xC774; &#xAC12;&#xC774; &#xCD9C;&#xB825;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo/bar/zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; tR :R s/@/:/g; tX; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo/bar/zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; tR :R s/@/:/g; tX; b; :X p&apos;</span>
 $
 </code></pre>
 <h4 id="substitute-&#xBA85;&#xB839;&#xC744;-&#xC0AC;&#xC6A9;&#xD560;-&#xB54C;-g-&#xD50C;&#xB798;&#xADF8;-&#xC640;-branch-&#xC758;-&#xCC28;&#xC774;">substitute &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; g &#xD50C;&#xB798;&#xADF8; &#xC640; branch &#xC758; &#xCC28;&#xC774;</h4>
