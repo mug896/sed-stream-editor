@@ -796,10 +796,16 @@ VBoxManage natnetwork       remove --netname &lt;name&gt;
 VBoxManage natnetwork       modify --netname &lt;name&gt;
 
 $ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/VBoxManage natnetwork/\a&amp;\a/;&apos;</span> \
-    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//p;&apos;</span>
+    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//; p&apos;</span>
                             add --netname &lt;name&gt;
                             remove --netname &lt;name&gt;
                             modify --netname &lt;name&gt;
+
+$ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/VBoxManage natnetwork/\a&amp;\a/;&apos;</span> \
+    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//; s/      /foobar/; p&apos;</span>
+foobar                      add --netname &lt;name&gt;
+foobar                      remove --netname &lt;name&gt;
+foobar                      modify --netname &lt;name&gt;
 
 <span class="hljs-comment"># perl &#xC758;&#xACBD;&#xC6B0;&#xB294; e (execute) &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xCE58;&#xD658;&#xAC12;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/&quot; &quot; x length($1)/e&apos;</span>
