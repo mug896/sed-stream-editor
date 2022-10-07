@@ -786,7 +786,31 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bb
     sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/foo/&amp;/; tX; s/bar/zzz/; p; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/bar/xxx/; p&apos;</span>
 aaa bbb zoo ccc zzz ddd
 </code></pre>
-<h1 id="2">2.</h1>
+<h1 id="2-">2 .</h1>
+<p>&#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xB2E4;&#xB978; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC740; <code>s</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xD560;&#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
+&#xC784;&#xC758;&#xC758; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; length &#xB97C; &#xADF8;&#xB300;&#xB85C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xB2E4;&#xB978;&#xBB38;&#xC790;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &quot;VBoxManage natnetwork&quot; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; length &#xB97C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; space &#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh">$ cat file
+VBoxManage natnetwork       add --netname &lt;name&gt;
+VBoxManage natnetwork       remove --netname &lt;name&gt;
+VBoxManage natnetwork       modify --netname &lt;name&gt;
+
+$ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/VBoxManage natnetwork/\a&amp;\a/;&apos;</span> \
+    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//p;&apos;</span>
+                            add --netname &lt;name&gt;
+                            remove --netname &lt;name&gt;
+                            modify --netname &lt;name&gt;
+
+<span class="hljs-comment"># perl &#xC758;&#xACBD;&#xC6B0;&#xB294; e (execute) &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xCE58;&#xD658;&#xAC12;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/&quot; &quot; x length($1)/e&apos;</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>[Ss]h</code> &#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xB2E8;&#xC5B4;&#xB97C; length &#xB97C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xBAA8;&#xB450; <code>.</code> &#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;She sells sea shells by the sea shore&quot;</span> | 
+    sed -E <span class="hljs-string">&apos;:X s/([Ss]h\.*)[^. ]/\1./; tX; s/[Ss]h/../g&apos;</span>
+
+... sells sea ...... by the sea .....
+</code></pre>
+<h1 id="3-">3 .</h1>
 <p>&#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130; &#xC911;&#xC5D0;&#xB294; <code>( )</code>, <code>&lt; &gt;</code>, <code>{ }</code> &#xAC19;&#xC740; &#xAD04;&#xD638;&#xAC00; &#xC30D;&#xC73C;&#xB85C; nesting &#xB418;&#xC5B4; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; 
 &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xB2E4;&#xC74C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &#xAD04;&#xD638;&#xB9CC; &#xBAA8;&#xB450; &#xC81C;&#xAC70;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <p>&#xCCAB;&#xBC88;&#xC9F8; &#xBC29;&#xBC95;:</p>
@@ -842,7 +866,7 @@ sed -E <span class="hljs-string">&apos;:X s/__attr__\s*\([^()]*\)//g; s/(__attr_
 ((foo))  ((bar))  ((zoo))$
 ((foo))  ((bar))  ((zoo))
 </code></pre>
-<h1 id="3">3.</h1>
+<h1 id="4-">4 .</h1>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xC788;&#xB294; <code>,</code> &#xCF64;&#xB9C8;&#xB97C; &#xBAA8;&#xB450; &#xC81C;&#xAC70;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;John Doe, model (dell, 24, inch), 847483992, (100, foo, infinity) loop&quot;</span> |
 sed -E <span class="hljs-string">&apos;:X s/(\([^)]*),/\1/g; l; tX&apos;</span>
@@ -860,30 +884,6 @@ John Doe, model (dell <span class="hljs-number">24</span> inch), <span class="hl
    <span class="hljs-string">&apos;(dell, 24,&apos;</span> &#xAE4C;&#xC9C0;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
 
 <span class="hljs-number">3</span>. &#xC774;&#xD6C4; <span class="hljs-string">&apos;\1&apos;</span> &#xC5D0;&#xC758;&#xD574; <span class="hljs-string">&apos;,&apos;</span> &#xCF64;&#xB9C8;&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBD80;&#xBD84;&#xB9CC; &#xCDE8;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xAD04;&#xD638;&#xC548;&#xC5D0; &#xC788;&#xB294; &#xCF64;&#xB9C8;&#xAC00; &#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;.
-</code></pre>
-<h1 id="4-">4 .</h1>
-<p>&#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xB2E4;&#xB978; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC740; <code>s</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xD560;&#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
-&#xC784;&#xC758;&#xC758; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; length &#xB97C; &#xADF8;&#xB300;&#xB85C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xB2E4;&#xB978;&#xBB38;&#xC790;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
-<p>&#xB2E4;&#xC74C;&#xC740; &quot;VBoxManage natnetwork&quot; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; length &#xB97C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; space &#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-sh">$ cat file
-VBoxManage natnetwork       add --netname &lt;name&gt;
-VBoxManage natnetwork       remove --netname &lt;name&gt;
-VBoxManage natnetwork       modify --netname &lt;name&gt;
-
-$ cat file | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/VBoxManage natnetwork/\a&amp;\a/;&apos;</span> \
-    <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/\a.(.*)\a/ \a\1\a/; tX; s/\a\a//p;&apos;</span>
-                            add --netname &lt;name&gt;
-                            remove --netname &lt;name&gt;
-                            modify --netname &lt;name&gt;
-
-<span class="hljs-comment"># perl &#xC758;&#xACBD;&#xC6B0;&#xB294; e (execute) &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xCE58;&#xD658;&#xAC12;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-$ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/&quot; &quot; x length($1)/e&apos;</span>
-</code></pre>
-<p>&#xB2E4;&#xC74C;&#xC740; <code>[Ss]h</code> &#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xB2E8;&#xC5B4;&#xB97C; length &#xB97C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xBAA8;&#xB450; <code>.</code> &#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;She sells sea shells by the sea shore&quot;</span> | 
-    sed -E <span class="hljs-string">&apos;:X s/([Ss]h\.*)[^. ]/\1./; tX; s/[Ss]h/../g&apos;</span>
-
-... sells sea ...... by the sea .....
 </code></pre>
 <h1 id="5-">5 .</h1>
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC73C;&#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
