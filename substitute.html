@@ -690,6 +690,26 @@ bcab
 <p>filename &#xC740; &#xD574;&#xB2F9;&#xC2DD;&#xC5D0;&#xC11C; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC704;&#xCE58;&#xD574;&#xC57C; &#xD558;&#xACE0; &#xB4A4;&#xC5D0; &#xC774;&#xC5B4;&#xC11C; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xB098; &#xBA85;&#xB839;&#xC774; &#xC624;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4;.
 &#xC774;&#xD6C4; &#xC5F0;&#xC774;&#xC5B4;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>-e</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC2DD;&#xC744; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h1 id="quiz">Quiz</h1>
+<p>&#xC785;&#xB825; &#xB77C;&#xC778;&#xC5D0;&#xC11C; <code>foo</code> &#xC640; <code>zoo</code> &#xB2E8;&#xC5B4; &#xC0AC;&#xC774;&#xC5D0; <code>bar</code> &#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74;
+<code>.*</code> &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC04;&#xB2E8;&#xD788; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.</p>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo bar zoo&apos;</span> | sed -En <span class="hljs-string">&apos;/^foo.*bar.*zoo$/p&apos;</span>
+foo bar zoo
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo xxx zoo&apos;</span> | sed -En <span class="hljs-string">&apos;/^foo.*bar.*zoo$/p&apos;</span>
+$
+</code></pre>
+<p>&#xBC18;&#xB300;&#xB85C; <code>foo</code> &#xC640; <code>zoo</code> &#xB2E8;&#xC5B4; &#xC0AC;&#xC774;&#xC5D0; <code>bar</code> &#xAC00; &#xC5C6;&#xC744; &#xACBD;&#xC6B0;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo bar zoo&apos;</span> | sed -En <span class="hljs-string">&apos;h; s/^foo(.*)zoo$/\1/; /bar/!{g;p}&apos;</span>
+$
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo xxx zoo&apos;</span> | sed -En <span class="hljs-string">&apos;h; s/^foo(.*)zoo$/\1/; /bar/!{g;p}&apos;</span>
+foo xxx zoo
+
+<span class="hljs-comment"># perl &#xC758; &#xACBD;&#xC6B0;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; negative lookahead &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo xxx zoo&apos;</span> | perl <span class="hljs-operator">-ne</span> <span class="hljs-string">&apos;/^foo(?!.*bar).*zoo$/ &amp;&amp; print&apos;</span>
+foo xxx zoo
+</code></pre>
+<h1 id="2-">2 .</h1>
 <p><code>bc</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC785;&#xB825;&#xACFC; &#xCD9C;&#xB825;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; base ( &#xC9C4;&#xBC95; ) &#xC744; &#xB9C8;&#xC74C;&#xB300;&#xB85C; &#xC870;&#xC815;&#xD560; &#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
 &#xCD9C;&#xB825;&#xC744; 2 &#xC9C4;&#xBC95;&#xC73C;&#xB85C; &#xD588;&#xC744; &#xB54C; byte &#xB2E8;&#xC704;&#xB85C; &#xC22B;&#xC790;&#xB97C; 8 &#xAC1C;&#xC529; &#xAD6C;&#xBD84;&#xD574;&#xC11C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC785;&#xB825;&#xC740; 16 &#xC9C4;&#xC218;, &#xCD9C;&#xB825;&#xC740; 2 &#xC9C4;&#xC218;&#xB85C; &#xD588;&#xC744;&#xB54C; byte &#xB2E8;&#xC704;&#xB85C; &#xAD6C;&#xBD84;&#xD558;&#xAE30;&#xAC00; &#xC5B4;&#xB835;&#xB2E4;.</span>
@@ -707,7 +727,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=
 <blockquote>
 <p>bc &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xB550; obase &#xAC00; ibase &#xC55E;&#xC5D0; &#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<h1 id="2">2.</h1>
+<h1 id="3-">3 .</h1>
 <p>&#xB2E4;&#xC74C; file &#xB0B4;&#xC6A9;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC744; &quot;Unix and Linux&quot; &#xB85C; &#xB9CC;&#xB4E4;&#xB824;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
 <code>&gt;&gt;</code> redirection &#xC744; &#xC774;&#xC6A9;&#xD574; append &#xB97C; &#xD558;&#xBA74; &#xACB0;&#xACFC;&#xAC00; &#xC624;&#xB978;&#xCABD;&#xACFC; &#xAC19;&#xC774; &#xB418;&#xB294;&#xB370;&#xC694;.
 &#xC5B4;&#xB5BB;&#xAC8C; &#xD558;&#xBA74; &#xB420;&#xAE4C;&#xC694;?</p>
@@ -727,7 +747,7 @@ Hello
 Welcome to
 Unix and Linux
 </code></pre>
-<h1 id="3">3.</h1>
+<h1 id="4-">4 .</h1>
 <p>&#xB2E4;&#xC74C; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xBA74; &#xC2DC;&#xC791;&#xACFC; &#xB05D;&#xBD80;&#xBD84;&#xC5D0; &#xC5EC;&#xBD84;&#xC758; newline &#xB4E4;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xB370;&#xC694;.
 &#xC81C;&#xAC70; &#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">sh$ cat file
