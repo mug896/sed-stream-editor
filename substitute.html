@@ -692,22 +692,22 @@ bcab
 <h1 id="quiz">Quiz</h1>
 <p>&#xC785;&#xB825; &#xB77C;&#xC778;&#xC5D0;&#xC11C; <code>foo</code> &#xC640; <code>zoo</code> &#xB2E8;&#xC5B4; &#xC0AC;&#xC774;&#xC5D0; <code>bar</code> &#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74;
 <code>.*</code> &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC04;&#xB2E8;&#xD788; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.</p>
-<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo bar zoo&apos;</span> | sed -En <span class="hljs-string">&apos;/^foo.*bar.*zoo$/p&apos;</span>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;x foo bar zoo x&apos;</span> | sed -En <span class="hljs-string">&apos;/.*foo.*bar.*zoo.*/p&apos;</span>
 foo bar zoo
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo xxx zoo&apos;</span> | sed -En <span class="hljs-string">&apos;/^foo.*bar.*zoo$/p&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;x foo xxx zoo x&apos;</span> | sed -En <span class="hljs-string">&apos;/.*foo.*bar.*zoo.*/p&apos;</span>
 $
 </code></pre>
 <p>&#xBC18;&#xB300;&#xB85C; <code>foo</code> &#xC640; <code>zoo</code> &#xB2E8;&#xC5B4; &#xC0AC;&#xC774;&#xC5D0; <code>bar</code> &#xAC00; &#xC5C6;&#xC744; &#xACBD;&#xC6B0;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
-<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo bar zoo&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;h; s/^foo(.*)zoo$/\1/; tX; b; :X /bar/!{g;p}&apos;</span>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;x foo bar zoo x&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;h; s/.*foo(.*)zoo.*/\1/; tX; b; :X /bar/!{g;p}&apos;</span>
 $
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo xxx zoo&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;h; s/^foo(.*)zoo$/\1/; tX; b; :X /bar/!{g;p}&apos;</span>
-foo xxx zoo
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;x foo xxx zoo x&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;h; s/.*foo(.*)zoo.*/\1/; tX; b; :X /bar/!{g;p}&apos;</span>
+x foo xxx zoo x
 
 <span class="hljs-comment"># perl &#xC758; &#xACBD;&#xC6B0;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; negative lookahead &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;foo xxx zoo&apos;</span> | perl <span class="hljs-operator">-ne</span> <span class="hljs-string">&apos;/^foo(?!.*bar).*zoo$/ &amp;&amp; print&apos;</span>
-foo xxx zoo
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;x foo xxx zoo x&apos;</span> | perl <span class="hljs-operator">-ne</span> <span class="hljs-string">&apos;/.*foo(?!.*bar).*zoo.*/ &amp;&amp; print&apos;</span>
+x foo xxx zoo x
 </code></pre>
 <h1 id="2-">2 .</h1>
 <p><code>bc</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC785;&#xB825;&#xACFC; &#xCD9C;&#xB825;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; base ( &#xC9C4;&#xBC95; ) &#xC744; &#xB9C8;&#xC74C;&#xB300;&#xB85C; &#xC870;&#xC815;&#xD560; &#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
