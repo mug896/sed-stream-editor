@@ -785,6 +785,17 @@ aaa bbb foo ccc xxx ddd
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb zoo ccc bar ddd&quot;</span> |
     sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/foo/&amp;/; tX; s/bar/zzz/; p; b&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;:X s/bar/xxx/; p&apos;</span>
 aaa bbb zoo ccc zzz ddd
+
+---------------------------------------------------------
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb foo ccc bar ddd&quot;</span> |
+    sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/foo/{ s/bar/xxx/; p; b}; s/bar/zzz/; p&apos;</span>
+aaa bbb foo ccc xxx ddd
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb zoo ccc bar ddd&quot;</span> |
+    sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/foo/{ s/bar/xxx/; p; b}; s/bar/zzz/; p&apos;</span>
+aaa bbb zoo ccc zzz ddd
 </code></pre>
 <h1 id="2-">2 .</h1>
 <p>&#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xB2E4;&#xB978; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC740; <code>s</code> &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xD560;&#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
