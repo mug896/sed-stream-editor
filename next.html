@@ -546,6 +546,36 @@ append &#xD558;&#xACE0; newline &#xC744; space &#xB85C; &#xBCC0;&#xACBD;&#xD558;
 [ max_segment_size ] <span class="hljs-number">65536</span>
 . . .
 </code></pre>
+<h1 id="2-">2 .</h1>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC774;&#xB984;, &#xB098;&#xC774;, &#xC9C1;&#xC5C5;&#xC744; &#xD56D;&#xBAA9;&#xC73C;&#xB85C; &#xAC16;&#xB294; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xC911;&#xC5D0;&#xC11C; &#xB098;&#xC774;&#xAC00; 39 &#xC774;&#xACE0; &#xC9C1;&#xC5C5;&#xC774; &#xC218;&#xD559;&#xC790;&#xC778; &#xB808;&#xCF54;&#xB4DC;&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh">$ cat ./list.txt
+&#xC774;&#xB984;: &#xC544;&#xC774;&#xC720;
+&#xB098;&#xC774;: <span class="hljs-number">29</span>
+&#xC9C1;&#xC5C5;: &#xAC00;&#xC218;
+
+&#xC774;&#xB984;: &#xD5C8;&#xC900;&#xC774;
+&#xB098;&#xC774;: <span class="hljs-number">39</span>
+&#xC9C1;&#xC5C5;: &#xC218;&#xD559;&#xC790;
+
+&#xC774;&#xB984;: &#xBC31;&#xC885;&#xC6D0;
+&#xB098;&#xC774;: <span class="hljs-number">56</span>
+&#xC9C1;&#xC5C5;: &#xC694;&#xB9AC;&#xC0AC;
+
+--------------------
+
+$ sed -n <span class="hljs-string">&apos;/&#xC774;&#xB984;/ {             # &#xC785;&#xB825;&#xB77C;&#xC778;&#xC774; &quot;&#xC774;&#xB984;&quot; &#xACFC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xBA74;
+    N                         # &#xB2E4;&#xC74C; &#xB77C;&#xC778;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC5EC; append &#xD569;&#xB2C8;&#xB2E4;.
+    /&#xB098;&#xC774;: 39$/! d             # &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC774; &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB418;&#xBA74; d &#xB85C; &#xC0AD;&#xC81C;&#xD558;&#xACE0; &#xB2E4;&#xC2DC;&#xC2DC;&#xC791;.
+    N                         # &#xB2E4;&#xC74C; &#xB77C;&#xC778;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC5EC; append &#xD569;&#xB2C8;&#xB2E4;.
+    /&#xC9C1;&#xC5C5;: &#xC218;&#xD559;&#xC790;$/! d          # &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC774; &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB418;&#xBA74; d &#xB85C; &#xC0AD;&#xC81C;&#xD558;&#xACE0; &#xB2E4;&#xC2DC;&#xC2DC;&#xC791;.
+    p                         # pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xBAA8;&#xB450; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.
+}&apos;</span> ./list.txt
+
+&#xC774;&#xB984;: &#xD5C8;&#xC900;&#xC774;
+&#xB098;&#xC774;: <span class="hljs-number">39</span>
+&#xC9C1;&#xC5C5;: &#xC218;&#xD559;&#xC790;
+</code></pre>
 
                     
                     </section>
