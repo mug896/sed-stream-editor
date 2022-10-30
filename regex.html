@@ -803,7 +803,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111 AB
 AA <span class="hljs-number">111</span> AA <span class="hljs-number">222</span> AA <span class="hljs-number">333</span> AA              <span class="hljs-comment"># greedy matching</span>
 ^^^^^^^^^^^^^^^^^^^^^^^
 </code></pre>
-<p>sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; BRE, ERE &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB450;&#xBC88;&#xC9F8; greedy (longest) matching &#xC744; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; regex &#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xC8FC;&#xC758;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>regex &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB450;&#xBC88;&#xC9F8; greedy (longest) matching &#xC744; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB77C;&#xC11C; regex &#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xC8FC;&#xC758;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC22B;&#xC790; &#xBD80;&#xBD84;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xB824;&#xACE0; &#xD558;&#xB294;&#xB370; &#xB9C8;&#xC9C0;&#xB9C9; &#xBB38;&#xC790;&#xB9CC; &#xD45C;&#xC2DC;&#xB41C;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc123&quot;</span> | sed -En <span class="hljs-string">&apos;s/.*([0-9]+)/\1/p&apos;</span>
 <span class="hljs-number">3</span>
@@ -817,7 +817,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&lt;ht
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aa=11,xx=00,bb=22,aa=33,yy=00,bb=44&apos;</span> | sed -E <span class="hljs-string">&apos;s/aa.*bb/ZZZ/&apos;</span>
 ZZZ=<span class="hljs-number">44</span>
 </code></pre>
-<p>BRE, ERE &#xC5D0;&#xC11C; lazy matching &#xC744; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xBA74;&#xB429;&#xB2C8;&#xB2E4;. </p>
+<p>sed &#xC5D0;&#xC11C; lazy matching &#xC744; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xBA74;&#xB429;&#xB2C8;&#xB2E4;. </p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;abc123&quot;</span> | sed -En <span class="hljs-string">&apos;s/[^0-9]*([0-9]+)/\1/p&apos;</span>
 <span class="hljs-number">123</span>
 
@@ -838,8 +838,9 @@ aa=<span class="hljs-number">11</span>,xx=<span class="hljs-number">00</span>,bb
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aa=11,xx=00,bb=22,aa=33,yy=00,bb=44&apos;</span> | sed -E <span class="hljs-string">&apos;s/aa.*bb(.*)/ZZZ\1/&apos;</span>
 ZZZ=<span class="hljs-number">44</span>
 </code></pre>
-<h4 id="&#xC640;--&#xC758;-backtracing-&#xAE30;&#xB2A5;"><code>*</code> &#xC640; <code>+</code> &#xC758; backtracing &#xAE30;&#xB2A5;</h4>
-<p><code>*</code> &#xC640; <code>+</code> &#xB294; &#xC784;&#xC758;&#xC758; &#xC218;&#xB7C9;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB4A4;&#xC5D0;&#xC624;&#xB294; &#xAC12;&#xC744; &#xB9E4;&#xCE6D;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB2E4;&#xC2DC; &#xB4A4;&#xB85C; &#xAC08;&#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h4 id="&#xC640;--&#xC758;-backtracking-&#xAE30;&#xB2A5;"><code>*</code> &#xC640; <code>+</code> &#xC758; backtracking &#xAE30;&#xB2A5;</h4>
+<p><code>*</code> &#xC640; <code>+</code> &#xB294; &#xC784;&#xC758;&#xC758; &#xC218;&#xB7C9;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB2E4;&#xC74C;&#xC5D0;&#xC624;&#xB294; &#xAC12;&#xC774; &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB420;&#xACBD;&#xC6B0; &#xB9E4;&#xCE6D;&#xD558;&#xAE30; 
+&#xC704;&#xD574; &#xB2E4;&#xC2DC; &#xB4A4;&#xB85C; &#xAC08;&#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC77C;&#xC885;&#xC758; &#xACE0;&#xAE09; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xACBD;&#xC6B0;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span>  <span class="hljs-string">&apos;model &lt;dell,847483992,16G&gt; AMD&apos;</span> | sed -En <span class="hljs-string">&apos;s/&lt;[^&gt;]*/&lt;/p&apos;</span>
 model &lt;&gt; AMD
 
@@ -848,8 +849,8 @@ model &lt;<span class="hljs-number">16</span>G&gt; AMD
 
 <span class="hljs-number">1</span>. &#xBA3C;&#xC800; &lt;[^&gt;]* &#xC2DD;&#xC5D0; &#xC758;&#xD574;&#xC11C; &lt;dell,<span class="hljs-number">847483992</span>,<span class="hljs-number">16</span>G &#xAE4C;&#xC9C0; &#xB9E4;&#xCE6D;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.
 
-<span class="hljs-number">2</span>. &#xADF8;&#xB7F0;&#xB370; &lt;[^&gt;]* &#xC2DD; &#xB4A4;&#xC5D0; <span class="hljs-string">&quot;,&quot;</span> &#xAC00; &#xC624;&#xBBC0;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xB420;&#xB54C;&#xAE4C;&#xC9C0; backtracing &#xC744; &#xD558;&#xAC8C;&#xB418;&#xC5B4;
-   &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &lt;dell,<span class="hljs-number">847483992</span>, &#xAE4C;&#xC9C0; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+<span class="hljs-number">2</span>. &#xADF8;&#xB7F0;&#xB370; &lt;[^&gt;]* &#xC2DD; &#xB4A4;&#xC5D0; <span class="hljs-string">&quot;,&quot;</span> &#xAC00; &#xC640;&#xC11C; &#xB9E4;&#xCE6D;&#xC774; &#xC2E4;&#xD328;&#xAC00; &#xB418;&#xBBC0;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xB420;&#xB54C;&#xAE4C;&#xC9C0; 
+   &#xB2E4;&#xC2DC; backtracking &#xC744; &#xD558;&#xAC8C;&#xB418;&#xC5B4; &lt;dell,<span class="hljs-number">847483992</span>, &#xC5D0;&#xC11C; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
 </code></pre>
 <p><code>.*</code> &#xC640; <code>.+</code> &#xB294; greedy &#xD558;&#xC9C0;&#xB9CC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>,</code> &#xAC00; &#xC0AC;&#xC774;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA74;
 &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; &#xD544;&#xB4DC; &#xAC12;&#xC744; &#xCD94;&#xCD9C;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
