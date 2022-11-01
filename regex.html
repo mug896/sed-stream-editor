@@ -866,8 +866,8 @@ Read
 <span class="hljs-number">2</span>. &#xADF8;&#xB2E4;&#xC74C; ^func[^{]* &#xC2DD;&#xC5D0; &#xC774;&#xC5B4;&#xC11C; <span class="hljs-string">&quot; ([[:alnum:]]+)[[(].*&quot;</span> &#xC774; &#xC624;&#xB294;&#xB370; <span class="hljs-string">&quot;{&quot;</span> &#xC640;&#xB294; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC8E0;.
 <span class="hljs-number">3</span>. &#xB530;&#xB77C;&#xC11C; &#xB9E4;&#xCE6D;&#xC774; &#xB420;&#xB54C;&#xAE4C;&#xC9C0; backtracking &#xC744; &#xD558;&#xBA74; ... Read( &#xC5D0;&#xC11C; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
 </code></pre>
-<p><code>.*</code> &#xC640; <code>.+</code> &#xB294; greedy &#xD558;&#xC9C0;&#xB9CC; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>,</code> &#xAC00; &#xC0AC;&#xC774;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA74;
-&#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; &#xD544;&#xB4DC; &#xAC12;&#xC744; &#xCD94;&#xCD9C;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>.*</code> &#xC640; <code>.+</code> &#xB294; greedy &#xD558;&#xC9C0;&#xB9CC; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>,</code> &#xBB38;&#xC790;&#xAC00; &#xC0AC;&#xC774;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA74;
+&#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; &#xD544;&#xB4DC;&#xAC12;&#xC744; &#xCD94;&#xCD9C;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111,222,333,444&quot;</span> | sed -En <span class="hljs-string">&apos;s/(.*),(.*),(.*),(.*)/\1:\2:\3:\4/p&apos;</span>
 <span class="hljs-number">111</span>:<span class="hljs-number">222</span>:<span class="hljs-number">333</span>:<span class="hljs-number">444</span>
 </code></pre>
