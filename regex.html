@@ -890,7 +890,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;/dev/s
 <span class="hljs-number">4</span>. <span class="hljs-string">&quot;24% &quot;</span> &#xB294; ([<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+% ) &#xC2DD;&#xACFC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; \<span class="hljs-number">1</span> &#xC5D0;&#xC758;&#xD574; &#xCD9C;&#xB825;&#xC5D0; &#xB0A8;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
 <span class="hljs-number">5</span>. <span class="hljs-string">&quot;/boot/efi&quot;</span> &#xBD80;&#xBD84;&#xB3C4; ([<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+% ) &#xC2DD;&#xACFC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; <span class="hljs-string">&quot;.&quot;</span> &#xC640; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC5B4; &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xC81C;&#xC678;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
 
-<span class="hljs-comment"># &quot;[&#xC22B;&#xC790;]&quot; or &quot;&lt;&#xC22B;&#xC790;&gt;&quot; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC740; &quot;[&#xC22B;&#xC790;]&quot; or &quot;&lt;&#xC22B;&#xC790;&gt;&quot; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aa [12] bb &lt;34&gt; cc [5X6] dd &lt;78&gt; ee [99] ff&quot;</span> | 
     sed -E <span class="hljs-string">&apos;s/(\[[0-9]+] )|(&lt;[0-9]+&gt; )|./\1\2/g&apos;</span>
 [<span class="hljs-number">12</span>] &lt;<span class="hljs-number">34</span>&gt; &lt;<span class="hljs-number">78</span>&gt; [<span class="hljs-number">99</span>]
