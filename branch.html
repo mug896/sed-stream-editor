@@ -830,6 +830,43 @@ $ cat file | perl -pe <span class="hljs-string">&apos;s/(VBoxManage natnetwork)/
 ... sells sea ...... by the sea .....
 </code></pre>
 <h1 id="3-">3 .</h1>
+<p>&#xC635;&#xC158; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0; <code>[ ]</code> &#xAD04;&#xD638;&#xB97C; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xC120;&#xD0DD; &#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0BC; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.
+&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD655;&#xC7A5;&#xC774; &#xB418;&#xAC8C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xAD04;&#xD638;&#xAC00; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xADF8;&#xB300;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh">--[no-]leading-underscore        -fenable-[tree|rtl|ipa]-bar=        -fbounds-check
+
+--no-leading-underscore          -fenable-ipa-bar=                   -fbounds-check
+--leading-underscore             -fenable-rtl-bar=  
+                                 -fenable-tree-bar=
+</code></pre>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#xCCAB; &#xBC88;&#xC9F8;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xBE44;&#xAD50;&#xC801; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;--[no-]leading-underscore&apos;</span> |  sed -En <span class="hljs-string">&apos;           
+    h; s/(.*)\[([^]]*)](.*)/\1\2\3/; p;      # [ ] &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xC788;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xCD94;&#xCD9C;&#xD574;&#xC11C; &#xCD9C;&#xB825;
+    g; s/\[[^]]*]//; p;                      # [ ] &#xAD04;&#xD638; &#xC804;&#xCCB4;&#xB97C; &#xC0AD;&#xC81C;&#xD574;&#xC11C; &#xCD9C;&#xB825;
+&apos;</span>
+--no-leading-underscore
+--leading-underscore
+
+<span class="hljs-comment"># &#xB450; &#xBC88;&#xC9F8;&#xAC00; &#xC57D;&#xAC04; &#xAE4C;&#xB2E4;&#xB85C;&#xC6B4;&#xB370; [tree|rtl|ipa] &#xAC12;&#xC744; (\|?(\w+))+ &#xC744; &#xC774;&#xC6A9;&#xD574; &#xCD94;&#xCD9C;&#xD558;&#xBA74;</span>
+<span class="hljs-comment"># \3 &#xC758; &#xAC12;&#xC740; &#xB9C8;&#xC9C0;&#xB9C9; ipa &#xAC00; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8; &#xB2E4;&#xC74C; &#xBC18;&#xBCF5;&#xC5D0;&#xC11C;&#xB294; rtl &#xC774; &#xB418;&#xACE0; ...</span>
+<span class="hljs-comment"># :Y &#xBE0C;&#xB79C;&#xCE58; &#xC5D0;&#xC11C;&#xB294; \|?\w+] &#xB97C; &#xC774;&#xC6A9;&#xD574; |ipa] &#xBD80;&#xBD84;&#xC744; &#xC0AD;&#xC81C;&#xD574;&#xC11C; [tree|rtl] &#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xBC18;&#xBCF5;&#xC744; &#xACC4;&#xC18D;&#xD558;&#xB2E4;&#xAC00; &#xCD5C;&#xC885; [] &#xC2A4;&#xD2B8;&#xB9C1;&#xB9CC; &#xB0A8;&#xAC8C;&#xB418;&#xBA74; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;. </span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;-fenable-[tree|rtl|ipa]-bar=&apos;</span> |  sed -En <span class="hljs-string">&apos;                          
+    :X h; tR1; :R1 s/(.*)\[(\|?(\w+))+](.*)/\1\3\4/; p; tY;  
+    :Y g; s/\|?\w+]/]/; /\[]/!bX   
+&apos;</span>
+-fenable-ipa-bar=
+-fenable-rtl-bar=
+-fenable-tree-bar=
+
+--------------------------------------------------
+
+<span class="hljs-comment"># &#xC704;&#xC758; &#xB450; &#xC791;&#xC5C5;&#xC744; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE58;&#xBA74; &#xB2E4;&#xC74C;&#xACFC;&#xAC19;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span>  <span class="hljs-string">&apos;-fenable-[tree|rtl|ipa]-bar=&apos;</span> |  sed -En <span class="hljs-string">&apos;                                  
+    :X h; tR1; :R1 s/(.*)\[(\|?(\w+-?))+](.*)/\1\3\4/; p; tY; b; 
+    :Y g; s/\|?\w+-?]/]/; tR2 :R2 s/-\[]([[:alnum:]])/-\1/p; tZ; /\[]/! bX :Z&apos;</span>
+</code></pre>
+<h1 id="4-">4 .</h1>
 <p>&#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130; &#xC911;&#xC5D0;&#xB294; <code>( )</code>, <code>&lt; &gt;</code>, <code>{ }</code> &#xAC19;&#xC740; &#xAD04;&#xD638;&#xAC00; &#xC30D;&#xC73C;&#xB85C; nesting &#xB418;&#xC5B4; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; 
 &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xB2E4;&#xC74C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &#xAD04;&#xD638;&#xB9CC; &#xBAA8;&#xB450; &#xC81C;&#xAC70;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <p>&#xCCAB;&#xBC88;&#xC9F8; &#xBC29;&#xBC95;:</p>
@@ -885,7 +922,7 @@ sed -E <span class="hljs-string">&apos;:X s/__attr__\s*\([^()]*\)//g; s/(__attr_
 ((foo))  ((bar))  ((zoo))$
 ((foo))  ((bar))  ((zoo))
 </code></pre>
-<h1 id="4-">4 .</h1>
+<h1 id="5-">5 .</h1>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xC788;&#xB294; <code>,</code> &#xCF64;&#xB9C8;&#xB97C; &#xBAA8;&#xB450; &#xC81C;&#xAC70;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;John Doe, model (dell, 24, inch), 847483992, (100, foo, infinity) loop&quot;</span> |
 sed -E <span class="hljs-string">&apos;:X s/(\([^)]*),/\1/g; l; tX&apos;</span>
