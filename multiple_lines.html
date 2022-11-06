@@ -557,33 +557,33 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> 
 &#xC608;&#xB97C; &#xB4E4;&#xC5B4;&#xC11C; <code>s/X/Y/3</code> ( 3&#xBC88;&#xC9F8; &#xB9E4;&#xCE6D;&#xC5D0;&#xC11C; X &#xB97C; Y &#xB85C; &#xBCC0;&#xACBD; ) &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC740; <code>s/X/Y/M3</code> &#xC5D0;&#xC11C;&#xB3C4; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><code>s</code> &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>&#xC22B;&#xC790;</code> &#xB098; <code>g</code> flag &#xC740; &#xAC01;&#xAC01; N &#xBC88;&#xC9F8; &#xB9E4;&#xCE6D;, global &#xB9E4;&#xCE6D;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xB294;&#xB370;
 Multi-line &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#xCCAB; &#xBC88;&#xC9F8; &#xB9E4;&#xCE6D; &#xB77C;&#xC778;&#xC758; &#xCC98;&#xC74C;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M&apos; multi-line &#xBAA8;&#xB4DC;, &apos;1&apos; &#xBC88;&#xC9F8; &#xB9E4;&#xCE6D; &#xC774;&#xBBC0;&#xB85C; &#xCCAB; &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xC758; &#xCC98;&#xC74C;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^/XXX/M1; s/$/YYY/M1; p&apos;</span>
 
 <span class="hljs-comment"># &#xB9E4;&#xCE6D; &#xB118;&#xBC84;&#xB97C; &#xC801;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default &#xAC12;&#xC774; 1 &#xC774;&#xBBC0;&#xB85C; &apos;M&apos; &#xC740; &apos;M1&apos; &#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^/XXX/M; s/$/YYY/M; p&apos;</span>
 </code></pre>
 <p><img src="images/ml_2.png" alt=""></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M2&apos; &#xB294; 2&#xBC88;&#xC9F8; &#xB9E4;&#xCE6D; &#xB77C;&#xC778;&#xC758; &#xCC98;&#xC74C;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;. </span>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M&apos; multi-line &#xBAA8;&#xB4DC;, &apos;2&apos; &#xBC88;&#xC9F8; &#xB9E4;&#xCE6D; &#xC774;&#xBBC0;&#xB85C; &#xB450; &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xC758; &#xCC98;&#xC74C;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^/XXX/M2; s/$/YYY/M2; p&apos;</span>
 </code></pre>
 <p><img src="images/ml_3.png" alt=""></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &apos;Mg&apos; &#xB294; &#xC804;&#xCCB4; &#xB9E4;&#xCE6D; &#xB77C;&#xC778;&#xC758; &#xCC98;&#xC74C;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M&apos; multi-line &#xBAA8;&#xB4DC;, &apos;g&apos; &#xB294; global &#xB9E4;&#xCE6D; &#xC774;&#xBBC0;&#xB85C; &#xC804;&#xCCB4; &#xB77C;&#xC778;&#xC758; &#xCC98;&#xC74C;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^/XXX/Mg; s/$/YYY/Mg; p&apos;</span>
 </code></pre>
 <p><img src="images/ml_4.png" alt=""></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M&apos; &#xC740; multi-line &#xBAA8;&#xB4DC;, &apos;3g&apos; &#xB294; 3&#xBC88;&#xC9F8; &#xB9E4;&#xCE6D;&#xBD80;&#xD130; &#xC804;&#xBD80;&#xB97C; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;. </span>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M&apos; multi-line &#xBAA8;&#xB4DC;, &apos;3&apos; &#xC740; &#xC138; &#xBC88;&#xC9F8; &#xB9E4;&#xCE6D;&#xBD80;&#xD130;, &apos;g&apos; &#xB294; &#xC804;&#xBD80;&#xB97C; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;. </span>
 <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;111\n222\n333\n444&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^/XXX/M3g; s/$/YYY/M3g; p&apos;</span>
 </code></pre>
 <p><img src="images/ml_44.png" alt=""></p>
 <hr>
-<p>&#xC704;&#xC758; &#xACBD;&#xC6B0;&#xB294; regex &#xC5D0;&#xC11C; &#xB2E8;&#xC21C;&#xD788; <code>^</code>, <code>$</code> &#xBB38;&#xC790;&#xB9CC; &#xC0AC;&#xC6A9;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xCCB4; &#xB77C;&#xC778;&#xC774; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0;&#xB9CC;
-&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB77C;&#xC778; &#xC911;&#xC5D0; &#xC77C;&#xBD80;&#xBD84;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC704;&#xC758; &#xACBD;&#xC6B0;&#xB294; regex &#xC5D0;&#xC11C; &#xB2E8;&#xC21C;&#xD788; <code>^</code>, <code>$</code> &#xBB38;&#xC790;&#xB9CC; &#xC0AC;&#xC6A9;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; 
+&#xB77C;&#xC778; &#xC804;&#xCCB4;&#xAC00; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0;&#xB9CC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB77C;&#xC778; &#xC911;&#xC5D0; &#xC77C;&#xBD80;&#xBD84;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC804;&#xCCB4; &#xB77C;&#xC778; &#xC911;&#xC5D0;&#xC11C; 2&#xAC1C;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xB294; &#xACBD;&#xC6B0;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;A11\n2B2\nC33\n4D4&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^[A-Z]/XXX/Mg; p&apos;</span>
 </code></pre>
 <p><img src="images/ml_5.png" alt=""></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M2&apos; &#xB294; &#xC804;&#xCCB4; &#xB9E4;&#xCE6D; &#xB418;&#xB294; &#xB77C;&#xC778; &#xC911;&#xC5D0;&#xC11C; 2&#xBC88;&#xC9F8; &#xB9E4;&#xCE6D; &#xB77C;&#xC778;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;M&apos; multi-line &#xBAA8;&#xB4DC;, &apos;2&apos; &#xBC88;&#xC9F8; &#xB9E4;&#xCE6D; &#xC774;&#xBBC0;&#xB85C; &#xC138; &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;A11\n2B2\nC33\n4D4&quot;</span> | sed -En <span class="hljs-string">&apos;N;N;N; s/^[A-Z]/XXX/M2; p&apos;</span>
 </code></pre>
 <p><img src="images/ml_6.png" alt=""></p>
