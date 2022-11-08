@@ -628,13 +628,17 @@ xxx
 <p><code>[[:graph:]]</code> &#xC640; <code>[[:print:]]</code> &#xB294; space &#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC548; &#xD558;&#xACE0; &#xCC28;&#xC774;.  </p>
 </blockquote>
 <p><code>[ ]</code> &#xD45C;&#xD604;&#xC2DD; &#xC5D0;&#xC11C; <code>-</code> &#xB97C; &#xC77C;&#xBC18; &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xB450; &#xBB38;&#xC790; &#xC0AC;&#xC774;&#xC5D0; &#xC704;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; 
-&#xCC98;&#xC74C;&#xC774;&#xB098; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; &#xB418;&#xACE0; <code>]</code>, <code>[</code> &#xBB38;&#xC790;&#xB294; &#xCC98;&#xC74C;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xCC98;&#xC74C;&#xC774;&#xB098; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; &#xB418;&#xACE0; <code>[</code>, <code>]</code> &#xBB38;&#xC790;&#xB294; &#xCC98;&#xC74C;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;allow-all&apos; &apos;vm-process-priority&apos; &#xC640; &#xAC19;&#xC740; &#xC18C;&#xBB38;&#xC790;&#xC640; &apos;-&apos; &#xBB38;&#xC790;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB2E8;&#xC5B4; &#xB9E4;&#xCE6D;</span>
 [[:lower:]-]+ or [a-z-]+
 
-<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &apos;[&apos;, &apos;]&apos;, &apos;@&apos; &#xBB38;&#xC790;&#xB97C; &#xC0AD;&#xC81C; </span>
+<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &apos;]&apos;, &apos;[&apos;, &apos;@&apos; &#xBB38;&#xC790;&#xB97C; &#xC0AD;&#xC81C; </span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;[@foo]&apos;</span> | sed <span class="hljs-string">&apos;s/[][@]//g&apos;</span>
 foo
+
+<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &apos;]&apos;, &apos;[&apos;, &apos;[:alnum:]&apos; &#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xBA74; &#xB9E4;&#xCE6D;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;-t[imestamp]&apos;</span> | sed -En <span class="hljs-string">&apos;/^-[][[:alnum:]]+$/p&apos;</span>
+-t[imestamp
 </code></pre>
 <h5 id="logical-not-&#xC744;-&#xB098;&#xD0C0;&#xB0B4;&#xB294;-">logical NOT &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <code>^</code></h5>
 <p><code>[ ]</code> &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xB9E8;&#xC55E;&#xC5D0; <code>^</code> &#xB97C; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; logical NOT &#xC758; &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
