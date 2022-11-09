@@ -899,7 +899,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;/dev/s
 
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC740; &quot;[&#xC22B;&#xC790;]&quot; or &quot;&lt;&#xC22B;&#xC790;&gt;&quot; &#xD615;&#xD0DC;&#xB9CC; &#xCD94;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aa [12] bb &lt;34&gt; cc [5X6] dd &lt;78&gt; ee [99] ff&quot;</span> | 
-    sed -E <span class="hljs-string">&apos;s/(\[[0-9]+] )|(&lt;[0-9]+&gt; )|./\1\2/g&apos;</span>
+    sed -E <span class="hljs-string">&apos;s/(\[[0-9]+] |&lt;[0-9]+&gt; )|./\1/g&apos;</span>
 [<span class="hljs-number">12</span>] &lt;<span class="hljs-number">34</span>&gt; &lt;<span class="hljs-number">78</span>&gt; [<span class="hljs-number">99</span>]
 </code></pre>
 <h4 id="-&#xC218;&#xB7C9;-&#xD55C;&#xC815;&#xC790;"><code>{ }</code> &#xC218;&#xB7C9; &#xD55C;&#xC815;&#xC790;</h4>
