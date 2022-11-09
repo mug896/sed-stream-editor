@@ -637,6 +637,31 @@ $ sed -E <span class="hljs-string">&apos;
 /config:launcher5.mxres /service:engine
 /config:launcher_binary.mxres /service:scanner
 </code></pre>
+<h1 id="quiz">Quiz</h1>
+<p>&#xC55E;&#xC11C; regex &#xBA54;&#xB274;&#xC5D0;&#xC11C; lazy &#xB9E4;&#xCE6D;&#xC744; &#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xB294;&#xB370;&#xC694;.
+&#xB2E8;&#xC77C; &#xBB38;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xD2B9;&#xC815; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; lazy &#xB9E4;&#xCE6D;&#xD574;&#xC11C; &#xCCAB; &#xBC88;&#xC9F8; foo &#xB2E8;&#xC5B4;&#xAE4C;&#xC9C0;&#xB9CC; &#xC0AD;&#xC81C;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># .* &#xB294; greedy &#xD558;&#xBBC0;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; foo &#xB2E8;&#xC5B4;&#xAE4C;&#xC9C0; &#xC0AD;&#xC81C;&#xAC00; &#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 foo 222 foo 333&quot;</span> | sed -E <span class="hljs-string">&apos;s/.*foo//&apos;</span>
+ <span class="hljs-number">333</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 foo 222 foo 333&quot;</span> | sed -E <span class="hljs-string">&apos;h; s/(foo).*$/\1/; G; s/^([^\n]+)\n\1//&apos;</span>
+ <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
+
+<span class="hljs-comment"># 1. h; &#xBA3C;&#xC800; &#xC785;&#xB825;&#xAC12;&#xC744; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD574;&#xB193;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># 2. s/(foo).*$/\1/ &#xC2DD;&#xC73C;&#xB85C; greedy &#xB9E4;&#xCE6D;&#xC744; &#xB4A4;&#xC5D0;&#xC11C; &#xBD80;&#xD130;&#xD558;&#xBA74; pattern space &#xC5D0;&#xB294;</span>
+     <span class="hljs-number">111</span> foo &#xB9CC; &#xB0A8;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.
+<span class="hljs-comment"># 3. G &#xBA85;&#xB839;&#xC73C;&#xB85C; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC740; &#xC6D0;&#xBCF8;&#xAC12;&#xC744; pattern space &#xC5D0; append &#xD569;&#xB2C8;&#xB2E4;.</span>
+     <span class="hljs-number">111</span> foo
+     <span class="hljs-number">111</span> foo <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
+<span class="hljs-comment"># 4. s/^([^\n]+)\n\1//  (&#xC5EC;&#xAE30;&#xC11C; \1 &#xC740; ([^\n]+) &#xB9E4;&#xCE6D;&#xB41C; &#xAC12;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xAC12;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.)</span>
+     &#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD574; pattern space &#xC5D0;&#xC11C; &#xC55E;&#xBD80;&#xBD84;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xBA74; <span class="hljs-number">222</span> foo <span class="hljs-number">333</span> &#xB9CC; &#xB0A8;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.
+
+--------------------------------------------------------
+
+<span class="hljs-comment"># perl &#xC5D0;&#xC11C;&#xB294; .*? &#xB97C; &#xC774;&#xC6A9;&#xD574; lazy &#xB9E4;&#xCE6D;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 foo 222 foo 333&quot;</span> | perl -pe <span class="hljs-string">&apos;s/.*?(foo)//&apos;</span>
+ <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
+</code></pre>
 
                     
                     </section>
