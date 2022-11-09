@@ -648,14 +648,14 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 fo
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 foo 222 foo 333&quot;</span> | sed -E <span class="hljs-string">&apos;h; s/(foo).*$/\1/; G; s/^([^\n]+)\n\1//&apos;</span>
  <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
 
-<span class="hljs-comment"># 1. h; &#xBA3C;&#xC800; &#xC785;&#xB825;&#xAC12;&#xC744; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-comment"># 2. s/(foo).*$/\1/ &#xC2DD;&#xC73C;&#xB85C; greedy &#xB9E4;&#xCE6D;&#xC744; &#xB4A4;&#xC5D0;&#xC11C; &#xBD80;&#xD130;&#xD558;&#xBA74; pattern space &#xC5D0;&#xB294;</span>
-     <span class="hljs-number">111</span> foo &#xB9CC; &#xB0A8;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.
-<span class="hljs-comment"># 3. G &#xBA85;&#xB839;&#xC73C;&#xB85C; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC740; &#xC6D0;&#xBCF8;&#xAC12;&#xC744; pattern space &#xC5D0; append &#xD569;&#xB2C8;&#xB2E4;.</span>
-     <span class="hljs-number">111</span> foo
-     <span class="hljs-number">111</span> foo <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
-<span class="hljs-comment"># 4. s/^([^\n]+)\n\1//  (&#xC5EC;&#xAE30;&#xC11C; \1 &#xC740; ([^\n]+) &#xB9E4;&#xCE6D;&#xB41C; &#xAC12;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xAC12;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.)</span>
-     &#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD574; pattern space &#xC5D0;&#xC11C; &#xC55E;&#xBD80;&#xBD84;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xBA74; <span class="hljs-number">222</span> foo <span class="hljs-number">333</span> &#xB9CC; &#xB0A8;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.
+<span class="hljs-number">1</span>. h; &#xBA3C;&#xC800; &#xC785;&#xB825;&#xAC12;&#xC744; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC2B5;&#xB2C8;&#xB2E4;.
+<span class="hljs-number">2</span>. s/(foo).*$/\<span class="hljs-number">1</span>/ &#xC2DD;&#xC73C;&#xB85C; greedy &#xB9E4;&#xCE6D;&#xC744; &#xB4A4;&#xC5D0;&#xC11C; &#xBD80;&#xD130;&#xD558;&#xBA74; pattern space &#xC5D0;&#xB294;
+   <span class="hljs-number">111</span> foo &#xB9CC; &#xB0A8;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.
+<span class="hljs-number">3</span>. G &#xBA85;&#xB839;&#xC73C;&#xB85C; hold space &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC740; &#xC6D0;&#xBCF8;&#xAC12;&#xC744; pattern space &#xC5D0; append &#xD569;&#xB2C8;&#xB2E4;.
+   <span class="hljs-number">111</span> foo
+   <span class="hljs-number">111</span> foo <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
+<span class="hljs-number">4</span>. s/^([^\n]+)\n\<span class="hljs-number">1</span>//  (&#xC5EC;&#xAE30;&#xC11C; \<span class="hljs-number">1</span> &#xC740; ([^\n]+) &#xB9E4;&#xCE6D;&#xB41C; &#xAC12;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xAC12;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.)
+   &#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD574; pattern space &#xC5D0;&#xC11C; &#xC55E;&#xBD80;&#xBD84;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xBA74; <span class="hljs-number">222</span> foo <span class="hljs-number">333</span> &#xB9CC; &#xB0A8;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.
 
 --------------------------------------------------------
 
