@@ -663,10 +663,14 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 fo
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111 foo 222 foo 333&quot;</span> | perl -pe <span class="hljs-string">&apos;s/.*?(foo)//&apos;</span>
  <span class="hljs-number">222</span> foo <span class="hljs-number">333</span>
 </code></pre>
-<p>&#xB2E4;&#xC74C;&#xC740; FOO &#xC5D0;&#xC11C;&#xBD80;&#xD130; BAR &#xAE4C;&#xC9C0; lazy &#xB9E4;&#xCE6D;&#xC73C;&#xB85C; &#xC0AD;&#xC81C;&#xB97C; &#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>FOO</code> &#xC5D0;&#xC11C;&#xBD80;&#xD130; <code>BAR</code> &#xAE4C;&#xC9C0; lazy &#xB9E4;&#xCE6D;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> sss FOO uuu BAR nnn FOO ccc BAR rrr |
     sed <span class="hljs-string">&apos;s/BAR/\a/g; s/FOO[^\a]*\a/XXX/; s/\a/BAR/g&apos;</span>
 sss XXX nnn FOO ccc BAR rrr
+
+<span class="hljs-number">1</span>. &#xBA3C;&#xC800; BAR &#xB97C; \a &#xBB38;&#xC790;&#xB85C; &#xBAA8;&#xB450; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
+<span class="hljs-number">2</span>. &#xADF8;&#xB2E4;&#xC74C; FOO &#xC5D0;&#xC11C;&#xBD80;&#xD130; \a &#xBB38;&#xC790; &#xAE4C;&#xC9C0;&#xB97C; XXX &#xAC12;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
+<span class="hljs-number">3</span>. &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB0A8;&#xC740; \a &#xBB38;&#xC790;&#xB97C; &#xB2E4;&#xC2DC; BAR &#xB85C; &#xBAA8;&#xB450; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
 
 ------------------------------------------------------------------------
 
