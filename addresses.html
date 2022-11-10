@@ -499,21 +499,45 @@ $ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&ap
 <h4 id="first--step">first ~ step</h4>
 <p>first &#xC5D0; &#xACC4;&#xC18D;&#xD574;&#xC11C; step &#xC744; &#xB354;&#xD574;&#xB098;&#xAC04;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># 1, 4, 7, 10, 13, 16 ...</span>
-$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;1~3p&apos;</span>
+$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;1 ~ 3p&apos;</span>
 <span class="hljs-number">1</span>
 <span class="hljs-number">4</span>
 <span class="hljs-number">7</span>
 <span class="hljs-number">10</span>
 
 <span class="hljs-comment"># 4, 8, 12, 16, 20 ...  &#xC8FC;&#xC18C; 0 &#xC758; &#xC758;&#xBBF8;&#xB294; &#xB4A4;&#xC5D0;&#xB3C4; &#xB098;&#xC635;&#xB2C8;&#xB2E4;.</span>
-$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;0~4p&apos;</span>
+$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;0 ~ 4p&apos;</span>
 <span class="hljs-number">4</span>
 <span class="hljs-number">8</span>
 
 <span class="hljs-comment"># &#xC704;&#xC640; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xC785;&#xB2C8;&#xB2E4;.</span>
-$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;4~4p&apos;</span>  
+$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;4 ~ 4p&apos;</span>  
 <span class="hljs-number">4</span>
 <span class="hljs-number">8</span>
+</code></pre>
+<pre><code class="lang-sh">$ ip -<span class="hljs-number">4</span> address | cat -n
+     <span class="hljs-number">1</span>  <span class="hljs-number">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="hljs-number">65536</span> qdisc noqueue state UNKNOWN ...
+     <span class="hljs-number">2</span>      inet <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>/<span class="hljs-number">8</span> scope host lo
+     <span class="hljs-number">3</span>         valid_lft forever preferred_lft forever
+     <span class="hljs-number">4</span>  <span class="hljs-number">2</span>: enp0s25: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="hljs-number">1500</span> qdisc ...
+     <span class="hljs-number">5</span>      inet <span class="hljs-number">220.85</span>.<span class="hljs-number">92.78</span>/<span class="hljs-number">24</span> brd <span class="hljs-number">220.85</span>.<span class="hljs-number">92.255</span> scope global dynamic ...
+     <span class="hljs-number">6</span>         valid_lft <span class="hljs-number">4903</span>sec preferred_lft <span class="hljs-number">4903</span>sec
+     <span class="hljs-number">7</span>  <span class="hljs-number">4</span>: lxdbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="hljs-number">1500</span> qdisc noqueue state ...
+     <span class="hljs-number">8</span>      inet <span class="hljs-number">10.24</span>.<span class="hljs-number">244.1</span>/<span class="hljs-number">24</span> scope global lxdbr0
+     <span class="hljs-number">9</span>         valid_lft forever preferred_lft forever
+    <span class="hljs-number">10</span>  <span class="hljs-number">5</span>: br-<span class="hljs-number">958737</span>dcc5b0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="hljs-number">1500</span> qdisc ...
+    <span class="hljs-number">11</span>      inet <span class="hljs-number">172.18</span>.<span class="hljs-number">0.1</span>/<span class="hljs-number">16</span> brd <span class="hljs-number">172.18</span>.<span class="hljs-number">255.255</span> scope global br-<span class="hljs-number">958737</span>dcc5b0
+    <span class="hljs-number">12</span>         valid_lft forever preferred_lft forever
+    <span class="hljs-number">13</span>  <span class="hljs-number">6</span>: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="hljs-number">1500</span> qdisc noqueue ...
+    <span class="hljs-number">14</span>      inet <span class="hljs-number">172.17</span>.<span class="hljs-number">0.1</span>/<span class="hljs-number">16</span> brd <span class="hljs-number">172.17</span>.<span class="hljs-number">255.255</span> scope global docker0
+    <span class="hljs-number">15</span>         valid_lft forever preferred_lft forever
+
+$ ip -<span class="hljs-number">4</span> address | sed -n <span class="hljs-string">&apos;2 ~ 3p&apos;</span>
+    inet <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>/<span class="hljs-number">8</span> scope host lo
+    inet <span class="hljs-number">220.85</span>.<span class="hljs-number">92.78</span>/<span class="hljs-number">24</span> brd <span class="hljs-number">220.85</span>.<span class="hljs-number">92.255</span> scope global dynamic noprefixroute enp0s25
+    inet <span class="hljs-number">10.24</span>.<span class="hljs-number">244.1</span>/<span class="hljs-number">24</span> scope global lxdbr0
+    inet <span class="hljs-number">172.18</span>.<span class="hljs-number">0.1</span>/<span class="hljs-number">16</span> brd <span class="hljs-number">172.18</span>.<span class="hljs-number">255.255</span> scope global br-<span class="hljs-number">958737</span>dcc5b0
+    inet <span class="hljs-number">172.17</span>.<span class="hljs-number">0.1</span>/<span class="hljs-number">16</span> brd <span class="hljs-number">172.17</span>.<span class="hljs-number">255.255</span> scope global docker0
 </code></pre>
 <h2 id="regex-addresses">Regex Addresses</h2>
 <p>regex &#xB97C; &#xC774;&#xC6A9;&#xD55C; address &#xC9C0;&#xC815;&#xC740; <code>/regex/</code> &#xD615;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -580,33 +604,27 @@ $ sed -n <span class="hljs-string">&apos;10,/END/p&apos;</span>
 <span class="hljs-comment"># &apos;MIDDLE&apos; &#xC774; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
 $ sed -n <span class="hljs-string">&apos;/MIDDLE/,$p&apos;</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;
+$ cat &lt;&lt;\--- | sed -n <span class="hljs-string">&apos;/[0-9]/,/[0-9]/p&apos;</span>
 AA
-11
-BB
-22
-CC
-&quot;</span> | sed -n <span class="hljs-string">&apos;/[0-9]/,/[0-9]/p&apos;</span>
 <span class="hljs-number">11</span>
-BB
-<span class="hljs-number">22</span>
-
-<span class="hljs-comment"># &apos;CC&apos; &#xAC00; &#xBE60;&#xC84C;&#xACE0; &apos;33&apos;, &apos;DD&apos; &#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8; &#xB429;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-comment"># &#xD56D;&#xC0C1; sed &#xB294; stream editor &#xB77C;&#xB294; &#xC0DD;&#xAC01;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;
-AA
-11
-BB
-22
-CC
-33
-DD
-&quot;</span> | sed -n <span class="hljs-string">&apos;/[0-9]/,/[0-9]/p&apos;</span>
-<span class="hljs-number">11</span>
-BB
-<span class="hljs-number">22</span>
-<span class="hljs-number">33</span>
-DD
+BB            
+<span class="hljs-number">22</span>               
+CC                   <span class="hljs-comment"># &apos;CC&apos; &#xAC00; &#xBE60;&#xC84C;&#xACE0; &apos;33&apos;, &apos;DD&apos; &#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8; &#xB429;&#xB2C8;&#xB2E4;.</span>
+---                  <span class="hljs-comment"># &#xD56D;&#xC0C1; sed &#xB294; stream editor &#xB77C;&#xB294; &#xC0DD;&#xAC01;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-number">11</span>                   $ cat &lt;&lt;\--- | sed -n <span class="hljs-string">&apos;/[0-9]/,/[0-9]/p&apos;</span>
+BB                   AA
+<span class="hljs-number">22</span>                   <span class="hljs-number">11</span>
+                     BB
+                     <span class="hljs-number">22</span>
+                     CC
+                     <span class="hljs-number">33</span>
+                     DD
+                     ---
+                     <span class="hljs-number">11</span>
+                     BB
+                     <span class="hljs-number">22</span>
+                     <span class="hljs-number">33</span>
+                     DD
 </code></pre>
 <h4 id="address1--n">address1 , +N</h4>
 <p>address1 &#xBD80;&#xD130; &#xC774;&#xD6C4; +N &#xB77C;&#xC778; &#xAE4C;&#xC9C0;&#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -616,20 +634,22 @@ $ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&ap
 <span class="hljs-number">4</span>
 <span class="hljs-number">5</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;111                              $ echo &quot;</span><span class="hljs-number">111</span>
-<span class="hljs-number">222</span>                                      <span class="hljs-number">222</span>
-MIDDLE                                   MIDDLE
-<span class="hljs-number">333</span>                                      <span class="hljs-number">333</span>
-<span class="hljs-number">444</span>                                      <span class="hljs-number">444</span>
-<span class="hljs-number">555</span><span class="hljs-string">&quot; | sed -n &apos;/MIDDLE/,+2p&apos;             555&quot;</span> | sed <span class="hljs-string">&apos;/MIDDLE/,+2d&apos;</span>
-MIDDLE                                   <span class="hljs-number">111</span>
-<span class="hljs-number">333</span>                                      <span class="hljs-number">222</span>
-<span class="hljs-number">444</span>                                      <span class="hljs-number">555</span>
+$ cat &lt;&lt;\--- | sed -n <span class="hljs-string">&apos;/MIDDLE/,+2p&apos;</span>        $ cat &lt;&lt;\--- | sed <span class="hljs-string">&apos;/MIDDLE/,+2d&apos;</span>
+<span class="hljs-number">111</span>                                         <span class="hljs-number">111</span>
+<span class="hljs-number">222</span>                                         <span class="hljs-number">222</span>
+MIDDLE                                      MIDDLE
+<span class="hljs-number">333</span>                                         <span class="hljs-number">333</span>
+<span class="hljs-number">444</span>                                         <span class="hljs-number">444</span>
+<span class="hljs-number">555</span>                                         <span class="hljs-number">555</span>
+---                                         ---
+MIDDLE                                      <span class="hljs-number">111</span>
+<span class="hljs-number">333</span>                                         <span class="hljs-number">222</span>
+<span class="hljs-number">444</span>                                         <span class="hljs-number">555</span>
 </code></pre>
 <h4 id="address1--n">address1 , ~N</h4>
 <p><code>~</code> &#xBB38;&#xC790; &#xB294; &#xC704;&#xC5D0; <code>first ~ step</code> &#xC5D0;&#xC11C;&#xB3C4; &#xD55C;&#xBC88; &#xB098;&#xC654;&#xB294;&#xB370;&#xC694;. &#xBC30;&#xC218;&#xB97C; &#xB73B;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; address1 &#xBD80;&#xD130; &#xC22B;&#xC790; N &#xC758; &#xBC30;&#xC218;&#xAE4C;&#xC9C0;&#xB77C;&#xB294; &#xC758;&#xBBF8;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># 6 &#xC744; &#xC9C0;&#xB098;&#xB294; 4 &#xC758; &#xBC30;&#xC218;&#xB294; 8 &#xC774;&#xBBC0;&#xB85C; &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; 6,8p &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</span>
-$ seq <span class="hljs-number">10</span> | sed -n <span class="hljs-string">&apos;6,~4p&apos;</span>
+$ seq <span class="hljs-number">20</span> | sed -n <span class="hljs-string">&apos;6,~4p&apos;</span>
 <span class="hljs-number">6</span>
 <span class="hljs-number">7</span>
 <span class="hljs-number">8</span>
