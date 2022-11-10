@@ -604,6 +604,22 @@ $ sed -n <span class="hljs-string">&apos;10,/END/p&apos;</span>
 <span class="hljs-comment"># &apos;MIDDLE&apos; &#xC774; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
 $ sed -n <span class="hljs-string">&apos;/MIDDLE/,$p&apos;</span>
 
+<span class="hljs-comment"># 2&#xBC88; &#xBD80;&#xD130; 4&#xBC88; &#xB77C;&#xC778;&#xAE4C;&#xC9C0;&#xB9CC; [0-9] &#xB97C; X &#xB85C; &#xCE58;&#xD658; </span>
+$ cat &lt;&lt;\--- | sed <span class="hljs-string">&apos;2,4 s/[0-9]/X/g&apos;</span>
+<span class="hljs-number">11</span>
+<span class="hljs-number">22</span>
+<span class="hljs-number">33</span>
+<span class="hljs-number">44</span>
+<span class="hljs-number">55</span>
+<span class="hljs-number">66</span>
+---
+<span class="hljs-number">11</span>
+XX
+XX
+XX
+<span class="hljs-number">55</span>
+<span class="hljs-number">66</span>
+
 $ cat &lt;&lt;\--- | sed -n <span class="hljs-string">&apos;/[0-9]/,/[0-9]/p&apos;</span>
 AA
 <span class="hljs-number">11</span>
