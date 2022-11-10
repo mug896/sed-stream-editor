@@ -632,13 +632,18 @@ xxx
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;allow-all&apos; &apos;vm-process-priority&apos; &#xC640; &#xAC19;&#xC740; &#xC18C;&#xBB38;&#xC790;&#xC640; &apos;-&apos; &#xBB38;&#xC790;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB2E8;&#xC5B4; &#xB9E4;&#xCE6D;</span>
 [[:lower:]-]+ or [a-z-]+
 
-<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &apos;]&apos;, &apos;[&apos;, &apos;@&apos; &#xBB38;&#xC790;&#xB97C; &#xC0AD;&#xC81C; </span>
+<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &apos;]&apos; or &apos;[&apos; or &apos;@&apos; &#xBB38;&#xC790;&#xB97C; &#xC0AD;&#xC81C; </span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;[@foo]&apos;</span> | sed <span class="hljs-string">&apos;s/[][@]//g&apos;</span>
 foo
 
-<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &apos;]&apos;, &apos;[&apos;, &apos;[:alnum:]&apos; &#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xBA74; &#xB9E4;&#xCE6D;</span>
+<span class="hljs-comment"># &#xC804;&#xB2EC;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &apos;]&apos; or &apos;[&apos; or &apos;[:alnum:]&apos; &#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xBA74; &#xB9E4;&#xCE6D;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;-t[imestamp]&apos;</span> | sed -En <span class="hljs-string">&apos;/^-[][[:alnum:]]+$/p&apos;</span>
 -t[imestamp
+</code></pre>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>[ ]</code> &#xD45C;&#xD604;&#xC2DD; &#xC548;&#xC5D0;&#xC11C;&#xB294; <code>*</code>, <code>?</code>, <code>.</code>, <code>|</code> &#xAC19;&#xC740; regex &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB97C; escape &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># * + ? [ ] { } ( ) | . ^ $  &#xBAA8;&#xB450; escape &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4;&#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;*+?[]{}()|.^$&apos;</span> | sed -En <span class="hljs-string">&apos;/[][{}()*+?|.^$]/p&apos;</span>
+*+?[]{}()|.^$
 </code></pre>
 <h5 id="logical-not-&#xC744;-&#xB098;&#xD0C0;&#xB0B4;&#xB294;-">logical NOT &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <code>^</code></h5>
 <p><code>[ ]</code> &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xB9E8;&#xC55E;&#xC5D0; <code>^</code> &#xB97C; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; logical NOT &#xC758; &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
