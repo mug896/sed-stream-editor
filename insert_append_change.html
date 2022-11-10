@@ -606,24 +606,30 @@ $ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</s
 <h5 id="2-n-&#xC635;&#xC158;-&#xC124;&#xC815;&#xC5D0;-&#xAD00;&#xACC4;&#xC5C6;&#xC774;-&#xC785;&#xB825;&#xD55C;-&#xAC12;&#xC774;-&#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;">2. <code>-n</code> &#xC635;&#xC158; &#xC124;&#xC815;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</h5>
 <h5 id="3-pattern-space-&#xB0B4;&#xC6A9;&#xC774;-&#xC804;&#xBD80;-&#xC0AD;&#xC81C;&#xB41C;-&#xC0C1;&#xD0DC;&#xC774;&#xBBC0;&#xB85C;-&#xBA85;&#xB839;-&#xC0AC;&#xC774;&#xD074;&#xC744;-&#xC885;&#xB8CC;&#xD558;&#xACE0;-new-cycle-&#xC744;-&#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;">3. pattern space &#xB0B4;&#xC6A9;&#xC774; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xB41C; &#xC0C1;&#xD0DC;&#xC774;&#xBBC0;&#xB85C; &#xBA85;&#xB839; &#xC0AC;&#xC774;&#xD074;&#xC744; &#xC885;&#xB8CC;&#xD558;&#xACE0; new cycle &#xC744; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</h5>
 <p>&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; <code>i</code>, <code>a</code> &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>c</code> &#xBA85;&#xB839;&#xC774; &#xC81C;&#xC77C; &#xB4A4;&#xC5D0; &#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2c XXXXX&apos;</span>
+<pre><code class="lang-bash">$ seq <span class="hljs-number">5</span> | sed <span class="hljs-string">&apos;2c XXXXX&apos;</span>
 <span class="hljs-number">1</span>
 XXXXX
 <span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
 
 <span class="hljs-comment"># &apos;c&apos; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xC0AC;&#xC774;&#xD074;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xBBC0;&#xB85C; &apos;i&apos;, &apos;a&apos; &#xAC12;&#xC740; &#xD45C;&#xC2DC;&#xAC00; &#xC548;&#xB41C;&#xB2E4;.</span>
-$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> 
+$ seq <span class="hljs-number">5</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> 
 <span class="hljs-number">1</span>
 XXXXX
 <span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
 
 <span class="hljs-comment"># &apos;c&apos; &#xBA85;&#xB839;&#xC774; &#xC81C;&#xC77C; &#xB4A4;&#xC5D0; &#xC640;&#xC57C; &#xD55C;&#xB2E4;.</span>
-$ seq <span class="hljs-number">3</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span>
+$ seq <span class="hljs-number">5</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span>
 <span class="hljs-number">1</span>
 -----
 XXXXX
 =====
 <span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
 
 $ seq <span class="hljs-number">5</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a =====&apos;</span> 
 <span class="hljs-number">1</span>
