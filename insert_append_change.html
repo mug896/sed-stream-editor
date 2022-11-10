@@ -612,33 +612,33 @@ XXXXX
 <span class="hljs-number">3</span>
 
 <span class="hljs-comment"># &apos;c&apos; &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xC0AC;&#xC774;&#xD074;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xBBC0;&#xB85C; &apos;i&apos;, &apos;a&apos; &#xAC12;&#xC740; &#xD45C;&#xC2DC;&#xAC00; &#xC548;&#xB41C;&#xB2E4;.</span>
-$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a -----&apos;</span> 
+$ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> 
 <span class="hljs-number">1</span>
 XXXXX
 <span class="hljs-number">3</span>
 
 <span class="hljs-comment"># &apos;c&apos; &#xBA85;&#xB839;&#xC774; &#xC81C;&#xC77C; &#xB4A4;&#xC5D0; &#xC640;&#xC57C; &#xD55C;&#xB2E4;.</span>
-$ seq <span class="hljs-number">3</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span>
+$ seq <span class="hljs-number">3</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2c XXXXX&apos;</span>
 <span class="hljs-number">1</span>
-.....
-XXXXX
 -----
+XXXXX
+=====
 <span class="hljs-number">3</span>
 
-$ seq <span class="hljs-number">5</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a -----&apos;</span> 
+$ seq <span class="hljs-number">5</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a =====&apos;</span> 
 <span class="hljs-number">1</span>
 XXXXX
 <span class="hljs-number">5</span>
 
-$ seq <span class="hljs-number">5</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i .....&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span>
+$ seq <span class="hljs-number">5</span> | sed  <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4a =====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2,4c XXXXX&apos;</span>
 <span class="hljs-number">1</span>
-.....
 -----
-.....
+=====
 -----
-.....
+=====
+-----
 XXXXX
------
+=====
 <span class="hljs-number">5</span>
 
 <span class="hljs-comment"># &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC774; &#xC804;&#xBD80; &#xC0AD;&#xC81C;&#xB41C;&#xB2E4;.</span>
