@@ -500,17 +500,22 @@ sed &#xC5D0;&#xC758;&#xD574; queue &#xB418;&#xC5C8;&#xB2E4;&#xAC00; &#xD504;&#xB
 <h5 id="1-&#xD604;&#xC7AC;-pattern-space-&#xB0B4;&#xC6A9;&#xC5D0;&#xB294;-&#xC601;&#xD5A5;&#xC744;-&#xC8FC;&#xC9C0;-&#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;">1. &#xD604;&#xC7AC; pattern space &#xB0B4;&#xC6A9;&#xC5D0;&#xB294; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</h5>
 <h5 id="2-n-&#xC635;&#xC158;-&#xC124;&#xC815;&#xC5D0;-&#xAD00;&#xACC4;&#xC5C6;&#xC774;-&#xC785;&#xB825;&#xD55C;-&#xAC12;&#xC774;-&#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;">2. <code>-n</code> &#xC635;&#xC158; &#xC124;&#xC815;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</h5>
 <h5 id="3-&#xB4A4;&#xC774;&#xC5B4;-&#xACC4;&#xC18D;&#xD574;&#xC11C;-&#xBA85;&#xB839;&#xC744;-&#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74;-e-&#xC635;&#xC158;&#xC744;-&#xC774;&#xC6A9;&#xD574;&#xC11C;-&#xBD84;&#xB9AC;&#xD574;&#xC57C;-&#xD569;&#xB2C8;&#xB2E4;">3. &#xB4A4;&#xC774;&#xC5B4; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>-e</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</h5>
-<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2i -----&apos;</span>
-<span class="hljs-number">1</span>
------
-<span class="hljs-number">2</span>
-<span class="hljs-number">3</span>
+<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;i ---&apos;</span>              $ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;a ---&apos;</span>
+---                                <span class="hljs-number">1</span>
+<span class="hljs-number">1</span>                                  ---
+---                                <span class="hljs-number">2</span>
+<span class="hljs-number">2</span>                                  ---
+---                                <span class="hljs-number">3</span>
+<span class="hljs-number">3</span>                                  ---
 
-$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2a =====&apos;</span>
-<span class="hljs-number">1</span>
-<span class="hljs-number">2</span>
-=====
-<span class="hljs-number">3</span>
+$ seq <span class="hljs-number">5</span> | sed <span class="hljs-string">&apos;2,3 a ---&apos;</span>          $ seq <span class="hljs-number">5</span> | sed <span class="hljs-string">&apos;2,3 c ---&apos;</span>
+<span class="hljs-number">1</span>                                  <span class="hljs-number">1</span>
+<span class="hljs-number">2</span>                                  ---
+---                                <span class="hljs-number">4</span>
+<span class="hljs-number">3</span>                                  <span class="hljs-number">5</span>
+---
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
 
 $ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2i -----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;2a =====&apos;</span>
 <span class="hljs-number">1</span>
@@ -526,7 +531,7 @@ $ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</s
 =====
 <span class="hljs-number">3</span>
 
-$ <span class="hljs-built_in">echo</span> abc | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/a/{i ----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/b/{i ====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span>
+$ <span class="hljs-built_in">echo</span> abc | sed <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/ab/{i ----&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;/bc/{i ====&apos;</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;}&apos;</span>
 ----
 ====
 abc
