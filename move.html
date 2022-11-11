@@ -672,6 +672,11 @@ sss XXX nnn FOO ccc BAR rrr
 <span class="hljs-number">2</span>. &#xADF8;&#xB2E4;&#xC74C; FOO &#xC5D0;&#xC11C;&#xBD80;&#xD130; \a &#xBB38;&#xC790; &#xAE4C;&#xC9C0;&#xB97C; XXX &#xAC12;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
 <span class="hljs-number">3</span>. &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB0A8;&#xC740; \a &#xBB38;&#xC790;&#xB97C; &#xB2E4;&#xC2DC; BAR &#xB85C; &#xBAA8;&#xB450; &#xCE58;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
 
+<span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; FOO &#xB098; BAR &#xB2E8;&#xC5B4;&#xC5D0; regex &#xC774; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;sss FXO uuu BXR nnn FYO ccc BYR rrr&quot;</span> |
+    sed -E <span class="hljs-string">&apos;s/(B[A-Z]R)/\a\1/g; s/F[A-Z]O[^\a]*\aB[A-Z]R/XXX/; s/\a//g&apos;</span>
+sss XXX nnn FYO ccc BYR rrr
+
 ------------------------------------------------------------------------
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;sss FOO uuu BAR nnn FOO ccc BAR rrr&quot;</span> | perl -pe <span class="hljs-string">&apos;s/FOO.*?BAR/XXX/&apos;</span>
