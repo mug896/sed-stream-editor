@@ -528,13 +528,20 @@ foo/bar/zoo
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;(foo/bar/zoo)&apos;</span> | sed -En <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;s/^\(|\)$//g; tR :R s/@/:/g; tX; b; :X p&apos;</span>
 $
 </code></pre>
-<h4 id="substitute-&#xBA85;&#xB839;&#xC744;-&#xC0AC;&#xC6A9;&#xD560;-&#xB54C;-g-&#xD50C;&#xB798;&#xADF8;-&#xC640;-branch-&#xC758;-&#xCC28;&#xC774;">substitute &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; g &#xD50C;&#xB798;&#xADF8; &#xC640; branch &#xC758; &#xCC28;&#xC774;</h4>
-<p><code>g</code> &#xD50C;&#xB798;&#xADF8;</p>
+<h4 id="substitute-&#xBA85;&#xB839;&#xC758;-g-&#xD50C;&#xB798;&#xADF8;-&#xC640;-branch-&#xBA85;&#xB839;-&#xBE44;&#xAD50;">substitute &#xBA85;&#xB839;&#xC758; g &#xD50C;&#xB798;&#xADF8; &#xC640; branch &#xBA85;&#xB839; &#xBE44;&#xAD50;</h4>
+<p>substitute &#xBA85;&#xB839;&#xC758; <code>g</code> &#xD50C;&#xB798;&#xADF8;</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]{2})([0-9]{2})#\1\\x\2#g&apos;</span>
 <span class="hljs-number">12</span>\x3456\x7890
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]{2})([0-9]{2})#\\x\1\\x\2#g&apos;</span>
 \x12\x34\x56\x7890
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]{2})#\\x\1#g&apos;</span>
+\x12\x34\x56\x78\x90
+
+<span class="hljs-comment"># *, + &#xC218;&#xB7C9; &#xD55C;&#xC815;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9; &#xB9E4;&#xCE6D;&#xAC12;&#xB9CC; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1234567890&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]{2})*#\\x\1#g&apos;</span>
+\x90
 </code></pre>
 <p>branch &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;1234567890&apos;</span> | sed -E <span class="hljs-string">&apos;:X s/^([0-9]*)([0-9]{2})/\1\\x\2/; tX&apos;</span>
