@@ -859,7 +859,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;--[no-
 <span class="hljs-comment"># :Y &#xBE0C;&#xB79C;&#xCE58; &#xC5D0;&#xC11C;&#xB294; \|?\w+] &#xB97C; &#xC774;&#xC6A9;&#xD574; |ipa] &#xBD80;&#xBD84;&#xC744; &#xC0AD;&#xC81C;&#xD574;&#xC11C; [tree|rtl] &#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># &#xBC18;&#xBCF5;&#xC744; &#xACC4;&#xC18D;&#xD558;&#xB2E4;&#xAC00; &#xCD5C;&#xC885; [] &#xC2A4;&#xD2B8;&#xB9C1;&#xB9CC; &#xB0A8;&#xAC8C;&#xB418;&#xBA74; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;. </span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;-fenable-[tree|rtl|ipa]-bar=&apos;</span> |  sed -En <span class="hljs-string">&apos;                          
-    :X h; tR1; :R1 s/(.*)\[(\|?(\w+))+](.*)/\1\3\4/; p; tY;  
+    :X h; tR1; :R1 s/(.*)\[(\|?(\w+))+](.*)/\1\3\4/; p; tY; b;
     :Y g; s/\|?\w+]/]/; /\[]/!bX   
 &apos;</span>
 -fenable-ipa-bar=
