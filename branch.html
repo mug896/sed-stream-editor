@@ -871,7 +871,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;-fenab
 <span class="hljs-comment"># &#xC704;&#xC758; &#xB450; &#xC791;&#xC5C5;&#xC744; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE58;&#xBA74; &#xB2E4;&#xC74C;&#xACFC;&#xAC19;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span>  <span class="hljs-string">&apos;-fenable-[tree|rtl|ipa]-bar=&apos;</span> |  sed -En <span class="hljs-string">&apos;
     :X h; tR1; :R1 s/(.*)\[(\|?(\w+-?))+](.*)/\1\3\4/; p; tY; b; 
-    :Y g; s/\|?\w+-?]/]/; tR2 :R2 s/-\[]([[:alnum:]])/-\1/p; tZ; /\[]/! bX :Z&apos;</span>
+    :Y g; s/\|?\w+-?]/]/; tR2 :R2 s/-\[]([[:alnum:]])/-\1/p; t; /\[]/! bX&apos;</span>
 </code></pre>
 <h1 id="4-">4 .</h1>
 <p>&#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130; &#xC911;&#xC5D0;&#xB294; <code>( )</code>, <code>&lt; &gt;</code>, <code>{ }</code> &#xAC19;&#xC740; &#xAD04;&#xD638;&#xAC00; &#xC30D;&#xC73C;&#xB85C; nesting &#xB418;&#xC5B4; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; 
