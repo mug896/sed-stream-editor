@@ -475,10 +475,13 @@ pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xBA85;&#xB839
 &#xADF8;&#xB9AC;&#xACE0; &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xAC00; &#xB2E4;&#xC2DC; pattern space &#xB85C; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xB610; &#xACB0;&#xACFC;&#xB97C; &#xC218;&#xC815;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACA0;&#xC8E0;?</p>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD588;&#xC744; &#xB54C; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p><img src="images/execute_1.png" alt=""></p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2:3&quot;</span> | sed -E <span class="hljs-string">&apos;s#([0-9]+):([0-9]+)#AA=$((\1+\2)); sleep $AA; echo $AA#e&apos;</span> 
 <span class="hljs-number">5</span>
 </code></pre>
+<p><img src="images/execute_1.png" alt=""></p>
+<blockquote>
+<p>&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xB418;&#xC5B4; &#xC2E4;&#xD589;&#xB418;&#xBBC0;&#xB85C; &#xBC18;&#xBCF5;&#xD574;&#xC11C; &#xC5EC;&#xB7EC;&#xBC88; &#xC2E4;&#xD589;&#xD560; &#xACBD;&#xC6B0; &#xC18D;&#xB3C4;&#xAC00; &#xB290;&#xB824;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p><code>e</code> &#xBA85;&#xB839;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xD615;&#xD0DC;&#xB97C; 2&#xAC00;&#xC9C0;&#xB85C; &#xBD84;&#xB958;&#xD574; &#xBCFC;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h4 id="1-se-&#xB97C;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;-&#xB2E8;&#xB3C5;&#xC73C;&#xB85C;-e-&#xBA85;&#xB839;&#xC744;-&#xC2E4;&#xD589;&#xD558;&#xB294;-&#xBC29;&#xBC95;">1. s/../../e &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;, &#xB2E8;&#xB3C5;&#xC73C;&#xB85C; e &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
 <p>&#xC774; &#xBC29;&#xBC95;&#xB4E4;&#xC740; &#xD604;&#xC7AC; pattern space &#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xBA85;&#xB839;&#xBB38;&#xC73C;&#xB85C; &#xD558;&#xC5EC; <code>sh -c</code> &#xD615;&#xD0DC;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xACE0;
