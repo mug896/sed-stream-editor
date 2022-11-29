@@ -514,19 +514,24 @@ XXX Transfer complete.
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
 </code></pre>
+<h4 id="sed-&#xB294;-&#xD56D;&#xC0C1;-&#xD30C;&#xC77C;&#xC758;-&#xCC98;&#xC74C;&#xBD80;&#xD130;-&#xB05D;&#xAE4C;&#xC9C0;-&#xBAA8;&#xB450;-&#xC2A4;&#xCE94;&#xD569;&#xB2C8;&#xB2E4;">sed &#xB294; &#xD56D;&#xC0C1; &#xD30C;&#xC77C;&#xC758; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB05D;&#xAE4C;&#xC9C0; &#xBAA8;&#xB450; &#xC2A4;&#xCE94;&#xD569;&#xB2C8;&#xB2E4;.</h4>
 <p>sed &#xB294; stream editor &#xB85C;&#xC368; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC5B4;&#xB5A4; &#xCD9C;&#xB825; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB358; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xD30C;&#xC77C;&#xC758; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB05D;&#xAE4C;&#xC9C0;&#xB97C; &#xBAA8;&#xB450; &#xC2A4;&#xCE94;&#xD569;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC758; &#xC0AC;&#xC774;&#xC988;&#xAC00; &#xD074; &#xACBD;&#xC6B0; &#xD56D;&#xC0C1; &#xC5F0;&#xC0B0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xB294; &#xC2DC;&#xC810;&#xC5D0;&#xC11C; quit &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xC885;&#xB8CC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD30C;&#xC77C;&#xC758; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB05D;&#xAE4C;&#xC9C0;&#xB97C; &#xBAA8;&#xB450; &#xC2A4;&#xCE94;&#xD55C;&#xB2E4;.</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># 3 &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xACE0; &#xC2A4;&#xCE94;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
 $ sed -n <span class="hljs-string">&apos;3p&apos;</span> very_big_file
+<span class="hljs-comment"># &#xD30C;&#xC77C; &#xC2A4;&#xCE94;&#xC774; /END/ &#xC5D0;&#xC11C; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ sed -n <span class="hljs-string">&apos;/BEGIN/,/END/{ p }&apos;</span> very_big_file
 
 <span class="hljs-comment"># &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xC5F0;&#xC0B0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xBA74; quit &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC885;&#xB8CC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
 $ sed -n <span class="hljs-string">&apos;3{p;Q}&apos;</span> very_big_file
+
+$ sed -n <span class="hljs-string">&apos;/BEGIN/,/END/{ p; /END/Q }&apos;</span> very_big_file
 </code></pre>
 <p>&#xB610;&#xD55C; &#xD30C;&#xC77C; &#xC0AC;&#xC774;&#xC988;&#xAC00; &#xD06C;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; branch loop &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74;
 regex &#xB9E4;&#xCE6D; &#xC601;&#xC5ED;&#xC774; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC99D;&#xAC00;&#xD558;&#xBBC0;&#xB85C; &#xCC98;&#xB9AC; &#xC18D;&#xB3C4;&#xAC00; &#xD06C;&#xAC8C; &#xB5A8;&#xC5B4;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xB9E4;&#xCE6D; &#xC601;&#xC5ED;&#xC774; &#xB108;&#xBB34; &#xCEE4;&#xC9C0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xACE0; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC5F0;&#xC0B0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xBA74; quit &#xBA85;&#xB839;&#xC73C;&#xB85C;
 &#xC885;&#xB8CC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ time sed -n <span class="hljs-string">&apos;/typedef struct/{ :X N; /XXX/!bX; p }&apos;</span> /usr/include/elf.h
+<pre><code class="lang-bash">$ time sed -n <span class="hljs-string">&apos;/typedef struct/{ :X N; /AAA/!bX; p }&apos;</span> /usr/include/elf.h
 
 real    <span class="hljs-number">0</span>m0.<span class="hljs-number">328</span>s
 user    <span class="hljs-number">0</span>m0.<span class="hljs-number">327</span>s
@@ -549,28 +554,28 @@ $ tail -n100000 very_big_file | sed <span class="hljs-string">&apos;...&apos;</s
 <h2 id="quiz">Quiz</h2>
 <p>&#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xB77C;&#xC778;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xB294;&#xB370; &#xC81C;&#xC77C; &#xBE60;&#xB978; &#xBC29;&#xBC95;&#xC740;?<br>&#xC57D; 1G &#xC815;&#xB3C4; &#xB418;&#xB294; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC911;&#xAC04; &#xC704;&#xCE58;&#xC758; &#xB77C;&#xC778;&#xC744; &#xCD94;&#xCD9C;&#xD558;&#xB294;&#xB370; tail, head &#xBC29;&#xBC95;&#xC774; &#xC81C;&#xC77C; &#xBE68;&#xB790;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xCD1D; 96,603,415 &#xB77C;&#xC778;&#xC758; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC911;&#xAC04; &#xB77C;&#xC778;&#xC744; &#xCD94;&#xCD9C;</span>
-$ time wc <span class="hljs-operator">-l</span> file
-<span class="hljs-number">96603415</span> file
+$ time wc <span class="hljs-operator">-l</span> file.txt
+<span class="hljs-number">96603415</span> file.txt
 
 real    <span class="hljs-number">0</span>m0.<span class="hljs-number">885</span>s
 user    <span class="hljs-number">0</span>m0.<span class="hljs-number">744</span>s
 sys     <span class="hljs-number">0</span>m0.<span class="hljs-number">140</span>s
 
-$ time tail -n <span class="hljs-number">48301710</span> file | head -n1
+$ time tail -n <span class="hljs-number">48301710</span> file.txt | head -n1
 AH3ZM5G9TA
 
 real    <span class="hljs-number">0</span>m0.<span class="hljs-number">442</span>s
 user    <span class="hljs-number">0</span>m0.<span class="hljs-number">376</span>s
 sys     <span class="hljs-number">0</span>m0.<span class="hljs-number">064</span>s
 
-$ time head -n <span class="hljs-number">48301707</span> file | tail -n1
+$ time head -n <span class="hljs-number">48301707</span> file.txt | tail -n1
 AH3ZM5G9TA
 
 real    <span class="hljs-number">0</span>m0.<span class="hljs-number">627</span>s
 user    <span class="hljs-number">0</span>m0.<span class="hljs-number">708</span>s
 sys     <span class="hljs-number">0</span>m0.<span class="hljs-number">404</span>s
 
-$ time sed -n <span class="hljs-string">&apos;48301707{p;Q}&apos;</span> file
+$ time sed -n <span class="hljs-string">&apos;48301707{p;Q}&apos;</span> file.txt
 AH3ZM5G9TA
 
 real    <span class="hljs-number">0</span>m2.<span class="hljs-number">402</span>s
