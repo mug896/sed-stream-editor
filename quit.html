@@ -531,7 +531,7 @@ $ sed -n <span class="hljs-string">&apos;/BEGIN/,/END/{ p; /END/Q }&apos;</span>
 regex &#xB9E4;&#xCE6D; &#xC601;&#xC5ED;&#xC774; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC99D;&#xAC00;&#xD558;&#xBBC0;&#xB85C; &#xCC98;&#xB9AC; &#xC18D;&#xB3C4;&#xAC00; &#xD06C;&#xAC8C; &#xB5A8;&#xC5B4;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xB9E4;&#xCE6D; &#xC601;&#xC5ED;&#xC774; &#xB108;&#xBB34; &#xCEE4;&#xC9C0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xACE0; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC5F0;&#xC0B0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xBA74; quit &#xBA85;&#xB839;&#xC73C;&#xB85C;
 &#xC885;&#xB8CC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ time sed -n <span class="hljs-string">&apos;/typedef struct/{ :X N; /AAA/!bX; p }&apos;</span> /usr/include/elf.h
+<pre><code class="lang-bash">$ time sed -n <span class="hljs-string">&apos;/typedef struct/{ :X N; /ZZZ/!bX; p }&apos;</span> /usr/include/elf.h
 
 real    <span class="hljs-number">0</span>m0.<span class="hljs-number">328</span>s
 user    <span class="hljs-number">0</span>m0.<span class="hljs-number">327</span>s
